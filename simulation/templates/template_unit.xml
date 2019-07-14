@@ -38,6 +38,7 @@
     <Unhealable>false</Unhealable>
   </Health>
   <Identity>
+	<Species>Unit</Species>
     <GenericName>Unit</GenericName>
 	<Civ>gaia</Civ>
     <Classes datatype="tokens">Unit ConquestCritical</Classes>

@@ -143,8 +143,11 @@ UnitAI.prototype.UnitFsmSpec = {
 
 	// Default event handlers:
 	"NearbyAttacked": function(msg) {
-		if (this.GetStance().respondFlee)
-			this.Flee(msg.data.attacker, false);
+		if (this.GetStance().respondFlee) {
+			let cmpIdentity = Engine.QueryInterface(this.entity, IID_Identity);
+			if (cmpIdentity && cmpIdentity.IsSameSpecy(msg.data.target))
+				this.Flee(msg.data.attacker, false);
+		}
 	},
 	"MoveCompleted": function() {
 		// ignore spurious movement messages
