@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_structure_military_barracks">
+  <GarrisonHolder>
+    <Train> 
+      <TrainList datatype="tokens">Melee+Infantry</TrainList>
+    </Train>
+    <List datatype="tokens">Infantry</List>
+  </GarrisonHolder>
+  <Cost>
+    <PopulationBonus>15</PopulationBonus>
+  </Cost>
+  <Identity>
+    <GenericName>Barracks</GenericName>
+    <Tooltip>Train citizen-soldiers. Research training improvements.</Tooltip>
+    <VisibleClasses datatype="tokens">Town Barracks</VisibleClasses>
+    <Icon>structures/barracks.png</Icon>
+  </Identity>
+  <ProductionQueue>
+    <BatchTimeModifier>1.0</BatchTimeModifier>
+	<Groups>
+		<Swordsman>
+			<GenericName>Swordsman</GenericName>
+			<Icon>technologies/sword.png</Icon>
+			<Tooltip>Choose among swordsmen</Tooltip>
+			<Entities datatype="tokens">
+			  units/{civ}_infantry_swordman_b
+			  units/{civ}_infantry_swordman_a
+			  units/{civ}_infantry_swordman_e
+			</Entities>
+		</Swordsman>
+		<Spearman>
+			<GenericName>Spearman</GenericName>
+			<Icon>technologies/spear.png</Icon>
+			<Tooltip>Choose among swordsmen</Tooltip>
+			<Entities datatype="tokens">
+			  units/{civ}_infantry_spearman_b
+			  units/{civ}_infantry_spearman_a
+			  units/{civ}_infantry_spearman_e
+			  units/{civ}_infantry_spearman_hoplite_b
+			  units/{civ}_infantry_spearman_hoplite_a
+			  units/{civ}_infantry_spearman_hoplite_e
+			</Entities>
+		</Spearman>
+		<Pikeman>
+			<GenericName>Pikeman</GenericName>
+			<Icon>units/mace_infantry_pikeman.png</Icon>
+			<Tooltip>Choose among pikemen</Tooltip>
+			<Entities datatype="tokens">
+			  units/{civ}_infantry_pikeman_b
+			  units/{civ}_infantry_pikeman_a
+			  units/{civ}_infantry_pikeman_e
+			</Entities>
+		</Pikeman>
+		<Axeman>
+			<GenericName>Axeman</GenericName>
+			<Icon>technologies/battle_axe.png</Icon>
+			<Tooltip>Choose among axemen</Tooltip>
+			<Entities datatype="tokens">
+			  units/{civ}_infantry_axeman_b
+			  units/{civ}_infantry_axeman_a
+			  units/{civ}_infantry_axeman_e
+			</Entities>
+		</Axeman>
+	</Groups>
+  </ProductionQueue>
+ <VisualActor>
+    <FoundationActor>structures/fndn_4x4.xml</FoundationActor>
+  </VisualActor>
+</Entity>

@@ -1,0 +1,15 @@
+{
+	"genericName": "Upgrade spearmen",
+	"specificName": {
+	},
+	"description": "Promote unit.",
+	"cost": { "rp": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": {"all": [{"tech":"spears"}, {"tech":"vertical_shield"}]},
+	"icon": "armor_plates_iron_spear.png",
+	"researchTime": 20,
+	"tooltip": "Equip spearmen with shields.",
+	"requirementsTooltip": "Needs Vertical shield.",
+	"modifications": [{"value": "Promotion/RequiredXp", "replace": 0}],
+	"affects": ["Infantry Spear Basic"],
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

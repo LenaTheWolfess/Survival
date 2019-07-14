@@ -1,0 +1,14 @@
+{
+	"genericName": "Champion swordman",
+	"specificName": {
+	},
+	"description": "Unlock swordman champion.",
+	"cost": { "rp": 250, "wood": 100, "stone": 0, "metal": 100 },
+	"requirements": {"all": [{ "tech": "champion_infantry" }, { "tech": "swords"}] },
+	"supersedes": "swords",
+	"icon": "sword_cross.png",
+	"researchTime": 360,
+	"tooltip": "Unlock the ability to train swordman champion.",
+	"requirementsTooltip": "Needs Champions and Swords.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

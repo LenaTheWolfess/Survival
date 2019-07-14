@@ -1,0 +1,7 @@
+{
+	"adds": 50,
+	"action": "Build",
+	"type": "Military",
+	"once": true,
+	"count": 1
+}

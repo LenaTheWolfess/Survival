@@ -1,0 +1,16 @@
+{
+	"TranslatedKeys": ["Title", "Description"],
+	"Data":
+	{
+		"Title": "Survival",
+		"Description": "Defeat opponents by killing their citizens.",
+		"Scripts":
+		[
+			"scripts/TriggerHelper.js",
+			"scripts/ConquestCommon.js",
+			"scripts/Survival.js"
+		],
+		"DisabledWhenChecked": ["conquest", "capture_the_relic", "conquest_units", "regicide", "wonder", "conquest_structure"],
+		"GUIOrder": 1
+	}
+}

@@ -1,0 +1,13 @@
+{
+	"genericName": "Elephant armor",
+	"specificName": {
+	},
+	"description": "Unlock eletphant armor.",
+	"cost": { "rp": 250, "wood": 0, "stone": 0, "metal": 100 },
+	"supersedes": "cavalry",
+	"requirements": {"all": [{ "tech": "plate_armor"}]},
+	"icon": "horseshoe_gold.png",
+	"researchTime": 90,
+	"requirementsTooltip": "Needs Plate armor.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

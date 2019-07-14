@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_mechanical_dropsite_food">
+  <Identity>
+    <Civ>athen</Civ>
+    <Icon>units/athen_wagon.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/athenians/wagon_dropsite.xml</Actor>
+  </VisualActor>
+</Entity>

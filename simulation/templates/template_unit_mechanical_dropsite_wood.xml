@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_mechanical_dropsite">
+  <Identity>
+    <Classes datatype="tokens">DropsiteWood</Classes>
+    <GenericName>Wagon (Wood)</GenericName>
+  </Identity>
+  <ResourceDropsite>
+    <Types>wood</Types>
+  </ResourceDropsite>
+</Entity>

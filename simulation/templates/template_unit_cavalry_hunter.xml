@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_cavalry">
+  <TrainingRestrictions>
+    <Category>Hunter</Category>
+  </TrainingRestrictions>
+  <Attack>
+    <Melee>
+      <Hack>5</Hack>
+      <Pierce>0</Pierce>
+      <Crush>0.0</Crush>
+      <Missle>0.0</Missle>  
+      <MaxRange>2.2</MaxRange>
+      <PrepareTime>500</PrepareTime>
+      <RepeatTime>1000</RepeatTime>
+      <RestrictedClasses datatype="tokens">Structure</RestrictedClasses>
+      <PreferredClasses datatype="tokens">Animal</PreferredClasses>
+    </Melee>
+	<Ranged>
+      <Ammo>30</Ammo>
+	  <RefillAmount>5</RefillAmount>
+	  <RefillTime>100000</RefillTime>
+      <Hack>0.0</Hack>
+      <Pierce>0.0</Pierce>
+      <Crush>0.0</Crush>
+      <Missle>15.0</Missle>
+      <MaxRange>16.0</MaxRange>
+      <MinRange>7.0</MinRange>
+      <PrepareTime>1000</PrepareTime>
+      <RepeatTime>1500</RepeatTime>
+      <Projectile>
+        <Spread>3.0</Spread>
+        <Gravity>9.81</Gravity>
+        <LaunchPoint y="3"/>
+        <Speed>75.0</Speed>
+      </Projectile>
+      <Delay>0</Delay>
+      <RestrictedClasses datatype="tokens">Structure Human</RestrictedClasses>
+      <PreferredClasses datatype="tokens">Animal</PreferredClasses>
+    </Ranged>
+  </Attack>
+  <Cost>
+    <BatchSize>1</BatchSize>
+	<Resources>
+      <grain>50</grain>
+	  <wood>15</wood>
+    </Resources>
+  </Cost>
+  <Health>
+    <Max>150</Max>
+  </Health>
+  <ResourceGatherer>
+    <MaxDistance>2.0</MaxDistance>
+    <BaseSpeed>1.0</BaseSpeed>
+    <Rates>
+      <meat.meat>0.5</meat.meat>
+    </Rates>
+    <Capacities>
+      <grain>20</grain>
+    </Capacities>
+  </ResourceGatherer>
+  <Identity>
+    <GenericName>Hunter</GenericName>
+    <VisibleClasses datatype="tokens">Melee Hunter Worker -Cavalry Citizen -Soldier</VisibleClasses>
+    <Classes datatype="tokens">-CitizenSoldier</Classes>
+	<Formations disable=""/>
+  </Identity>
+</Entity>

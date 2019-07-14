@@ -1,0 +1,12 @@
+{
+	"genericName": "Spears",
+	"specificName": {
+	},
+	"description": "Research spears.",
+	"cost": { "rp": 10, "wood": 50, "stone": 0, "metal": 25 },
+	"requirements": { "tech": "forging" },
+	"icon": "spear.png",
+	"researchTime": 30,
+	"tooltip": "Unlock the ability to train spearmen.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_support_slave">
+  <Builder>
+    <Rate>0.5</Rate>
+  </Builder>
+  <Health>
+    <Max>25</Max>
+  </Health>
+  <Identity>
+    <SpecificName>Woman slave</SpecificName>
+    <Gender>female</Gender>
+  </Identity>
+  <ResourceGatherer>
+    <Rates>
+      <fruit.berry>0.6</fruit.berry>
+      <fruit.apple>0.6</fruit.apple>
+      <grain.grain>0.1</grain.grain>
+      <meat.meat>0.4</meat.meat>
+      <wood.tree>0.1</wood.tree>
+      <wood.ruins>5</wood.ruins>
+      <stone.rock>0.1</stone.rock>
+      <stone.ruins>2</stone.ruins>
+      <metal.ore>0.1</metal.ore>
+    </Rates>
+  </ResourceGatherer>
+  <Sound>
+    <SoundGroups>
+      <trained>interface/alarm/alarm_create_female.xml</trained>
+    </SoundGroups>
+  </Sound>
+</Entity>

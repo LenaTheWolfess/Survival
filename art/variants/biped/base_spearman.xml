@@ -1,0 +1,5 @@
+<variant name="Base">
+  <animations>
+	<animation file="biped/new/promotion.dae" name="promotion" speed="80"/>
+  </animations>
+</variant>

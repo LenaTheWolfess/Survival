@@ -1,0 +1,12 @@
+{
+	"genericName": "Leather helmets",
+	"specificName": {
+	},
+	"description": "Unlock leather helmets.",
+	"cost": { "rp": 250, "wood": 100, "stone": 0, "metal": 100 },
+	"requirements": { "tech": "phase_village" },
+	"icon": "helmet_corinthian_bronze.png",
+	"researchTime": 60,
+	"tooltip": "",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

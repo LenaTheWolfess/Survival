@@ -1,0 +1,14 @@
+{
+	"genericName": "Champion swordman",
+	"specificName": {
+	},
+	"description": "Unlock swordman champion.",
+	"cost": { "food": 600, "wood": 100, "stone": 0, "metal": 500 },
+	"requirements": {"all": [{ "tech": "helmets" },{ "tech": "improved_plate_armor" },{"tech": "champion_infantry" }, { "tech": "swords"}] },
+	"supersedes": "swords",
+	"icon": "sword_cross.png",
+	"researchTime": 180,
+	"tooltip": "Unlock the ability to train swordman champion.",
+	"requirementsTooltip": "Needs Champions, Swords, Helmets, Advanced leg protection, Improved Plate armor.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

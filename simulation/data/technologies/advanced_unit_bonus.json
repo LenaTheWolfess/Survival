@@ -1,0 +1,8 @@
+{
+	"autoResearch": true,
+	"icon": "upgrade_advanced.png",
+	"tooltip": "Units promoted to the advanced class gain a lot of quality: 20% extra health, 1 extra armor level of every type, 20% extra loot, 20% extra attack for melee units, 4m extra range and better precision for ranged units, faster movement speeds and extra heal speed and range for healers.",
+	"modifications": [
+	],
+	"affects": ["Advanced Unit", "Elite Unit"]
+}

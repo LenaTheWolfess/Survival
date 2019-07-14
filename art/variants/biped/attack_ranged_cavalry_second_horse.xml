@@ -1,0 +1,6 @@
+<variant name="attack_melee">
+  <animations>
+    <animation file="quadraped/horse_attack_short_a.dae" event="0.6" name="attack_melee" id="attack1" speed="60"/>
+    <animation file="quadraped/horse_attack_short_b.dae" event="0.6" name="attack_melee" id="attack2" speed="60"/>
+  </animations>
+</variant>

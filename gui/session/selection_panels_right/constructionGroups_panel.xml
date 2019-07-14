@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object name="unitConstructionGroupsPanel"
+	size="4 -56 100% 0"
+	type="image"
+	sprite="queuePanelShader"
+>
+	<object size="6 6 100% 100%">
+	<repeat count="5">
+		<object name="unitConstructionGroupsButton[n]" hidden="true" style="iconButton" type="button" size="0 0 40 40" tooltip_style="sessionToolTipBottom">
+		<object name="unitConstructionGroupsIcon[n]" ghost="true" type="image" size="3 3 37 37"/>
+		</object>
+	</repeat>
+	</object>
+</object>

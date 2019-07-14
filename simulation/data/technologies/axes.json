@@ -1,0 +1,12 @@
+{
+	"genericName": "Axes",
+	"specificName": {
+	},
+	"description": "Unlock axemen.",
+	"cost": { "rp": 50, "wood": 50, "stone": 0, "metal": 100 },
+	"requirements": { "tech": "forging" },
+	"icon": "battle_axe.png",
+	"researchTime": 30,
+	"tooltip": "Unlock the ability to train axemen.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

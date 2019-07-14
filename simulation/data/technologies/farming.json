@@ -1,0 +1,12 @@
+{
+	"genericName": "Farming",
+	"specificName": {
+	},
+	"description": "Unlock farming.",
+	"cost": { "rp": 100, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": { "tech": "phase_town"},
+	"icon": "grain.png",
+	"researchTime": 60,
+	"tooltip": "Unlock the ability to use farms.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

@@ -1,0 +1,12 @@
+{
+	"code": "rp",
+	"name": "Research points",
+	"description": "",
+	"order": 1,
+	"subtypes": {
+		"rp": "Research"
+	},
+	"truePrice": 500,
+	"properties": [],
+	"aiAnalysisInfluenceGroup": "ignore"
+}

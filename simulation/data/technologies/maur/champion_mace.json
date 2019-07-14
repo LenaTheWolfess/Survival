@@ -1,0 +1,14 @@
+{
+	"genericName": "Champion maceman",
+	"specificName": {
+	},
+	"description": "Unlock maceman champion.",
+	"cost": { "food": 600, "wood": 100, "stone": 0, "metal": 500 },
+	"requirements": {"all": [{"tech": "maur/strong_shield"}, {"tech": "champion_infantry" }, {"tech":"helmets"},{"tech":"scaled_armor"}, { "tech": "maces"}] },
+	"supersedes": "maces",
+	"icon": "upgrade_advanced.png",
+	"researchTime": 180,
+	"tooltip": "Unlock the ability to train maceman champion.",
+	"requirementsTooltip": "Needs Champions, Maces, Helmets, Scaled armor and Strong shield.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

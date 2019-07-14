@@ -1,0 +1,15 @@
+{
+	    "autoResearch": true,
+    "genericName": "Unlock Heavy swordsmen",
+	"specificName": {
+	},
+	"description": "Unlock unit.",
+	"cost": { "rp": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"supersedes": "athen_sword_a",
+	"requirements": {"all": [{"tech": "phase_empire"}, {"tech": "advanced_leg_protection"},{"tech": "advanced_armor" }, {"tech": "swords"}]},
+	"icon": "armor_plates_swords.png",
+	"researchTime": 0,
+	"tooltip": "Equip swordsmen with advanced leg protection and advanced armor.",
+	"requirementsTooltip": "Needs Advanced leg protection and Advanced armor.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

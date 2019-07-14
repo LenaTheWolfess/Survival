@@ -1,0 +1,12 @@
+{
+	"genericName": "Basic armor",
+	"specificName": {
+	},
+	"description": "Research basic armor.",
+	"cost": { "rp": 10, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": { "tech": "phase_village" },
+	"icon": "armor_leather.png",
+	"researchTime": 30,
+	"tooltip": "",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

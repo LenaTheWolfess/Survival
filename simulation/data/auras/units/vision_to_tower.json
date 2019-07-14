@@ -1,0 +1,9 @@
+{
+	"type": "garrison",
+	"affects": ["DefenseTowerLow"],
+	"modifications": [
+		{ "value": "Vision/Range",   "add":   40}
+	],
+	"auraDescription": "Gives vision range 40 for Sentry towers when garrisoned in.",
+	"auraName": "Vision"
+}

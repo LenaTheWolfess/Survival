@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actor version="1">
+  <castshadow/>
+  <group>
+    <variant frequency="1" name="Base">
+      <mesh>skeletal/new/f_dress.dae</mesh>
+      <props>
+        <prop actor="props/units/heads/new/head_female_dudette_b.xml" attachpoint="head"/>
+      </props>
+      <textures>
+        <texture file="skeletal/hele_fem_a.dds" name="baseTex"/>
+      </textures>
+    </variant>
+  </group>
+  <group>
+    <variant file="biped/base_slave_male.xml"/>
+    <variant file="biped/carry_food.xml"/>
+    <variant file="biped/carry_meat.xml"/>
+    <variant file="biped/carry_wood.xml"/>
+    <variant file="biped/carry_stone.xml"/>
+    <variant file="biped/carry_metal.xml"/>
+  </group>
+  <group>
+    <variant frequency="1" name="Idle"/>
+    <variant file="biped/approach_build.xml"/>
+    <variant file="biped/approach_fruit.xml"/>
+    <variant file="biped/approach_meat.xml"/>
+    <variant file="biped/approach_grain.xml"/>
+    <variant file="biped/approach_ore.xml"/>
+    <variant file="biped/approach_tree.xml"/>
+    <variant file="biped/approach_rock.xml"/>
+    <variant file="biped/approach_slaughter.xml"/>
+    <variant file="biped/female_gather_tree.xml"/>
+    <variant file="biped/attack_chop.xml"/>
+    <variant file="biped/gather_grain.xml"/>
+    <variant file="biped/gather_berry.xml"/>
+    <variant file="biped/gather_apple.xml"/>
+    <variant file="biped/gather_fruit.xml"/>
+    <variant file="biped/gather_meat.xml"/>
+    <variant file="biped/gather_rock.xml"/>
+    <variant file="biped/gather_ore.xml"/>
+    <variant file="biped/gather_ruins.xml"/>
+    <variant file="biped/gather_praise.xml"/>
+    <variant file="biped/build.xml"/>
+    <variant file="biped/build_farm.xml"/>
+    <variant file="biped/death_infantry.xml"/>
+  </group>
+  <material>player_trans.xml</material>
+</actor>

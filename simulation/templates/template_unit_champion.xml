@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit">
+  <Attack>
+    <Capture>
+      <Value>5</Value>
+      <MaxRange>4</MaxRange>
+      <RepeatTime>1000</RepeatTime>
+      <RestrictedClasses datatype="tokens">Field Palisade SiegeWall StoneWall</RestrictedClasses>
+    </Capture>
+  </Attack>
+  <Cost>
+    <BatchSize>1</BatchSize>
+    <BuildTime>10</BuildTime>
+  </Cost>
+  <Identity>
+    <GenericName>Champion Unit</GenericName>
+    <Classes datatype="tokens">Organic Human</Classes>
+    <VisibleClasses datatype="tokens">Champion Soldier</VisibleClasses>
+  </Identity>
+  <Morale>
+    <MaxPoints>200</MaxPoints>
+	<RegenRate>0</RegenRate>
+  </Morale>
+  <Loot>
+    <xp>150</xp>
+    <meat>10</meat>
+    <wood>10</wood>
+    <stone>0</stone>
+    <metal>20</metal>
+  </Loot>
+  <Consumer>
+	<Time>10000</Time>
+	<Groups>
+	  <Food>
+	    <Or>
+			<Meat>
+				<Code>meat</Code>
+				<Count>2</Count>
+			</Meat>
+			<Fish>
+				<Code>fish</Code>
+				<Count>2</Count>
+			</Fish>
+			<Fruit>
+				<Code>fruit</Code>
+				<Count>20</Count>
+			</Fruit>
+	    </Or>
+		<Punish>2</Punish>
+	  </Food>
+	</Groups>
+  </Consumer>
+  <Sound>
+    <SoundGroups>
+      <attack_impact_ranged>attack/impact/arrow_metal.xml</attack_impact_ranged>
+      <attack_ranged>attack/weapon/arrowfly.xml</attack_ranged>
+    </SoundGroups>
+  </Sound>
+  <Vision>
+    <Range>32</Range>
+  </Vision>
+</Entity>

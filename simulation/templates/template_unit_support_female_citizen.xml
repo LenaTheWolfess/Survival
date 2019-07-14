@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_support_citizen">
+  <Auras datatype="tokens">
+    units/female_inspiration
+  </Auras>
+  <Identity>
+    <GenericName>Female Citizen</GenericName>
+    <Gender>female</Gender>
+    <Classes datatype="tokens">FemaleCitizen</Classes>
+    <VisibleClasses datatype="tokens">Female</VisibleClasses>
+  </Identity>
+  <Builder>
+    <Rate>0.5</Rate>
+  </Builder>
+  <Sound>
+    <SoundGroups>
+      <trained>interface/alarm/alarm_create_female.xml</trained>
+    </SoundGroups>
+  </Sound>
+</Entity>

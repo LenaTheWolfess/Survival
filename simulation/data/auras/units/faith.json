@@ -1,0 +1,17 @@
+{
+	"type": "range",
+	"radius": 25,
+	"affects": ["Citizen"],
+	"modifications": [
+		{ "value": "Builder/Rate", "multiply": 1.5 },
+		{ "value": "ResourceGatherer/BaseSpeed", "multiply": 1.5 }
+	],
+	"auraName": "Faith",
+	"auraDescription": "+50% working rate for citizens.",
+	"overlayIcon": "art/textures/ui/session/auras/buildgather_bonus.png",
+	"rangeOverlay" : {
+		"lineTexture": "outline_border.png",
+		"lineTextureMask": "outline_border_mask.png",
+		"lineThickness": 0.075
+	}
+}

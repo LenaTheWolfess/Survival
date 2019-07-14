@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_structure_military_barracks_stables">
+  <Footprint>
+    <Square width="25.0" depth="25.0"/>
+    <Height>12.0</Height>
+  </Footprint>
+  <Health>
+    <SpawnEntityOnDeath>decay|rubble/rubble_stone_5x5</SpawnEntityOnDeath>
+  </Health>
+  <Identity>
+    <Civ>athen</Civ>
+    <SpecificName>Stratēgeîon</SpecificName>
+  </Identity>
+  <Obstruction>
+    <Static width="23.0" depth="23.0"/>
+  </Obstruction>
+  <ProductionQueue>
+    <Technologies datatype="tokens">
+      sword_riders
+      horse_javelins
+	  athen_cavalry_sword_a
+	  athen_cavalry_sword_e
+	  athen_cavalry_javelin_a
+	  athen_cavalry_javelin_e
+    </Technologies>
+  </ProductionQueue>
+  <VisualActor>
+    <Actor>structures/hellenes/stable.xml</Actor>
+    <FoundationActor>structures/fndn_5x5.xml</FoundationActor>
+  </VisualActor>
+</Entity>

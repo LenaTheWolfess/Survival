@@ -1,0 +1,13 @@
+{
+	"code": "animal",
+	"name": "Animal products",
+	"description": "Get daily products from domestic animals.",
+	"order": 1,
+	"subtypes": {
+		"eggs": "Eggs",
+		"milk": "Milk"
+	},
+	"truePrice": 300,
+	"properties": ["barterable", "tradable", "tributable"],
+	"aiAnalysisInfluenceGroup": "ignore"
+}

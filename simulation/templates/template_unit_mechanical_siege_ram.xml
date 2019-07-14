@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_mechanical_siege">
+  <Auras datatype="tokens">
+    units/siege_protection
+  </Auras>
+  <Armour>
+    <Missle>100</Missle>
+    <Crush>10</Crush>
+    <Hack>100</Hack>
+    <Pierce>100</Pierce>
+  </Armour>
+  <Attack>
+    <NeedsManPower>6</NeedsManPower>
+    <Melee>
+      <EnergyCost>10</EnergyCost>
+      <Hack>0.0</Hack>
+      <Pierce>0.0</Pierce>
+      <Crush>150.0</Crush>
+      <Missle>0.0</Missle>
+      <MaxRange>10</MaxRange>
+      <MinRange>0</MinRange>
+      <PrepareTime>3000</PrepareTime>
+      <RepeatTime>8000</RepeatTime>
+      <RestrictedClasses datatype="tokens">Organic</RestrictedClasses>
+      <PreferredClasses datatype="tokens">Gates Structure</PreferredClasses>
+    </Melee>
+  </Attack>
+  <Capturable disable=""/>
+  <Cost>
+    <BuildTime>30</BuildTime>
+    <Resources>
+      <wood>350</wood>
+      <metal>200</metal>
+    </Resources>
+  </Cost>
+  <Capturable>
+    <CapturePoints>500</CapturePoints>
+    <RegenRate>0</RegenRate>
+    <GarrisonRegenRate>1.0</GarrisonRegenRate>
+  </Capturable>
+  <Energy>
+    <MaxPoints>100</MaxPoints>
+    <RegenRate>5</RegenRate>
+    <RunDegRate>20</RunDegRate>
+  </Energy>
+  <GarrisonHolder>
+    <Max>17</Max>
+    <EjectHealth>0.1</EjectHealth>
+    <EjectClassesOnDestroy datatype="tokens">Unit</EjectClassesOnDestroy>
+    <List datatype="tokens">Support Infantry</List>
+    <BuffHeal>0</BuffHeal>
+    <LoadingRange>2</LoadingRange>
+  </GarrisonHolder>
+  <Health>
+    <Max>400</Max>
+  </Health>
+  <Identity>
+    <GenericName>Battering Ram</GenericName>
+    <VisibleClasses datatype="tokens">Melee Ram</VisibleClasses>
+    <RequiredTechnology>siege_ram</RequiredTechnology>
+    <FormationGroup>Ram</FormationGroup>
+  </Identity>
+  <Sound>
+    <SoundGroups>
+      <select>attack/siege/siege_select.xml</select>
+      <order_walk>attack/siege/ram_move.xml</order_walk>
+      <order_attack>attack/siege/ram_attack_order.xml</order_attack>
+      <trained>attack/siege/ram_trained.xml</trained>
+      <attack_melee>attack/siege/ram_attack.xml</attack_melee>
+    </SoundGroups>
+  </Sound>
+  <UnitMotion>
+    <WalkSpeed op="mul">0.2</WalkSpeed>
+    <Run> <Speed op="mul">0.2</Speed> </Run>
+  </UnitMotion>
+  <Vision>
+    <Range>10</Range>
+  </Vision>
+</Entity>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_hero_infantry_swordsman">
+  <Armour>
+    <Hack>10.0</Hack>
+    <Crush>7.0</Crush>
+    <Pierce>9.0</Pierce>
+    <Missle>8.0</Missle>
+    <Shield>
+      <Hack>5.0</Hack>
+      <Crush>5.0</Crush>
+      <Pierce>5.0</Pierce>
+      <Missle>5.0</Missle>
+    </Shield>
+  </Armour>
+  <Auras datatype="tokens">
+    units/heroes/athen_hero_themistocles_1
+    units/heroes/athen_hero_themistocles_2
+  </Auras>
+  <Identity>
+    <Civ>athen</Civ>
+    <Lang>greek</Lang>
+    <GenericName>Themistocles</GenericName>
+    <SpecificName>Themistoklês</SpecificName>
+	<FormationCompany>athen_champion_marine</FormationCompany>
+    <Icon>units/athen_hero_themistocles.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/athenians/hero_infantry_swordsman_themistocles.xml</Actor>
+  </VisualActor>
+</Entity>

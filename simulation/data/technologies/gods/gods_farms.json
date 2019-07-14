@@ -1,0 +1,13 @@
+{
+	"pair": "gods/gods_farms_vs_war",
+	"genericName": "God of farming",
+	"description": "Whorship God of farming.",
+	"cost": {"food": 0, "wood": 0, "stone": 0, "metal": 0},
+	"requirements": {"tech": "phase_city"},
+	"icon": "grain.png",
+	"researchTime": 0,
+	"tooltip": "Farm production 2x.",
+	"modifications": [{"value": "ResourceGatherer/Rates/food.grain", "multiply": 2.0}],
+	"affects": ["Worker"],
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

@@ -1,0 +1,13 @@
+{
+	"genericName": "Improved horse armor",
+	"specificName": {
+	},
+	"description": "Improved horse armor.",
+	"cost": { "rp": 250, "wood": 150, "stone": 0, "metal": 50 },
+	"supersedes": "horse_basic_armor",
+	"requirements": {"all": [{ "tech": "cavalry", "tech":"horse_basic_armor" }] },
+	"icon": "horseshoe_metal.png",
+	"researchTime": 90,
+	"requirementsTooltip": "Needs Cavalry.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

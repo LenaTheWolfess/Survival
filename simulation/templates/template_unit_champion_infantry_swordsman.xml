@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_infantry_melee">
+  <Attack>
+    <Melee>
+      <Hack>11</Hack>
+      <MaxRange>3.0</MaxRange>
+      <RepeatTime>1000</RepeatTime>
+      <PreferredClasses datatype="tokens">Human Siege</PreferredClasses>
+    </Melee>
+  </Attack>
+  <Cost>
+    <Resources>
+      <wood>75</wood>
+      <metal>100</metal>
+    </Resources>
+  </Cost>
+  <Identity>
+    <VisibleClasses datatype="tokens">Melee Sword</VisibleClasses>
+    <GenericName>Champion Swordsman</GenericName>
+    <Formations datatype="tokens">
+      special/formations/testudo
+    </Formations>
+  </Identity>
+</Entity>

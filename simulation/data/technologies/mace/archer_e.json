@@ -1,0 +1,16 @@
+{
+	"genericName": "Upgrade archers",
+	"specificName": {
+	},
+	"description": "Promote unit.",
+	"cost": { "food": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": {"all": [{"tech": "basic_armor"}, {"tech":"helmets"}]},
+	"supersedes": "mace/archer_a",
+	"icon": "upgrade_elite.png",
+	"researchTime": 10,
+	"tooltip": "Equip archers with basic armor and helmets.",
+	"requirementsTooltip": "Needs Basic armor and Helmets.",
+	"modifications": [{"value": "Promotion/RequiredXp", "replace": 0}],
+	"affects": ["Infantry Archer Advanced"],
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

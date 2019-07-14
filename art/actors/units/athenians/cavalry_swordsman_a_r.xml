@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actor version="1">
+  <castshadow/>
+  <group>
+    <variant frequency="1" name="Base">
+      <mesh>skeletal/new/m_armor_tunic_short.dae</mesh>
+      <props>
+        <prop actor="props/units/heads/new/head_hele_a.xml" attachpoint="head"/>
+        <prop actor="props/units/helmets/hele_illyrian_crested_black.xml" attachpoint="helmet"/>
+        <prop actor="props/units/weapons/xiphos.xml" attachpoint="weapon_R"/>
+        <prop actor="props/temp/l_sheath.xml" attachpoint="sheath_L"/>
+      </props>
+    </variant>
+  </group>
+  <group>
+    <variant frequency="1" name="linothorax-black">
+      <textures>
+        <texture file="skeletal/hele_csw_a_1.dds" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant frequency="1" name="linothorax-black-reinforced">
+      <textures>
+        <texture file="skeletal/hele_csw_a_2.dds" name="baseTex"/>
+      </textures>
+    </variant>
+  </group>
+  <group>
+   <variant name="base" frequency="1">
+      <props>
+        <prop actor="props/temp/l_sheath_xiphos.xml" attachpoint="sheath_L"/>
+        <prop actor="" attachpoint="weapon_R"/>
+      </props>
+    </variant>
+    <variant name="combat"/>
+    </group>
+  <group>
+    <variant file="biped/base_cavalry_javelin_relax.xml" frequency="1"/>
+    <variant file="biped/base_cavalry_swordsman_ready.xml" name="combat"/>
+    <variant file="biped/rider/carry_meat.xml"/>
+    <variant file="biped/rider/approach_slaughter_shield_hele.xml"/>
+    <variant file="biped/rider/promotion.xml"/>
+    <variant file="biped/rider/attack_slaughter_hele.xml"/>
+    <variant file="biped/gather_meat.xml"/>
+    <variant file="biped/rider/death.xml"/>
+  </group>
+  <material>player_trans.xml</material>
+</actor>

@@ -1,0 +1,12 @@
+{
+	"code": "meat",
+	"name": "Meat",
+	"description": "Hunt wild or slaughter domestic animals for meat.",
+	"order": 1,
+	"subtypes": {
+		"meat": "Meat"
+	},
+	"truePrice": 100,
+	"properties": ["barterable", "tradable", "tributable"],
+	"aiAnalysisInfluenceGroup": "abundant"
+}

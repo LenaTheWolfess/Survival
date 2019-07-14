@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_cavalry">
+  <Attack>
+    <Melee>
+      <EnergyCost>5</EnergyCost>
+      <EnergyPenetration>true</EnergyPenetration>
+      <CritChance>0.1</CritChance>
+      <CritDamage>50000</CritDamage>
+      <EnergyCost>1</EnergyCost>
+      <EnergyPenetration>true</EnergyPenetration>
+      <Hack>0</Hack>
+      <Pierce>0</Pierce>
+      <Crush>0</Crush>
+      <Missle>0</Missle>
+      <MaxRange>3.5</MaxRange>
+      <PrepareTime>375</PrepareTime>
+      <RepeatTime>750</RepeatTime>
+      <RestrictedClasses datatype="tokens">Structure</RestrictedClasses>
+      <PreferredClasses datatype="tokens">Human</PreferredClasses>
+    </Melee>
+  </Attack>
+</Entity>

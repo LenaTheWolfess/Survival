@@ -1,0 +1,15 @@
+{
+	    "autoResearch": true,
+    "genericName": "Unlock Heavy sword cavalry",
+	"specificName": {
+	},
+	"description": "Unlock unit.",
+	"cost": { "rp": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": {"all": [{"tech": "phase_empire"}, {"tech": "chain_armor"}, {"tech":"sword_riders"}]},
+	"icon": "upgrade_elite.png",
+	"supersedes": "athen_cavalry_sword_a",
+	"researchTime": 0,
+	"tooltip": "Equip sword cavalry with chain armor.",
+	"requirementsTooltip": "Needs Chain armor.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

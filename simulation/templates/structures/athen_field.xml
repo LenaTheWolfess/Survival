@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_structure_resource_field">
+  <Identity>
+    <Civ>athen</Civ>
+    <SpecificName>Agrós</SpecificName>
+  </Identity>
+  <ResourceSupply>
+	<SpawnEntityOnExhaustion>
+		structures/athen_field_empty
+	</SpawnEntityOnExhaustion>
+  </ResourceSupply>
+  <VisualActor>
+    <Actor>structures/plot_field_medit.xml</Actor>
+  </VisualActor>
+</Entity>

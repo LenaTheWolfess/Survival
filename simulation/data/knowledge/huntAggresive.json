@@ -1,0 +1,7 @@
+{
+	"adds": 20,
+	"action": "Kill",
+	"type": "HuntAggresive",
+	"once": false,
+	"count": 10
+}

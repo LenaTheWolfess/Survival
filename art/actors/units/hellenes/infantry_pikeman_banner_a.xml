@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actor version="1">
+  <castshadow/>
+  <group>
+    <variant name="Base">
+      <mesh>skeletal/new/m_tunic_short.dae</mesh>
+      <props>
+          <prop actor="props/units/weapons/greek_banner_a.xml" attachpoint="weapon_R"/>
+      </props>
+    </variant>
+  </group>
+  <group>
+    <variant frequency="1" name="Helmet-Corinthians">
+      <props>
+        <prop actor="props/units/heads/new/head_corinthian.xml" attachpoint="head"/>
+      </props>
+    </variant>
+    <variant frequency="1" name="Helmet-Later">
+      <props>
+        <prop actor="props/units/heads/new/head_hele_a.xml" attachpoint="head"/>
+      </props>
+    </variant>
+  </group>
+  <group>
+    <variant frequency="2" name="tunic 3">
+      <textures>
+        <texture file="skeletal/hele_isp_b.dds" name="baseTex"/>
+      </textures>
+    </variant>
+  </group>
+  <group>
+    <variant name="ready" file="biped/ready_stance/base_banner.xml"/>
+    <variant name="relax" file="biped/relax/base_banner.xml" frequency="1"/>
+    <variant file="biped/attack_capture.xml"/>
+    <variant file="biped/attack_slaughter.xml"/>
+    <variant file="biped/death_infantry.xml"/>
+  </group>
+  <material>player_trans.xml</material>
+</actor>

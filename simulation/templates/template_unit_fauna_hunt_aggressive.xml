@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_fauna_hunt">
+  <KnowledgeClass>
+	<Class>HuntAggresive</Class>
+  </KnowledgeClass>
+  <Attack>
+    <Melee>
+      <Hack>1</Hack>
+      <Pierce>1</Pierce>
+      <Crush>0</Crush>
+	  <Missle>0</Missle>
+      <MaxRange>4</MaxRange>
+      <PrepareTime>500</PrepareTime>
+      <RepeatTime>1000</RepeatTime>
+      <RestrictedClasses datatype="tokens">Structure Ship Siege</RestrictedClasses>
+    </Melee>
+  </Attack>
+  <Loot>
+    <xp>20</xp>
+  </Loot>
+  <AnimalAI>
+    <NaturalBehaviour>aggressive</NaturalBehaviour>
+  </AnimalAI>
+  <Vision>
+    <Range>40</Range>
+  </Vision>
+</Entity>

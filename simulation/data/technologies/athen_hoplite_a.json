@@ -1,0 +1,14 @@
+{
+	    "autoResearch": true,
+    "genericName": "Unlock Medium hoplites",
+	"specificName": {
+	},
+	"description": "Unlock unit.",
+	"cost": { "rp": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": {"all": [{"tech": "phase_city"}, {"tech": "helmets"},{"tech": "advanced_leg_protection"},{"tech": "advanced_armor" }, {"tech": "athen_hoplite"}]},
+	"icon": "armor_plates_iron_spear.png",
+	"researchTime": 0,
+	"tooltip": "Equip hoplites with helmets, advanced leg protection and advanced armor.",
+	"requirementsTooltip": "Needs Helmets, Advanced leg protection and Advanced armor.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

@@ -1,0 +1,16 @@
+{
+	"genericName": "Upgrade swordsmen",
+	"specificName": {
+	},
+	"description": "Promote unit.",
+	"cost": { "food": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"supersedes": "iber/sword_a",
+	"requirements": {"all": [{"tech": "chain_armor" }, {"tech": "swords"}]},
+	"icon": "armor_plates_swords.png",
+	"researchTime": 10,
+	"tooltip": "Equip swordsmen with chain armor.",
+	"requirementsTooltip": "Needs Chain armor.",
+	"modifications": [{"value": "Promotion/RequiredXp", "replace": 0}],
+	"affects": ["Infantry Sword Advanced"],
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

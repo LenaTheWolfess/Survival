@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objects>
+
+	<script directory="gui/common/"/>
+	<script directory="gui/reference/common/"/>
+	<script directory="gui/reference/techtree/"/>
+
+	<object	hotkey="techtree">
+		<action on="Press">
+			close();
+		</action>
+	</object>
+
+	<!-- Add a translucent black background to fade out the menu page -->
+	<object type="image" z="0" sprite="BackgroundTranslucent"/>
+
+	<object type="image" style="ModernDialog" size="16 24 100%-16 100%-24">
+		<object style="TitleText" type="text" size="50%-128 -18 50%+128 14">
+			<translatableAttribute id="caption">Technology Tree</translatableAttribute>
+		</object>
+
+		<!-- Civ selection -->
+		<object size="16 10 100%-16 30">
+			<object
+				name="civSelectionHeading"
+				type="text"
+				font="sans-bold-16"
+				textcolor="white"
+				text_align="left"
+				size="100%-290 10 100%-180 48">
+				<translatableAttribute id="caption">Civilization:</translatableAttribute>
+			</object>
+
+			<object name="civSelection" type="dropdown" style="ModernDropDown" size="100%-180 8 100% 34" dropdown_size="424">
+				<action on="SelectionChange">selectCiv(this.list_data[this.selected]);</action>
+			</object>
+			<object
+				name="civEmblem"
+				type="image"
+				size="6 6 96+6 96+6"
+				sprite="stretched:pregame/shell/logo/wfg_logo_white.png"
+			/>
+			<object
+				name="civName"
+				type="text"
+				font="sans-bold-20"
+				textcolor="white"
+				text_align="left"
+				text_valign="top"
+				size="104 32 100%-8 50"
+			/>
+			
+			<object
+				name="civHistory"
+				type="text"
+				font="sans-12"
+				textcolor="white"
+				text_align="left"
+				text_valign="top"
+				size="104 52 100%-8 52+62"
+				style="SectionBox"
+			/>
+		</object>
+
+		<!-- Tech Tree display -->
+		<object size="0 54+64 100%-124 100%-54" name="display_tree">
+			<object type="image" name="tree_display" style="TreeDisplay" size="8 0 100%-12 100%">
+				<include file="gui/reference/techtree/rows.xml"/>
+			</object>
+		</object>
+		
+		
+		<!-- Struct page -->
+		<object
+			type="button"
+			style="StoneButton"
+			size="100%-309 100%-44 100%-169 100%-16"
+			name="structinfo"
+			hotkey="structnfo"
+		>
+			<translatableAttribute id="caption">Structures</translatableAttribute>
+			<action on="Press">switchToStructPage();</action>
+		</object>
+		<!-- Close dialog -->
+		<object
+			type="button"
+			style="StoneButton"
+			size="100%-164 100%-44 100%-16 100%-16"
+			name="close"
+			hotkey="cancel"
+		>
+			<translatableAttribute id="caption">Close</translatableAttribute>
+			<action on="Press">
+				close();
+			</action>
+		</object>
+	</object>
+</objects>

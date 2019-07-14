@@ -1,0 +1,8 @@
+<variant name="approach_slaughter">
+  <animations>
+    <animation file="biped/rider/cavalry/javelin/trot.dae" name="Walk" speed="7"/>
+  </animations>
+  <props>
+    <prop actor="props/units/weapons/knife.xml" attachpoint="weapon_R"/>
+  </props>
+</variant>

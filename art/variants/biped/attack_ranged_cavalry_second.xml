@@ -1,0 +1,9 @@
+<variant name="attack_melee">
+  <animations>
+    <animation file="biped/rider/cavalry/generic/attack_shield_cut_b.dae" event="0.6" name="attack_melee" id="attack1" speed="60"/>
+    <animation file="biped/rider/cavalry/generic/attack_shield_cut_c.dae" event="0.6" name="attack_melee" id="attack2" speed="60"/>
+  </animations>
+  <props>
+    <prop actor="props/units/weapons/knife.xml" attachpoint="weapon_R"/>
+  </props>
+</variant>

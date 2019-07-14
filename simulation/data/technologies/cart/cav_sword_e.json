@@ -1,0 +1,16 @@
+{
+	"genericName": "Upgrade sword cavalry",
+	"specificName": {
+	},
+	"description": "Promote unit.",
+	"cost": { "food": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": {"all": [{"tech":"helmets"},{"tech": "chain_armor"}, {"tech":"sword_riders"}]},
+	"icon": "upgrade_elite.png",
+	"supersedes": "cart/cav_sword_a",
+	"researchTime": 15,
+	"tooltip": "Equip sword cavalry with chain armor and helmets.",
+	"requirementsTooltip": "Needs Chain armor and Helmets.",
+	"modifications": [{"value": "Promotion/RequiredXp", "replace": 0}],
+	"affects": ["Cavalry Sword Advanced"],
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

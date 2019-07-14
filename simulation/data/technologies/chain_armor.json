@@ -1,0 +1,13 @@
+{
+	"genericName": "Chain armor",
+	"specificName": {
+	},
+	"description": "Research chain armor.",
+	"cost": { "rp": 50, "wood": 100, "stone": 0, "metal": 200 },
+	"supersedes": "advanced_armor",
+	"requirements": {"all": [{"tech": "advanced_armor" }, {"tech": "phase_city"}]},
+	"icon": "armor_chain.png",
+	"researchTime": 60,
+	"tooltip": "Requires city phase.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

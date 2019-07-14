@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_infantry_javelinist">
+  <Cost>
+    <Resources>
+      <coin>10</coin>
+      <metal>0</metal>
+      <meat>0</meat>
+      <stone>0</stone>
+      <wood>0</wood>
+    </Resources>
+  </Cost>
+  <Consumer disable = ""/>
+  <Payed>
+    <Interval>60000</Interval>
+	<Sum>10</Sum>
+	<Code>coin</Code>
+  </Payed>
+  <Identity>
+    <Civ>gaia</Civ>
+    <Lang>greek</Lang>
+    <GenericName>Heavy Skirmisher</GenericName>
+    <SpecificName>Thyreophóros</SpecificName>
+    <Icon>units/athen_thureopos.png</Icon>
+     <RequiredTechnology>phase_town</RequiredTechnology>
+    <VisibleClasses datatype="tokens">Mercenary</VisibleClasses>
+  </Identity>
+  <VisualActor>
+    <Actor>units/hellenes/infantry_javelinist_c_thureophoros.xml</Actor>
+  </VisualActor>
+</Entity>

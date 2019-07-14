@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<variant name="charge">
+  <animations>
+    <animation file="biped/rider/cavalry/gallop_shield.dae" name="Run" speed="7"/>
+  </animations>
+</variant>

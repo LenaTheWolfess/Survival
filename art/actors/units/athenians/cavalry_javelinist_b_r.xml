@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actor version="1">
+  <castshadow/>
+  <group>
+    <variant frequency="1" name="Base">
+      <mesh>skeletal/new/m_tunic_short.dae</mesh>
+      <props>
+        <prop actor="props/units/heads/new/head_hele_b.xml" attachpoint="head"/>
+        <prop actor="props/units/weapons/jav_ammo.xml" attachpoint="ammo"/>
+        <prop actor="props/units/capes/rider/javelinist.xml" attachpoint="root"/>
+      </props>
+      <textures>
+        <texture file="skeletal/hele_isp_b.dds" name="baseTex"/>
+      </textures>
+    </variant>
+  </group>
+  <group>
+    <variant name="ammo" frequency="1"/>
+	<variant name ="noAmmo">
+	  <props>
+		<prop actor="props/units/weapons/knife.xml" attachpoint="weapon_R"/>
+        <prop actor="" attachpoint="ammo"/>
+	  </props>
+	</variant>
+	<variant name = "noRanged">
+	  <props>
+		<prop actor="props/units/weapons/knife.xml" attachpoint="weapon_R"/>
+	  </props>
+	</variant>
+  </group>
+  <group>
+    <variant file="biped/base_cavalry_swordsman_relax.xml" name="noRanged"/>
+    <variant file="biped/base_cavalry_swordsman_relax.xml" name="noAmmo"/>
+    <variant file="biped/base_cavalry_javelin_relax.xml" frequency = "1"/> 
+    <variant file="biped/attack_ranged_cavalry_second.xml"/>
+    <variant file="biped/attack_ranged_cavalry_javelin.xml" name="attack_ranged"/>
+    <variant file="biped/rider/promotion_shield.xml" />
+    <variant file="biped/rider/attack_slaughter_shield_hele.xml"/>
+    <variant file="biped/rider/approach_slaughter_shield_hele.xml"/>
+    <variant file="biped/rider/death_javelin.xml"/>
+  </group>
+  <material>player_trans.xml</material>
+</actor>

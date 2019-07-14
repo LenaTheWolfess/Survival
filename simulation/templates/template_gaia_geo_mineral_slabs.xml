@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_gaia_geo_mineral">
+  <Identity>
+    <GenericName>Metal Mine</GenericName>
+  </Identity>
+  <Footprint>
+    <Circle radius="10.0"/>
+    <Height>3.5</Height>
+  </Footprint>
+  <Obstruction>
+    <Static width="13.0" depth="13.0"/>
+  </Obstruction>
+  <Capturable>
+    <CapturePoints>1</CapturePoints>
+    <RegenRate>0.0</RegenRate>
+    <GarrisonRegenRate>0.0</GarrisonRegenRate>
+  </Capturable>
+  <TerritoryDecay>
+    <DecayRate>20</DecayRate>
+  </TerritoryDecay>
+  <ResourceSupply>
+    <Amount>5000</Amount>
+    <MaxGatherers>24</MaxGatherers>
+	<SpawnEntityOnExhaustion>
+		gaia/geology_stone_desert_small
+	</SpawnEntityOnExhaustion>
+	<RequiredTechnology>gather_mining_shaftmining</RequiredTechnology>
+  </ResourceSupply>
+  <Sound>
+    <SoundGroups>
+      <select>interface/select/resource/sel_metal.xml</select>
+    </SoundGroups>
+  </Sound>
+  <StatusBars>
+    <BarWidth>6.0</BarWidth>
+    <BarHeight>0.6</BarHeight>
+    <HeightOffset>8.0</HeightOffset>
+  </StatusBars>
+</Entity>

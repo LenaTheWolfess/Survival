@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="gaia/fauna_zebu">
+  <Cost>
+    <BuildTime>53</BuildTime>
+    <Resources>
+      <grain>100</grain>
+    </Resources>
+  </Cost>
+  <ResourceSupply>
+    <Amount>150</Amount>
+  </ResourceSupply>
+  <ResourceTrickle>
+	<Interval>20000</Interval>
+    <Rates>
+      <animal>10</animal>
+	</Rates>
+  </ResourceTrickle><Consumer>
+    <Time>20000</Time>
+	<Groups>
+		<Food>
+		  <And>
+			<Grain>
+			  <Code>grain</Code>
+			  <Count>4</Count>
+			</Grain>
+		 </And>
+		 <Punish>10</Punish>
+		</Food>
+	</Groups>
+  </Consumer>
+  <Visibility>
+    <RetainInFog>false</RetainInFog>
+  </Visibility>
+</Entity>

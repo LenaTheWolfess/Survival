@@ -1,0 +1,8 @@
+{
+	"name": "survival",
+	"label": "Survival",
+	"version": "1.0.0",
+	"description": "gameplay",
+	"dependencies": ["0ad=0.0.23"],
+	"type": "gameplay"
+}

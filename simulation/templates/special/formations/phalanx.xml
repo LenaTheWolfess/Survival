@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_formation">
+  <Auras datatype="tokens">
+    formations/formation_phalanx
+  </Auras>
+  <Formation>
+    <Icon>formations/phalanx.png</Icon>
+    <RequiredMemberCount>10</RequiredMemberCount>
+	<SortingClasses>Hero Banner Commander Pike Spear Hoplite Sword Melee</SortingClasses>
+	<SortingOrder>fillFromTheBack</SortingOrder>
+    <DisabledTooltip>only hoplite infantry allowed (at least 10)</DisabledTooltip>
+    <FormationName>Phalanx</FormationName>
+    <UnitSeparationWidthMultiplier>0.4</UnitSeparationWidthMultiplier>
+    <UnitSeparationDepthMultiplier>0.4</UnitSeparationDepthMultiplier>
+    <WidthDepthRatio>4</WidthDepthRatio>
+    <MinColumns>5</MinColumns>
+    <MaxColumns>20</MaxColumns>
+    <MaxRows>8</MaxRows>
+    <Animations>
+      <idle>
+        1..2,1..-1: phalanx_idle;
+        3..4,1..-1: phalanx_back_idle;
+        5..6,1..-1: phalanx_back_idle
+      </idle>
+      <walk>
+        1..2,1..-1: phalanx_walk;
+        3..4,1..-1: phalanx_walk;
+        5..6,1..-1: phalanx_walk
+      </walk>
+      <run>
+        1..2,1..-1: phalanx_run;
+        3..4,1..-1: phalanx_run;
+        5..6,1..-1: phalanx_run
+      </run>
+      <attack>
+        1..2,1..-1: phalanx_attack;
+        3..4,1..-1: phalanx_attack;
+        5..6,1..-1: phalanx_idle
+      </attack>
+    </Animations>
+  </Formation>
+  <FormationAttack>
+    <CanAttackAsFormation>true</CanAttackAsFormation>
+  </FormationAttack>
+</Entity>

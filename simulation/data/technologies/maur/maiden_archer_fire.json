@@ -1,0 +1,13 @@
+{
+	"genericName": "Maiden fire archer",
+	"specificName": {
+	},
+	"description": "Unlock maiden fire archer.",
+	"cost": { "food": 600, "wood": 200, "stone": 0, "metal": 0 },
+	"requirements": {"all": [{"tech": "champion_infantry" }, { "tech": "archery"}, {"tech":"heroes/maurya"}] },
+	"icon": "arrow.png",
+	"researchTime": 180,
+	"tooltip": "Unlock the ability to train maiden fire archer.",
+	"requirementsTooltip": "Needs Champions, Archery and Maurya.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

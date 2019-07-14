@@ -1,0 +1,12 @@
+{
+	"genericName": "Strong shields",
+	"specificName": {
+	},
+	"description": "Unlock stronger shields.",
+	"cost": { "rp": 0, "wood": 300, "stone": 0, "metal": 0 },
+	"requirements": { "all": [{"tech":"simple_shield"}] },
+	"icon": "shields_generic_gold.png",
+	"researchTime": 120,
+	"tooltip": "",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

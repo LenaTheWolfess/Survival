@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actor version="1">
+  <castshadow/>
+  <group>
+    <variant frequency="1" name="Base">
+      <mesh>skeletal/new/m_tunic_short.dae</mesh>
+      <props>
+        <prop actor="props/units/heads/new/head_hele_b.xml" attachpoint="head"/>
+        <prop actor="props/units/helmets/headband_color.xml" attachpoint="helmet"/>
+        <prop actor="" attachpoint="weapon_R"/>
+        <prop actor="props/units/weapons/bow_short.xml" attachpoint="weapon_L"/>
+        <prop actor="props/units/quiver_greek_back.xml" attachpoint="back"/>
+      </props>
+      <textures>
+        <texture file="skeletal/hele_isp_b.dds" name="baseTex"/>
+      </textures>
+    </variant>
+  </group>
+  <group>
+    <variant name="ammo" frequency = "1"/>
+	<variant name ="noAmmo">
+	  <props>
+		<prop actor="props/units/weapons/knife.xml" attachpoint="weapon_R"/>
+        <prop actor="" attachpoint="back"/>
+	  </props>
+	</variant>
+	<variant name = "noRanged">
+	  <props>
+		<prop actor="props/units/weapons/knife.xml" attachpoint="weapon_R"/>
+	  </props>
+	</variant>
+  </group>
+  <group>
+     <variant name="base" frequency="1"/>
+	 <variant name="noAmmo" />
+	 <variant name ="noRanged"/>
+     <variant name="combat">
+      <props>
+        <prop actor="props/units/weapons/arrow_back.xml" attachpoint="weapon_R"/>
+      </props>
+	</variant>
+  </group>
+  <group>
+    <variant name="base" frequency="1"/>
+    <variant file="biped/attack_ranged_archer.xml" name="attack_ranged"/>
+    <variant file="biped/base_swordsman_shieldarm_fast_relax.xml" name="noAmmo"/>
+    <variant file="biped/base_swordsman_shieldarm_fast_relax.xml" name="noRanged"/>
+    <variant file="biped/attack_ranged_second.xml" name="combat"/>
+  </group>
+  <group>
+    <variant file="biped/base_swordsman_shieldarm_fast_relax.xml" name="noAmmo"/>
+    <variant file="biped/base_swordsman_shieldarm_fast_relax.xml" name="noRanged"/>
+    <variant file="biped/base_archer_relax.xml" frequency="1"/>
+    <variant file="biped/base_archer_ready.xml" name="combat"/>
+    <variant file="biped/approach_slaughter.xml"/>
+    <variant file="biped/attack_capture.xml"/>
+    <variant file="biped/attack_slaughter.xml"/>
+    <variant file="biped/gather_praise.xml"/>
+    <variant file="biped/death_infantry.xml"/>
+  </group>
+  <material>player_trans.xml</material>
+</actor>

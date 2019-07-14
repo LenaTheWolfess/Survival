@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_infantry_melee">
+  <Attack>
+    <Melee>
+      <Crush>10</Crush>
+      <RepeatTime>750</RepeatTime>
+      <MissChance>4.5</MissChance>
+      <PreferredClasses datatype="tokens">Infantry</PreferredClasses>
+    </Melee>
+  </Attack>
+  <Cost>
+    <Resources>
+      <wood>5</wood>
+      <metal>2</metal>
+    </Resources>
+  </Cost>
+  <Identity>
+    <VisibleClasses datatype="tokens">Club</VisibleClasses>
+    <GenericName>Clubman</GenericName>
+	<FormationGroup>InfantryClub</FormationGroup>
+  </Identity>
+  <Loot>
+    <metal>5</metal>
+  </Loot>
+</Entity>

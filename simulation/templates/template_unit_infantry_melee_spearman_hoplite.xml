@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_infantry_melee_spearman">
+  <Identity>
+    <Formations datatype="tokens">
+      special/formations/phalanx
+    </Formations>
+    <VisibleClasses datatype="tokens">Hoplite -Spear</VisibleClasses>
+    <FormationGroup>InfantryHoplite</FormationGroup>
+  </Identity>
+  <Cost>
+    <BuildTime op="add">2</BuildTime>
+  </Cost>
+</Entity>

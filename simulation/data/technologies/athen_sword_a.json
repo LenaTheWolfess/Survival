@@ -1,0 +1,14 @@
+{
+	"autoResearch": true,
+    "genericName": "Unlock Medium swordsmen",
+	"specificName": {
+	},
+	"description": "Unlock unit.",
+	"cost": { "rp": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": {"all": [{"tech": "phase_city"}, {"tech":"swords"},{"tech": "helmets"},{"tech": "medium_leg_protection"},{"tech": "round_med_shield" }]},
+	"icon": "armor_plates_iron_swords.png",
+	"researchTime": 0,
+	"tooltip": "Equip swordsmen with helmets, shields and leg protection.",
+	"requirementsTooltip": "Needs Helmets, Medium leg protection and Round shields.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

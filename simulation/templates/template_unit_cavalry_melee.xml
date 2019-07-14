@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_cavalry">
+  <Attack>
+    <Melee>
+      <EnergyCost>1</EnergyCost>
+      <EnergyPenetration>true</EnergyPenetration>
+      <Hack>0</Hack>
+      <Pierce>0</Pierce>
+      <Crush>0.0</Crush>
+      <Missle>0.0</Missle>
+      <MaxRange>3.5</MaxRange>
+      <PrepareTime>500</PrepareTime>
+      <RepeatTime>750</RepeatTime>  
+      <MissChance>3</MissChance>
+      <RestrictedClasses datatype="tokens">Structure Ram</RestrictedClasses>
+      <PreferredClasses datatype="tokens">Human</PreferredClasses>
+    </Melee>
+  </Attack>
+  <Experience>
+    <MaxLevel>3</MaxLevel>
+    <RequiredXp>100</RequiredXp>
+  </Experience>
+  <Identity>
+    <VisibleClasses datatype="tokens">Melee</VisibleClasses>
+    <GenericName>Melee Cavalry</GenericName>
+	<FormationGroup>CavalryMelee</FormationGroup>
+  </Identity>
+</Entity>

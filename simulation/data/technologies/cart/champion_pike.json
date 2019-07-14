@@ -1,0 +1,14 @@
+{
+	"genericName": "Champion pikeman",
+	"specificName": {
+	},
+	"description": "Unlock pikeman champion.",
+	"cost": { "food": 800, "wood": 100, "stone": 0, "metal": 700 },
+	"requirements": {"all": [{ "tech": "champion_infantry" }, { "tech": "pikes"}, {"tech":"chain_armor"}, {"tech":"round_med_shield"}, {"tech":"helmets"}, {"tech":"medium_leg_protection"}]},
+	"supersedes": "pikes",
+	"icon": "spear.png",
+	"researchTime": 120,
+	"tooltip": "Unlock the ability to train pikeman champion.",
+	"requirementsTooltip": "Needs Champions, Pikes, Chain armor, Helmets, Round shield and Medium leg protection.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

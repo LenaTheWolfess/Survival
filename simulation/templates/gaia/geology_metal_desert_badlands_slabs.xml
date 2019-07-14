@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_gaia_geo_mineral_slabs">
+  <ResourceSupply>
+	<SpawnEntityOnExhaustion>
+		gaia/geology_metal_desert_small
+	</SpawnEntityOnExhaustion>
+  </ResourceSupply>
+  <VisualActor>
+    <Actor>geology/metalmine_desert_badlands_slabs.xml</Actor>
+  </VisualActor>
+</Entity>

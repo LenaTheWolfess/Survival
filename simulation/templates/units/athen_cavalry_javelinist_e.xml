@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="units/athen_cavalry_javelinist_a">
+  <Armour>
+   <Missle>2</Missle>  
+   <Pierce>2</Pierce>  
+   <Crush>3</Crush>  
+   <Hack>3</Hack> 
+  </Armour>
+  <Identity>
+    <Rank>Elite</Rank>
+    <GenericName>Heavy Greek Cavalry</GenericName>
+    <Icon>units/athen_cavalry_javelinist_e.png</Icon>
+	<RequiredTechnology>athen_cavalry_javelin_e</RequiredTechnology>
+  </Identity>
+  <Cost>
+    <BuildTime op="add">0.5</BuildTime>
+    <Resources>
+      <metal op="add">10</metal>
+    </Resources>
+  </Cost>
+  <UnitMotion>
+    <WalkSpeed op="mul">0.96</WalkSpeed>
+    <Run><Speed  op="mul">0.96 </Speed></Run>
+  </UnitMotion>
+  <VisualActor>
+    <Actor>units/athenians/cavalry_javelinist_e_m.xml</Actor>
+  </VisualActor>
+</Entity>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_infantry_melee">
+  <Attack>
+    <Melee>
+      <Hack>5</Hack>
+      <Pierce>2</Pierce>
+      <Crush>2</Crush>
+      <PrepareTime>500</PrepareTime>
+      <PreferredClasses datatype="tokens">Infantry</PreferredClasses>
+    </Melee>
+  </Attack>
+  <Cost>
+    <Resources>
+      <wood>5</wood>
+      <metal>5</metal>
+    </Resources>
+  </Cost>
+  <Identity>
+    <VisibleClasses datatype="tokens">Axe</VisibleClasses>
+    <GenericName>Axeman</GenericName>
+    <RequiredTechnology>axes</RequiredTechnology>
+	<FormationGroup>InfantryAxe</FormationGroup>
+  </Identity>
+  <Loot>
+    <wood>0</wood>
+    <metal>5</metal>
+  </Loot>
+</Entity>

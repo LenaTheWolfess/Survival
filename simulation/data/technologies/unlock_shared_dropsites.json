@@ -1,0 +1,15 @@
+{
+	"genericName": "Diaspora",
+	"description": "The extension of trade leads to the permanent establishment of storekeepers and their families in foreign countries, allowing them to exploit the wealth of these countries.",
+	"cost": { "rp": 0, "wood": 0, "stone": 0, "metal": 0, "coin": 50 },
+	"requirements": { "entity": { "class": "Trader", "number": 3 } },
+	"requirementsTooltip": "Requires 3 Traders",
+	"supersedes": "unlock_shared_los",
+	"icon": "diaspora.png",
+	"researchTime": 40,
+	"tooltip": "Allows using allied dropsites.",
+	"modifications": [
+		{ "value": "Player/sharedDropsites", "replace": true }
+	],
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

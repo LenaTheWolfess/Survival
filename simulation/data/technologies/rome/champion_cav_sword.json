@@ -1,0 +1,13 @@
+{
+	"genericName": "Champion sword cavalry",
+	"specificName": {
+	},
+	"description": "Unlock champion sword cavalry.",
+	"cost": { "food": 800, "wood": 100, "stone": 0, "metal": 400 },
+	"requirements": {"all": [{ "tech": "improved_plate_armor"},{ "tech": "helmets"}, { "tech": "champion_cavalry" }, { "tech": "swords"}] },
+	"icon": "sword_cavalry.png",
+	"researchTime": 180,
+	"tooltip": "Unlock the ability to train champion sword cavalry.",
+	"requirementsTooltip": "Needs Champion cavalry, Swords, Helmets and Improved plate armor.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

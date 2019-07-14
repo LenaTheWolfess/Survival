@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<variant name="ready">
+  <animations>
+    <animation file="quadraped/horse_idle_b.dae" name="Idle" id="idle1" speed="80"/>
+    <animation file="quadraped/horse_idle_c.dae" name="Idle" id="idle2" speed="80"/>
+    <animation file="quadraped/horse_idle_d.dae" name="Idle" id="idle3" speed="80"/>
+    <animation file="quadraped/horse_trot.dae" name="Run" speed="7"/>
+    <animation file="quadraped/horse_walk.dae" name="Walk" speed="25"/>
+  </animations>
+</variant>

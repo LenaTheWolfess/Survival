@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_structure_military_barracks">
+  <BuildRestrictions>
+    <Category>Archery</Category>
+  </BuildRestrictions>
+  <Identity>
+    <Classes datatype="tokens">Archery</Classes>
+    <VisibleClasses datatype="tokens">Town Archery</VisibleClasses>
+    <GenericName>Archery Range</GenericName>
+    <Icon>structures/range.png</Icon>
+    <Tooltip>Train citizen-soldier ranged infantry. Research training improvements.</Tooltip>
+  </Identity>
+  <GarrisonHolder>
+    <Train> 
+      <TrainList datatype="tokens">Ranged+Infantry</TrainList>
+    </Train>
+    <List datatype="tokens">Infantry</List>
+  </GarrisonHolder>
+  <ProductionQueue>
+	<BatchTimeModifier>1.0</BatchTimeModifier>
+	<Groups>
+		<Javelin>
+			<GenericName>Javelinist</GenericName>
+			<Icon>technologies/javelin_thong.png</Icon>
+			<Tooltip>Choose among javelinists</Tooltip>
+			<Entities datatype="tokens">
+			  units/{civ}_infantry_javelinist_b
+			  units/{civ}_infantry_javelinist_a
+			  units/{civ}_infantry_javelinist_e
+			</Entities>
+		</Javelin>
+		<Slinger>
+			<GenericName>Slingers</GenericName>
+			<Icon>units/athen_infantry_slinger.png</Icon>
+			<Tooltip>Choose among slingers</Tooltip>
+			<Entities datatype="tokens">
+			  units/{civ}_infantry_slinger_b
+			  units/{civ}_infantry_slinger_a
+			  units/{civ}_infantry_slinger_e
+			</Entities>
+		</Slinger>
+		<Archer>
+			<GenericName>Archers</GenericName>
+			<Icon>technologies/arrow.png</Icon>
+			<Tooltip>Choose among archers</Tooltip>
+			<Entities datatype="tokens">
+			  units/{civ}_infantry_archer_b
+			  units/{civ}_infantry_archer_a
+			  units/{civ}_infantry_archer_e
+			</Entities>
+		</Archer>
+	</Groups>
+  </ProductionQueue>
+  <Sound>
+    <SoundGroups>
+      <constructed>interface/complete/building/complete_range.xml</constructed>
+    </SoundGroups>
+  </Sound>
+</Entity>

@@ -1,0 +1,13 @@
+{
+	"genericName": "Advanced armor",
+	"specificName": {
+	},
+	"description": "Research advanced armor.",
+	"cost": { "rp": 20, "wood": 30, "stone": 0, "metal": 50 },
+	"supersedes": "basic_armor",
+	"requirements": { "tech": "basic_armor" },
+	"icon": "armor_scale.png",
+	"researchTime": 30,
+	"tooltip": "",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

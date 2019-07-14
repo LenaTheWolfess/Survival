@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_infantry_melee_spearman_hoplite">
+  <Armour>
+   <Shield>
+    <Missle>4</Missle>  
+    <Pierce>4</Pierce>  
+    <Crush>4</Crush>  
+    <Hack>4</Hack> 
+   </Shield>
+  </Armour>
+  <Cost>
+    <BuildTime>1.5</BuildTime>
+    <Resources>
+      <metal>6</metal>
+    </Resources>
+  </Cost>
+  <Identity>
+    <Civ>athen</Civ>
+    <Lang>greek</Lang>
+    <SelectionGroupName>units/athen_infantry_spearman_hoplite_b</SelectionGroupName>
+    <GenericName>Light Hoplite</GenericName>
+    <SpecificName>Hoplítēs Athēnaîos</SpecificName>
+    <RequiredTechnology>athen_hoplite</RequiredTechnology>
+    <Icon>units/athen_infantry_hoplite_b.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/athenians/infantry_spearman_hoplite_b.xml</Actor>
+  </VisualActor>
+</Entity>

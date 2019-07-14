@@ -1,0 +1,11 @@
+{
+  "affects": ["Organic"],
+  "auraName": "Outpost",
+  "auraDescription": "Garrisoned units gets protection from ranged attacks, have greater attack range and vision.",
+  "modifications": [
+    { "value": "Armour/Missle",        "add":      2   },
+    { "value": "Attack/Ranged/Missle",  "multiply": 2 },
+    { "value": "Vision/Range",         "add":     20   }
+  ],
+  "type": "garrisonedUnits"
+}

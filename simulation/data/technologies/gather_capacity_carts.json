@@ -1,0 +1,9 @@
+{
+	"genericName": "Horse-drawn Carts",
+	"description": "Research horse-drawn carts.",
+	"cost": { "rp": 0, "wood": 500, "stone": 0, "metal": 0 },
+	"icon": "handcart_empty.png",
+	"researchTime": 40,
+	"tooltip": "Increase capacity for carts.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

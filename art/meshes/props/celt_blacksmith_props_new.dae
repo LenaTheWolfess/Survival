@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.80.58 commit date:2019-04-24, commit time:02:30, hash:1b839e85e142</authoring_tool>
+    </contributor>
+    <created>2019-05-19T14:33:47</created>
+    <modified>2019-05-19T14:33:47</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images/>
+  <library_geometries>
+    <geometry id="celt_helmet_a-Geometry_003-mesh" name="celt_helmet_a-Geometry.003">
+      <mesh>
+        <source id="celt_helmet_a-Geometry_003-mesh-positions">
+          <float_array id="celt_helmet_a-Geometry_003-mesh-positions-array" count="9">-0.001000046 -9.99927e-4 -4.05444 9.99927e-4 -9.99927e-4 -4.05444 -0.001000046 0.001000046 -4.05444</float_array>
+          <technique_common>
+            <accessor source="#celt_helmet_a-Geometry_003-mesh-positions-array" count="3" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="celt_helmet_a-Geometry_003-mesh-normals">
+          <float_array id="celt_helmet_a-Geometry_003-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#celt_helmet_a-Geometry_003-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="celt_helmet_a-Geometry_003-mesh-map-0">
+          <float_array id="celt_helmet_a-Geometry_003-mesh-map-0-array" count="6">1 0 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#celt_helmet_a-Geometry_003-mesh-map-0-array" count="3" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="celt_helmet_a-Geometry_003-mesh-map-1">
+          <float_array id="celt_helmet_a-Geometry_003-mesh-map-1-array" count="6">0 0 0 0 0 0</float_array>
+          <technique_common>
+            <accessor source="#celt_helmet_a-Geometry_003-mesh-map-1-array" count="3" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="celt_helmet_a-Geometry_003-mesh-vertices">
+          <input semantic="POSITION" source="#celt_helmet_a-Geometry_003-mesh-positions"/>
+        </vertices>
+        <triangles count="1">
+          <input semantic="VERTEX" source="#celt_helmet_a-Geometry_003-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#celt_helmet_a-Geometry_003-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#celt_helmet_a-Geometry_003-mesh-map-0" offset="2" set="0"/>
+          <input semantic="TEXCOORD" source="#celt_helmet_a-Geometry_003-mesh-map-1" offset="2" set="1"/>
+          <p>1 0 0 2 0 1 0 0 2</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="celt_helmet_a_000" name="celt_helmet_a_000" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#celt_helmet_a-Geometry_003-mesh" name="celt_helmet_a_000"/>
+        <node id="prop_helmet_01" name="prop_helmet_01" type="NODE">
+          <matrix sid="transform">0.998415 -0.05612784 0.004138086 2.549421 0.04805257 0.8884261 0.4564976 -8.198685 -0.02929861 -0.4555752 0.889715 2.352411 0 0 0 1</matrix>
+        </node>
+        <node id="prop_helmet_02" name="prop_helmet_02" type="NODE">
+          <matrix sid="transform">-4.37114e-8 -0.9520442 -0.3059604 -8.497962 1 -4.56493e-8 -8.20987e-10 -1.52041e-7 -1.31853e-8 -0.3059604 0.9520442 1.131602 0 0 0 1</matrix>
+        </node>
+        <node id="prop_helmet_03" name="prop_helmet_03" type="NODE">
+          <matrix sid="transform">-4.37114e-8 -0.929612 -0.3685397 -7.754992 1 -4.63078e-8 -1.79935e-9 3.028295 -1.53935e-8 -0.3685397 0.929612 1.750217 0 0 0 1</matrix>
+        </node>
+        <node id="prop_helmet_04" name="prop_helmet_04" type="NODE">
+          <matrix sid="transform">-4.37114e-8 -0.4327359 0.9015207 -8.833408 1 -3.72694e-8 3.05967e-8 5.289105 2.03588e-8 0.9015207 0.4327359 2.433389 0 0 0 1</matrix>
+        </node>
+        <node id="prop_helmet_05" name="prop_helmet_05" type="NODE">
+          <matrix sid="transform">-4.37114e-8 -0.4327359 0.9015207 -8.833408 1 -3.72694e-8 3.05967e-8 6.441345 2.03588e-8 0.9015207 0.4327359 2.516129 0 0 0 1</matrix>
+        </node>
+        <node id="prop_helmet_08" name="prop_helmet_08" type="NODE">
+          <matrix sid="transform">1 0 0 -1.783262 0 0.2891536 -0.9572827 8.780637 0 0.9572827 0.2891536 3.647841 0 0 0 1</matrix>
+        </node>
+        <node id="prop_helmet_06" name="prop_helmet_06" type="NODE">
+          <matrix sid="transform">1 0 0 0.4229741 0 0.2891536 -0.9572827 8.780637 0 0.9572827 0.2891536 3.712366 0 0 0 1</matrix>
+        </node>
+        <node id="prop_helmet_07" name="prop_helmet_07" type="NODE">
+          <matrix sid="transform">0.5058419 -0.7744653 -0.3799045 1.279044 0.8621285 0.4389245 0.2531398 7.555916 -0.02929861 -0.4555752 0.889715 1.72096 0 0 0 1</matrix>
+        </node>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

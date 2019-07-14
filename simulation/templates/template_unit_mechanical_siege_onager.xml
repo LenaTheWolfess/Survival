@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_mechanical_siege">
+  <Attack>
+    <Ranged>
+      <Ammo>10</Ammo>
+	  <RefillAmount>5</RefillAmount>
+	  <RefillTime>100000</RefillTime>
+      <Hack>0.0</Hack>
+      <Pierce>10.0</Pierce>
+      <Crush>500.0</Crush>
+      <Missle>0.0</Missle>
+      <MaxRange>80.0</MaxRange>
+      <MinRange>26.0</MinRange>
+      <Projectile>
+	    <Speed>37.5</Speed>
+        <Spread>4.0</Spread>
+        <Gravity>4</Gravity>
+	  </Projectile>
+      <PrepareTime>4000</PrepareTime>
+      <RepeatTime>10000</RepeatTime>
+      <Delay>0</Delay>
+      <Projectile>
+        <ImpactActorName>props/units/weapons/rock_explosion.xml</ImpactActorName>
+        <ImpactAnimationLifetime>0.1</ImpactAnimationLifetime>
+      </Projectile>
+      <Splash>
+        <Shape>Circular</Shape>
+        <Range>10</Range>
+        <FriendlyFire>true</FriendlyFire>
+        <Hack>0.0</Hack>
+        <Pierce>15.0</Pierce>
+        <Crush>100.0</Crush>
+        <Missle>0.0</Missle>
+      </Splash>
+      <PreferredClasses datatype="tokens">Structure</PreferredClasses>
+    </Ranged>
+  </Attack>
+  <Capturable disable=""/>
+  <Cost>
+    <BuildTime>25</BuildTime>
+    <Resources>
+      <wood>400</wood>
+      <stone>250</stone>
+    </Resources>
+  </Cost>
+  <Footprint replace="">
+    <Square width="6.0" depth="15.0"/>
+    <Height>4.5</Height>
+  </Footprint>
+  <Health>
+    <Max>250</Max>
+  </Health>
+  <Identity>
+    <GenericName>Siege Catapult</GenericName>
+    <VisibleClasses datatype="tokens">Catapult Ranged</VisibleClasses>
+	<RequiredTechnology>catapult</RequiredTechnology>
+  </Identity>
+  <Loot>
+    <xp>300</xp>
+    <meat>0</meat>
+    <wood>20</wood>
+    <stone>10</stone>
+    <metal>0</metal>
+  </Loot>
+  <Pack>
+    <Time>10000</Time>
+  </Pack>
+  <Selectable>
+    <Overlay>
+      <Texture>
+        <MainTexture>square/256x256.png</MainTexture>
+        <MainTextureMask>square/256x256_mask.png</MainTextureMask>
+      </Texture>
+    </Overlay>
+  </Selectable>
+  <Sound>
+    <SoundGroups>
+      <attack_impact_ranged>attack/impact/siegeprojectilehit.xml</attack_impact_ranged>
+      <attack_ranged>attack/siege/ballist_attack.xml</attack_ranged>
+    </SoundGroups>
+  </Sound>
+  <UnitAI>
+    <DefaultStance>standground</DefaultStance>
+  </UnitAI>
+  <UnitMotion>
+    <WalkSpeed op="mul">0.8</WalkSpeed>
+    <Run> <Speed op="mul">0.8</Speed> </Run>
+  </UnitMotion>
+</Entity>

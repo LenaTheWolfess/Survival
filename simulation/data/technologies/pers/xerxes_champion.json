@@ -1,0 +1,13 @@
+{
+	"genericName": "Arštibara",
+	"specificName": {
+	},
+	"description": "Unlock Arštibara.",
+	"cost": { "food": 600, "wood": 100, "stone": 0, "metal": 500 },
+	"requirements": {"all": [{ "tech": "heroes/xerxes" }, {"tech":"pers/champion_archery"}, {"tech":"improved_shield"}, { "tech": "scaled_armor" }] },
+	"icon": "spear.png",
+	"researchTime": 180,
+	"tooltip": "Unlock the ability to train Arštibara.",
+	"requirementsTooltip": "Needs Champions archer, Improved shields, Scaled armor and Xerxes",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

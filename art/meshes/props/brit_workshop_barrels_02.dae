@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.80.58 commit date:2019-04-24, commit time:02:30, hash:1b839e85e142</authoring_tool>
+    </contributor>
+    <created>2019-04-29T23:05:14</created>
+    <modified>2019-04-29T23:05:14</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images/>
+  <library_geometries>
+    <geometry id="barrel-mesh" name="barrel">
+      <mesh>
+        <source id="barrel-mesh-positions">
+          <float_array id="barrel-mesh-positions-array" count="9">-0.1803882 -0.04630726 -1.951926 -0.1803883 -0.04198896 -1.951926 -0.1760702 -0.04198896 -1.951926</float_array>
+          <technique_common>
+            <accessor source="#barrel-mesh-positions-array" count="3" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="barrel-mesh-normals">
+          <float_array id="barrel-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#barrel-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="barrel-mesh-map-0">
+          <float_array id="barrel-mesh-map-0-array" count="6">0.753448 0.295875 0.712383 0.295875 0.712383 0.381111</float_array>
+          <technique_common>
+            <accessor source="#barrel-mesh-map-0-array" count="3" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="barrel-mesh-vertices">
+          <input semantic="POSITION" source="#barrel-mesh-positions"/>
+        </vertices>
+        <triangles count="1">
+          <input semantic="VERTEX" source="#barrel-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#barrel-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#barrel-mesh-map-0" offset="2" set="0"/>
+          <p>2 0 0 1 0 1 0 0 2</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="barrel" name="barrel" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#barrel-mesh" name="barrel"/>
+        <node id="prop_barrel_01" name="prop_barrel_01" type="NODE">
+          <matrix sid="transform">0.7543658 0.6564543 0 0.8460922 -0.6564543 0.7543658 0 0.1315345 0 0 1 0 0 0 0 1</matrix>
+        </node>
+        <node id="prop_barrel_03" name="prop_barrel_03" type="NODE">
+          <matrix sid="transform">0.8919415 -0.4521508 0 -0.7663178 0.4521508 0.8919415 0 -0.9683933 0 0 1 0 0 0 0 1</matrix>
+        </node>
+        <node id="prop_barrel_02" name="prop_barrel_02" type="NODE">
+          <matrix sid="transform">0.8954265 0.4452095 0 -0.8460978 -0.4452095 0.8954265 0 0.9653422 0 0 1 0 0 0 0 1</matrix>
+        </node>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

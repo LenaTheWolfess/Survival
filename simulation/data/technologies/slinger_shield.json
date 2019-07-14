@@ -1,0 +1,12 @@
+{
+	"genericName": "Slinger shield",
+	"specificName": {
+	},
+	"description": "Unlock slinger shields.",
+	"cost": { "rp": 250, "wood": 100, "stone": 0, "metal": 100 },
+	"requirements": { "tech": "phase_village" },
+	"icon": "shields_generic_wood.png",
+	"researchTime": 60,
+	"tooltip": "",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

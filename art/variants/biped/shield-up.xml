@@ -1,0 +1,7 @@
+<variant name="Base">
+  <animations>
+    <animation file="biped/new/shield-up-idle.dae" name="idle_shield_up" speed="100"/>
+    <animation file="biped/new/shield-up-walk.dae" name="walk_shield_up" speed="30"/>
+	<animation file="biped/new/shield-up-walk.dae" name="run_shield_up" speed="30"/>
+  </animations>
+</variant>

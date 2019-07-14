@@ -1,0 +1,13 @@
+{
+	"genericName": "Javalin shields upgrade",
+	"specificName": {
+	},
+	"description": "Upgrade javelin shields.",
+	"cost": { "rp": 250, "wood": 100, "stone": 0, "metal": 100 },
+	"supersedes": "round_shield",
+	"requirements": { "tech": "round_shield" },
+	"icon": "shields_generic_bronze_2.png",
+	"researchTime": 60,
+	"tooltip": "",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

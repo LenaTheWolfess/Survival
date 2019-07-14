@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_hero_infantry_ranged">
+  <Attack>
+    <Ranged>
+      <Missle>20</Missle>
+      <Pierce>0</Pierce>
+      <Hack>0</Hack>
+      <Crush>0</Crush>
+      <MaxRange>32.0</MaxRange>
+      <MinRange>7.0</MinRange>
+      <Projectile>
+        <Speed>62.5</Speed>
+        <Gravity>9.81</Gravity>
+        <Spread>0.5</Spread>
+	  </Projectile>
+      <PrepareTime>600</PrepareTime>
+      <RepeatTime>1000</RepeatTime>
+      <Delay>0</Delay>
+      <PreferredClasses datatype="tokens">Human</PreferredClasses>
+    </Ranged>
+  </Attack>
+  <Identity>
+    <VisibleClasses datatype="tokens">Javelin</VisibleClasses>
+    <GenericName>Hero Skirmisher</GenericName>
+    <Formations datatype="tokens">
+      special/formations/skirmish
+    </Formations>
+  </Identity>
+</Entity>

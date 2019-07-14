@@ -1,0 +1,15 @@
+{
+	"genericName": "Upgrade swordsmen",
+	"specificName": {
+	},
+	"description": "Promote unit.",
+	"cost": { "food": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": {"all": [{"tech":"swords"},{"tech": "vertical_shield"},{"tech": "chain_armor" }]},
+	"icon": "armor_plates_iron_swords.png",
+	"researchTime": 30,
+	"tooltip": "Equip swordsmen with helmets and chain armor.",
+	"requirementsTooltip": "Needs Chain armor and Vertical shields",
+	"modifications": [{"value": "Promotion/RequiredXp", "replace": 0}],
+	"affects": ["Infantry Sword Basic"],
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

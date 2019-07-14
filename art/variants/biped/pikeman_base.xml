@@ -1,0 +1,6 @@
+<variant name="Base">
+  <animations>
+    <animation file="biped/new/promotion.dae" name="promotion" speed="80"/>
+    <animation event="0.5" file="biped/new/pike_attack_a.dae" name="attack_melee" id="attack1" speed="10"/>
+  </animations>
+</variant>

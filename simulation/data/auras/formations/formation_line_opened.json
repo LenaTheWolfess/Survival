@@ -1,0 +1,17 @@
+{
+	"type": "formation",
+	"affects": ["Soldier"],
+	"modifications": [
+		{ "value": "Attack/Melee/Hack", "multiply": 1.50 },
+		{ "value": "Attack/Melee/Pierce", "multiply": 1.50 },
+		{ "value": "Attack/Melee/Crush", "multiply": 1.50 },
+		{ "value": "Armour/Missle", "multiply": 2.00  },
+		{ "value": "Armour/Pierce", "multiply": 1.00  },
+		{ "value": "Armour/Hack", "multiply": 1.00  },
+		{ "value": "Armour/Crush", "multiply": 1.10  },
+		{ "value": "UnitMotion/WalkSpeed", "multiply": 0.85 },
+		{ "value": "UnitMotion/Run/Speed", "multiply": 0.85 }
+	],
+	"auraName": "Opened line bonus",
+	"auraDescription": "Formation is less vulnerable against missile damage."
+}

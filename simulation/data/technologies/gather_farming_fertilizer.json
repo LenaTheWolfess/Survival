@@ -1,0 +1,14 @@
+{
+	"genericName": "Fertilizer",
+	"description": "Extra nutrients for farms.",
+	"cost": {"rp": 100, "wood": 0, "stone": 0, "metal": 0},
+	"supersedes": "gather_farming_plows",
+	"requirements": {"tech": "phase_city"},
+	"requirementsTooltip": "Unlocked in City Phase.",
+	"icon": "olives.png",
+	"researchTime": 40,
+	"tooltip": "Farms regrow with resource bonus 2x",
+	"modifications": [{"value": "ResourceRegrow/Multiplier", "multiply": 2.0}],
+	"affects": ["EmptyField"],
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

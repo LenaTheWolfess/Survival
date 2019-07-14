@@ -1,0 +1,14 @@
+{
+	"autoResearch": true,
+	"genericName": "Archer riders",
+	"specificName": {
+	},
+	"description": "Unlock archer riders.",
+	"cost": { "rp": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": {"all": [{ "tech": "cavalry" }, { "tech": "archery"}] },
+	"icon": "archery_tradition.png",
+	"researchTime": 0,
+	"tooltip": "Unlock the ability to train archers riding horses.",
+	"requirementsTooltip": "Needs Cavalry and Archery.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="gaia/flora_bush_berry">
+  <Identity>
+    <SpecificName>Bush Empty</SpecificName>
+  </Identity>
+  <ResourceSupply disable = ""/>
+  <ResourceRegrow>
+	<Time>1000</Time>
+	<MaxToComplete>60</MaxToComplete>
+	<EntityRegrow>gaia/flora_bush_berry</EntityRegrow>
+	<Multiplier>1.0</Multiplier>
+  </ResourceRegrow>
+  <VisualActor>
+    <Actor>props/flora/bush_tempe_a.xml</Actor>
+  </VisualActor>
+</Entity>

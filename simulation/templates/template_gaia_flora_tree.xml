@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_gaia_flora">
+  <Auras datatype="tokens">
+    units/lower_vision
+  </Auras>
+  <Armour>
+    <Hack>0</Hack>
+    <Pierce>0</Pierce>
+    <Crush>0</Crush>
+    <Missle>0</Missle>
+  </Armour>
+ <!-- <Health>
+    <Max>100</Max>
+	<DeathType>remain</DeathType>
+	<RegenRate>0</RegenRate>
+    <IdleRegenRate>0</IdleRegenRate>
+    <Unhealable>true</Unhealable>
+  </Health>
+ --> <Footprint>
+    <Circle radius="2.5"/>
+    <Height>15.0</Height>
+  </Footprint>
+  <Identity>
+    <Classes datatype="tokens">Tree</Classes>
+    <GenericName>Tree</GenericName>
+    <Tooltip>Chop down to accumulate Wood.</Tooltip>
+  </Identity>
+  <StatusBars>
+    <BarWidth>3.0</BarWidth>
+    <BarHeight>0.5</BarHeight>
+    <HeightOffset>10.0</HeightOffset>
+  </StatusBars>
+  <ResourceSupply>
+    <KillBeforeGather>false</KillBeforeGather>
+  </ResourceSupply>
+</Entity>

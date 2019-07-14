@@ -1,0 +1,20 @@
+{
+	"type": "formation",
+	"affects": ["Soldier"],
+	"modifications": [
+		{ "value": "Attack/Melee/Hack", "multiply": 2.0 },
+		{ "value": "Attack/Melee/Pierce", "multiply": 2.0 },
+		{ "value": "Attack/Melee/Crush", "multiply": 2.0 },
+		{ "value": "Armour/Pierce", "multiply": 1.50  },
+		{ "value": "Armour/Hack", "multiply": 1.50  },
+		{ "value": "Armour/Crush", "multiply": 1.50  },
+		{ "value": "Armour/Shield/Pierce", "multiply": 2.0  },
+		{ "value": "Armour/Shield/Hack", "multiply": 2.0  },
+		{ "value": "Armour/Shield/Crush", "multiply": 2.0  },
+		{ "value": "Armour/Shield/Missle", "multiply": 2.0  },
+		{ "value": "UnitMotion/WalkSpeed", "multiply": 0.7 },
+		{ "value": "UnitMotion/Run/Speed", "multiply": 0.7 }
+	],
+	"auraName": "Closed line bonus",
+	"auraDescription": " Its members has increased melee damage and armour but moves slower."
+}

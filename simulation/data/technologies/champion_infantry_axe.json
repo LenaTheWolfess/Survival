@@ -1,0 +1,14 @@
+{
+	"genericName": "Champion axeman",
+	"specificName": {
+	},
+	"description": "Unlock swordman champion.",
+	"cost": { "rp": 250, "wood": 100, "stone": 0, "metal": 100 },
+	"requirements": {"all": [{ "tech": "champion_infantry" }, { "tech": "axes"}] },
+	"supersedes": "axes",
+	"icon": "battle_axe.png",
+	"researchTime": 360,
+	"tooltip": "Unlock the ability to train axeman champion.",
+	"requirementsTooltip": "Needs Champions and Axes.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

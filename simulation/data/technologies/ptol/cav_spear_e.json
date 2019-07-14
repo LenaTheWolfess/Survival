@@ -1,0 +1,16 @@
+{
+	"genericName": "Upgrade spear cavalry",
+	"specificName": {
+	},
+	"description": "Promote unit.",
+	"cost": { "food": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": {"all": [{"tech": "plate_armor"},{"tech":"advanced_leg_protection"}, {"tech":"horse_spear"}]},
+	"icon": "upgrade_elite.png",
+	"supersedes": "ptol/cav_spear_a",
+	"researchTime": 30,
+	"tooltip": "Equip spear cavalry with plate armor and leg protection.",
+	"requirementsTooltip": "Needs Plate armor and Advanced leg protection.",
+	"modifications": [{"value": "Promotion/RequiredXp", "replace": 0}],
+	"affects": ["Cavalry Spear Advanced"],
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

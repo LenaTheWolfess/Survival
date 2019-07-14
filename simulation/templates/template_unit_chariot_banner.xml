@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_cavalry_melee">
+  <Attack>
+    <Melee>
+      <Hack>0.0</Hack>
+      <Pierce>15.0</Pierce>
+      <MaxRange>4.5</MaxRange>
+      <RepeatTime>2000</RepeatTime>
+    </Melee>
+  </Attack>
+  <Energy disable=""/>
+  <Cost>
+    <Resources>
+      <wood>5</wood>
+    </Resources>
+  </Cost>
+  <Identity>
+    <VisibleClasses datatype="tokens">Banner</VisibleClasses>
+    <GenericName>Banner Carrier</GenericName>
+	<FormationGroup>Banner</FormationGroup>
+	<Formations datatype="tokens">
+      special/formations/skirmish
+    </Formations>
+  </Identity>
+  <Promotion disable=""/>
+</Entity>

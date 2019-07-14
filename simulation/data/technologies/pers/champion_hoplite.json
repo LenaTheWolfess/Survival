@@ -1,0 +1,13 @@
+{
+	"genericName": "Champion hoplite",
+	"specificName": {
+	},
+	"description": "Unlock hoplite champion.",
+	"cost": { "food": 600, "wood": 100, "stone": 0, "metal": 500 },
+	"requirements": {"all": [{ "tech": "scaled_armor" },{"tech": "champion_infantry" }, { "tech": "spears"}, {"tech":"pers/round_med_shield"}] },
+	"icon": "fist_spear.png",
+	"researchTime": 180,
+	"tooltip": "Unlock the ability to train hoplite champion.",
+	"requirementsTooltip": "Needs Champions, Spears, Scaled armor and Round shield",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

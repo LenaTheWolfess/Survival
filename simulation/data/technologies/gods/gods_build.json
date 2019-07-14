@@ -1,0 +1,13 @@
+{
+	"pair": "gods/gods_family_vs_build",
+	"genericName": "God of builders",
+	"description": "Whorship God of builders.",
+	"cost": {"food": 0, "wood": 0, "stone": 0, "metal": 0},
+	"requirements": {"tech": "phase_village"},
+	"icon": "blocks_three.png",
+	"researchTime": 0,
+	"tooltip": "-50% build time.",
+	"modifications": [{ "value": "Cost/BuildTime", "multiply": 0.5 }],
+	"affects": ["Structure"],
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<actor version="1">
+  <castshadow/>
+  <group>
+    <variant frequency="1" name="Base">
+      <mesh>props/new/capes/cape_hd_medium.dae</mesh>
+      <textures>
+        <texture file="props/cape_hd.dds" name="baseTex"/>
+      </textures>
+    </variant>
+  </group>
+  <group>
+    <variant name="base" frequency="1"/>
+    <variant file="biped/attack_ranged_archer.xml" name="attack_ranged"/>
+    <variant file="biped/base_swordsman_shieldarm_fast_relax.xml" name="noAmmo"/>
+    <variant file="biped/base_swordsman_shieldarm_fast_relax.xml" name="noRanged"/>
+    <variant file="biped/attack_ranged_second.xml" name="combat"/>
+  </group>
+  <group>
+    <variant file="biped/base_swordsman_shieldarm_fast_relax.xml" name="noAmmo"/>
+    <variant file="biped/base_swordsman_shieldarm_fast_relax.xml" name="noRanged"/>
+    <variant file="biped/base_archer_relax.xml" frequency="1"/>
+    <variant file="biped/base_archer_ready.xml" name="combat"/>
+    <variant file="biped/attack_capture.xml"/>
+    <variant file="biped/death_infantry.xml"/>
+  </group>
+  <material>player_trans.xml</material>
+</actor>

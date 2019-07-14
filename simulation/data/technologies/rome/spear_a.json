@@ -1,0 +1,15 @@
+{
+	"genericName": "Upgrade spearmen",
+	"specificName": {
+	},
+	"description": "Promote unit.",
+	"cost": { "food": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": {"all": [{"tech":"spears"}, { "tech": "medium_leg_protection"}, {"tech": "chain_armor"}, {"tech":"helmets"}]},
+	"icon": "armor_plates_iron_spear.png",
+	"researchTime": 20,
+	"tooltip": "Equip spearmen with medium leg protection, chain armor and helmets.",
+	"requirementsTooltip": "Needs Medium leg protection, Chain mail and Helmets.",
+	"modifications": [{"value": "Promotion/RequiredXp", "replace": 0}],
+	"affects": ["Infantry Spear Basic"],
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

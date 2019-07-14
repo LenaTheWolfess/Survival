@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_infantry">
+  <Attack>
+    <Melee>
+      <Hack>5</Hack>
+      <Pierce>0.0</Pierce>
+      <Crush>0.0</Crush>
+      <Missle>0.0</Missle>  
+      <MaxRange>2.2</MaxRange>
+      <PrepareTime>500</PrepareTime>
+      <RepeatTime>1000</RepeatTime>
+      <RestrictedClasses datatype="tokens">Structure Ram</RestrictedClasses>
+      <PreferredClasses datatype="tokens">Human</PreferredClasses>
+    </Melee>
+    <Ranged>
+      <Ammo>10</Ammo>
+      <Hack>0.0</Hack>
+      <Pierce>0.0</Pierce>
+      <Crush>0.0</Crush>
+      <Missle>0.0</Missle>
+      <MaxRange>16.0</MaxRange>
+      <MinRange>7.0</MinRange>
+      <PrepareTime>1000</PrepareTime>
+      <RepeatTime>1500</RepeatTime>
+      <Projectile>
+        <Spread>3.0</Spread>
+        <Gravity>9.81</Gravity>
+        <LaunchPoint y="3"/>
+        <Speed>75.0</Speed>
+      </Projectile>
+      <Delay>0</Delay>
+      <RestrictedClasses datatype="tokens">Structure Ram</RestrictedClasses>
+      <PreferredClasses datatype="tokens">Human</PreferredClasses>
+    </Ranged>
+  </Attack>
+  <Health>
+    <Max>100</Max>
+  </Health>
+  <Identity>
+    <VisibleClasses datatype="tokens">Ranged</VisibleClasses>
+    <Formations datatype="tokens">
+      special/formations/skirmish
+    </Formations>
+	<FormationGroup>ChampionInfantryRanged</FormationGroup>
+  </Identity>
+</Entity>

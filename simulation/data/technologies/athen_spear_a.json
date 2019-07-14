@@ -1,0 +1,14 @@
+{
+	    "autoResearch": true,
+    "genericName": "Unlock Medium spearmen",
+	"specificName": {
+	},
+	"description": "Unlock unit.",
+	"cost": { "rp": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": {"all": [{"tech": "phase_city"}, {"tech":"spears"}, { "tech": "round_med_shield" }]},
+	"icon": "armor_plates_iron_spear.png",
+	"researchTime": 0,
+	"tooltip": "Equip spearmen with shields.",
+	"requirementsTooltip": "Needs Round Shields.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

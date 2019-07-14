@@ -1,0 +1,14 @@
+{
+	"genericName": "Champion cavalry",
+	"specificName": {
+	},
+	"description": "Unlock champion cavalry.",
+	"cost": { "rp": 250, "wood": 0, "stone": 0, "metal": 0 },
+	"supersedes": "cavalry",
+	"requirements": {"all": [{ "tech": "cavalry" }, { "tech": "champion_infantry"}] },
+	"icon": "horseshoe_gold.png",
+	"researchTime": 30,
+	"tooltip": "Unlock the ability to train champion cavalry.",
+	"requirementsTooltip": "Needs Cavalry and Champions.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

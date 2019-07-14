@@ -1,0 +1,13 @@
+{
+	"pair": "gods/gods_animals_vs_forge",
+	"genericName": "God of blacksmiths",
+	"description": "Whorship God of blacksmiths.",
+	"cost": {"food": 0, "wood": 0, "stone": 0, "metal": 0},
+	"requirements": {"tech": "phase_town"},
+	"icon": "metalworker.png",
+	"researchTime": 0,
+	"tooltip": "50% faster research and lower cost in blacksmith.",
+	"modifications": [{ "value": "ProductionQueue/TechCostMultiplier/time", "multiply": 0.5 }],
+	"affects": ["Blacksmith"],
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

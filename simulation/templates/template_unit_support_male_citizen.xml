@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_support_citizen">
+  <Attack>
+    <Melee>
+      <Hack>3.0</Hack>
+    </Melee>
+    <Slaughter>
+      <Hack>28.0</Hack>
+    </Slaughter>
+  </Attack>
+  <Identity>
+    <GenericName>Male Citizen</GenericName>
+    <Gender>male</Gender>
+    <Classes datatype="tokens">MaleCitizen</Classes>
+    <VisibleClasses datatype="tokens">Male</VisibleClasses>
+  </Identity>
+  <ResourceGatherer>
+    <Rates>
+      <fruit.berry>0.2</fruit.berry>
+      <meat.meat>0.5</meat.meat>
+      <wood.tree>0.2</wood.tree>
+    </Rates>
+  </ResourceGatherer>
+</Entity>

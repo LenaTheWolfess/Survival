@@ -1,0 +1,13 @@
+{
+	"genericName": "Round shields",
+	"specificName": {
+	},
+	"description": "Unlock round shields.",
+	"cost": { "rp": 250, "wood": 100, "stone": 0, "metal": 100 },
+	"supersedes": "simple_shield",
+	"requirements": { "tech": "simple_shield" },
+	"icon": "shields_generic_silver.png",
+	"researchTime": 60,
+	"tooltip": "",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

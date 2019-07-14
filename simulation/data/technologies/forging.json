@@ -1,0 +1,12 @@
+{
+	"genericName": "Forging",
+	"specificName": {
+	},
+	"description": "Research ability to forge weapons.",
+	"cost": { "rp": 50, "wood": 50, "stone": 0, "metal": 100 },
+	"requirements": { "tech": "phase_village" },
+	"icon": "forging.png",
+	"researchTime": 30,
+	"tooltip": "Unlock ability to forge weapons.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_formation">
+  <Formation>
+    <RequiredMemberCount>8</RequiredMemberCount>
+    <DisabledTooltip>at least 8 units required</DisabledTooltip>
+    <Icon>formations/scatter.png</Icon>
+    <FormationName>Scatter</FormationName>
+    <FormationShape>special</FormationShape>
+  </Formation>
+</Entity>

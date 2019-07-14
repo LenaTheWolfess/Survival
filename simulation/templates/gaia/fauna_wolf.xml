@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_fauna_wild_aggressive_wolf">
+  <Identity>
+    <SpecificName>Wolf</SpecificName>
+    <Icon>gaia/fauna_wolf.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>fauna/wolf.xml</Actor>
+  </VisualActor>
+  <Sound>
+    <SoundGroups>
+      <death>actor/fauna/death/death_animal_gen.xml</death>
+    </SoundGroups>
+  </Sound>
+</Entity>

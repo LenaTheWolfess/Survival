@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<actor version="1">
+  <castshadow/>
+  <group>
+    <variant frequency="1" file="helmets/hele_illyrian_crested_tin_01.xml" name="illyrian-crested-tin-a"/>
+    <variant frequency="1" file="helmets/hele_illyrian_crested_black_01.xml" name="illyrian-crested-black-a"/>
+  </group>
+  <material>player_trans_parallax_spec.xml</material>
+</actor>

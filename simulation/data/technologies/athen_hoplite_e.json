@@ -1,0 +1,15 @@
+{
+	    "autoResearch": true,
+    "genericName": "Unlock Heavy hoplites",
+	"specificName": {
+	},
+	"description": "Unlock unit.",
+	"cost": { "rp": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements":  {"all": [{"tech": "phase_empire"},{"tech": "chain_armor" }]},
+	"supersedes": "athen_hoplite_a",
+	"icon": "armor_plates_spear.png",
+	"researchTime": 0,
+	"tooltip": "Equip hoplites with chain armor.",
+	"requirementsTooltip": "Needs Chain armor.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

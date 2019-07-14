@@ -1,0 +1,13 @@
+{
+	"genericName": "Champion elephants",
+	"specificName": {
+	},
+	"description": "Unlock champion javelin cavalry.",
+	"cost": { "food": 800, "wood": 100, "stone": 0, "metal": 400 },
+	"requirements": {"all": [{"tech":"round_shield"},{ "tech": "plate_armor"},{ "tech": "helmets"},{"tech":"advanced_leg_protection"}, { "tech": "champion_cavalry" }, { "tech": "spears"}, {"tech":"javelins"}] },
+	"icon": "spear_cavalry.png",
+	"researchTime": 240,
+	"tooltip": "Unlock the ability to train champion elephants.",
+	"requirementsTooltip": "Needs Champion cavalry, Spears, Javelins, Helmets, Plate armor, Round shield and Advanced leg protection.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_infantry_melee">
+  <Attack>
+    <Melee>
+      <Pierce>15</Pierce>
+      <MaxRange>7</MaxRange>
+      <RepeatTime>2000</RepeatTime>
+    </Melee>
+  </Attack>
+  <Cost>
+    <Resources>
+      <wood>5</wood>
+    </Resources>
+  </Cost>
+  <Energy disable=""/>
+  <Identity>
+    <VisibleClasses datatype="tokens">Banner</VisibleClasses>
+    <GenericName>Banner carrier</GenericName>
+    <Formations datatype="tokens">
+      special/formations/syntagma
+      special/formations/skirmish
+      special/formations/phalanx
+      special/formations/testudo
+    </Formations>
+	<FormationGroup>Banner</FormationGroup>
+  </Identity>
+  <Promotion disable=""/>
+  <Loot>
+    <wood>5</wood>
+  </Loot>
+  <UnitMotion>
+    <WalkSpeed op="mul">0.8</WalkSpeed>
+    <Run>
+      <Speed op = "mul">0.8</Speed>
+    </Run>
+  </UnitMotion>
+</Entity>

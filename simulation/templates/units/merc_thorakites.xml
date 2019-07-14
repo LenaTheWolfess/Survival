@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_infantry_swordsman">
+  <Armour>
+    <Hack op="add">2</Hack>
+    <Pierce op="add">2</Pierce>
+  </Armour>
+  <Attack>
+    <Melee>
+      <Hack op="add">-2</Hack>
+    </Melee>
+  </Attack>
+  <Consumer disable = ""/>
+  <Cost>
+    <Resources>
+      <coin>10</coin>
+      <metal>0</metal>
+      <meat>0</meat>
+      <stone>0</stone>
+      <wood>0</wood>
+    </Resources>
+  </Cost>
+  <Payed>
+    <Interval>60000</Interval>
+	<Sum>10</Sum>
+	<Code>coin</Code>
+  </Payed>
+  <Identity>
+    <Civ>gaia</Civ>
+    <Lang>greek</Lang>
+    <GenericName>Armored Swordsman</GenericName>
+    <SpecificName>Thōrakitēs</SpecificName>
+    <Icon>units/mace_thorakites.png</Icon>
+    <RequiredTechnology>phase_town</RequiredTechnology>
+    <VisibleClasses datatype="tokens">Mercenary</VisibleClasses>
+  </Identity>
+  <VisualActor>
+    <Actor>units/hellenes/infantry_swordsman_c_thorakites.xml</Actor>
+  </VisualActor>
+</Entity>

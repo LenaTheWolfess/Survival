@@ -1,0 +1,15 @@
+{
+	    "autoResearch": true,
+    "genericName": "Champion hoplite",
+	"specificName": {
+	},
+	"description": "Unlock hoplite champion.",
+	"cost": { "rp": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": {"all": [{"tech": "round_med_shield"}, { "tech": "advanced_leg_protection" },{ "tech": "helmets" },{ "tech": "plate_armor" },{ "tech": "champion_infantry" }, { "tech": "athen_hoplite"}] },
+	"supersedes": "athen_hoplite",
+	"icon": "fist_spear.png",
+	"researchTime": 0,
+	"tooltip": "Unlock the ability to train hoplite champion.",
+	"requirementsTooltip": "Needs Champions, hoplites, Helmets, Advanced leg protection, Plate armor and Round shields.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

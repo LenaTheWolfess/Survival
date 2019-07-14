@@ -1,0 +1,16 @@
+{
+	"genericName": "Upgrade javelins",
+	"specificName": {
+	},
+	"description": "Promote unit.",
+	"cost": { "rp": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": {"all": [{"tech": "vertical_shield"},{"tech": "helmets"}, {"tech":"javelins"}]},
+	"supersedes": "brit/javelin_a",
+	"icon": "upgrade_elite.png",
+	"researchTime": 10,
+	"tooltip": "Equip javelins with shields.",
+	"requirementsTooltip": "Needs Vertical shield.",
+	"modifications": [{"value": "Promotion/RequiredXp", "replace": 0}],
+	"affects": ["Infantry Javelin Advanced"],
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

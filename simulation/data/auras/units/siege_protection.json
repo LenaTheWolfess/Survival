@@ -1,0 +1,16 @@
+{
+	"type": "range",
+	"radius": 10,
+	"affects": ["Organic"],
+	"modifications": [
+		{ "value": "Armour/Crush", "add": 3  },
+		{ "value": "Armour/Missle", "add": 8  }
+	],
+	"auraName": "Ram protection",
+	"auraDescription": "Provides protection from projectiles",
+	"rangeOverlay" : {
+		"lineTexture": "outline_border.png",
+		"lineTextureMask": "outline_border_mask.png",
+		"lineThickness": 0.075
+	}
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="gaia/fauna_horse_trainable">
+  <Identity>
+    <Civ>athen</Civ>
+	<RequiredTechnology>phase_town</RequiredTechnology>
+  </Identity>
+  <Upgrade>
+   <Swordsman>
+    <Entity>units/{native}_cavalry_swordsman_b</Entity>
+	 <Cost>
+	    <metal>6</metal>
+	 </Cost>
+     <Time>10</Time>
+  </Swordsman>
+   <Javelin>
+    <Entity>units/{native}_cavalry_javelinist_b</Entity>
+	 <Cost>
+	    <wood>30</wood>
+	 </Cost>
+     <Time>10</Time>
+  </Javelin>
+   <Hunter>
+    <Entity>units/{native}_cavalry_hunter</Entity>
+	 <Cost>
+	    <wood>30</wood>
+	 </Cost>
+     <Time>10</Time>
+  </Hunter>
+  </Upgrade>
+</Entity>

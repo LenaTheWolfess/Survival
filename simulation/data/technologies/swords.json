@@ -1,0 +1,12 @@
+{
+	"genericName": "Swords",
+	"specificName": {
+	},
+	"description": "Research swords.",
+	"cost": { "rp": 20, "wood": 50, "stone": 0, "metal": 100 },
+	"requirements": { "tech": "forging"},
+	"icon": "sword.png",
+	"researchTime": 30,
+	"tooltip": "Unlock the ability to train swordsmen.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

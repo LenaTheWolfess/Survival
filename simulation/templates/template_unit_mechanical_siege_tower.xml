@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_mechanical_siege">
+  <Attack>
+    <Capture>
+      <Value>2</Value>
+      <MaxRange>4</MaxRange>
+      <RepeatTime>1000</RepeatTime>
+      <RestrictedClasses datatype="tokens">Field Palisade SiegeWall Organic</RestrictedClasses>
+    </Capture>
+  </Attack>
+  <Armour>
+    <Missle>100</Missle>
+    <Crush>10</Crush>
+    <Hack>100</Hack>
+    <Pierce>100</Pierce>
+  </Armour>
+  <Cost>
+    <BuildTime>40</BuildTime>
+    <Resources>
+      <wood>500</wood>
+      <metal>300</metal>
+    </Resources>
+  </Cost>
+  <Energy>
+    <MaxPoints>100</MaxPoints>
+    <RegenRate>5</RegenRate>
+    <RunDegRate>10</RunDegRate>
+  </Energy>
+  <Footprint replace="">
+    <Square width="15.0" depth="15.0"/>
+    <Height>20.0</Height>
+  </Footprint>
+  <GarrisonHolder>
+    <Max>17</Max>
+    <EjectHealth>0.1</EjectHealth>
+    <EjectClassesOnDestroy datatype="tokens">Unit</EjectClassesOnDestroy>
+    <List datatype="tokens">Support Infantry</List>
+    <BuffHeal>0</BuffHeal>
+    <LoadingRange>2</LoadingRange>
+    <VisibleGarrisonPoints>
+      <Archer1>
+        <X>-2</X><Y>14</Y><Z>2</Z>
+      </Archer1>
+      <Archer2>
+        <X>1</X><Y>14</Y><Z>2</Z>
+      </Archer2>
+      <Archer3>
+        <X>-2</X><Y>14</Y><Z>0</Z>
+      </Archer3>
+      <Archer4>
+        <X>-2</X><Y>14</Y><Z>-2</Z>
+      </Archer4>
+    </VisibleGarrisonPoints>
+  </GarrisonHolder>
+  <Health>
+    <Max>500</Max>
+  </Health>
+  <Identity>
+    <GenericName>Siege Tower</GenericName>
+    <VisibleClasses datatype="tokens">SiegeTower Ranged</VisibleClasses>
+    <Tooltip>Garrison units for transport and to increase firepower.</Tooltip>
+	<RequiredTechnology>siege_tower</RequiredTechnology>
+  </Identity>
+  <Selectable>
+    <Overlay>
+      <Texture>
+        <MainTexture>circle/256x256.png</MainTexture>
+        <MainTextureMask>circle/256x256_mask.png</MainTextureMask>
+      </Texture>
+    </Overlay>
+  </Selectable>
+  <Sound>
+    <SoundGroups>
+      <select>attack/siege/siege_select.xml</select>
+      <order_attack>attack/siege/ram_move.xml</order_attack>
+      <order_walk>attack/siege/ram_move.xml</order_walk>
+      <attack_impact_ranged>attack/impact/arrow_metal.xml</attack_impact_ranged>
+      <attack_ranged>attack/weapon/arrowfly.xml</attack_ranged>
+      <trained>attack/siege/ram_trained.xml</trained>
+    </SoundGroups>
+  </Sound>
+  <StatusBars>
+    <HeightOffset>12.0</HeightOffset>
+  </StatusBars>
+  <UnitMotion>
+    <WalkSpeed op="mul">0.3</WalkSpeed>
+    <Run> <Speed op="mul">0.3</Speed> </Run>
+  </UnitMotion>
+  <UnitAI>
+    <NeedsManPowerToMove>9</NeedsManPowerToMove>
+  </UnitAI>
+  <Vision>
+    <Range>70</Range>
+  </Vision>
+</Entity>

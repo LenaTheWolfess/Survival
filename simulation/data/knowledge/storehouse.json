@@ -1,0 +1,7 @@
+{
+	"adds": 20,
+	"action": "Build",
+	"type": "Storehouse",
+	"once": true,
+	"count": 1
+}

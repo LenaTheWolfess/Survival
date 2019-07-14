@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="units/athen_infantry_spearman_hoplite_b">
+  <Armour>
+   <Missle>2</Missle>  
+   <Pierce>3</Pierce>  
+   <Crush>4</Crush>  
+   <Hack>5</Hack> 
+  </Armour>
+  <Identity>
+    <Rank>Advanced</Rank>
+    <GenericName>Medium Hoplite</GenericName>
+	<RequiredTechnology>athen_hoplite_a</RequiredTechnology>
+    <Icon>units/athen_infantry_hoplite_a.png</Icon>
+  </Identity>
+  <Cost>
+    <BuildTime>1.5</BuildTime>
+    <Resources>
+      <metal>10</metal>
+    </Resources>
+  </Cost>
+  <UnitMotion>
+    <WalkSpeed op="mul">0.95</WalkSpeed>
+     <Run><Speed  op="mul">0.95 </Speed></Run>
+  </UnitMotion>
+  <VisualActor>
+    <Actor>units/athenians/infantry_spearman_hoplite_a.xml</Actor>
+  </VisualActor>
+</Entity>

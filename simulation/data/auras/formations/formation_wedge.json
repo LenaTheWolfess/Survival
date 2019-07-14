@@ -1,0 +1,14 @@
+{
+	"type": "formation",
+	"affects": ["Soldier"],
+	"modifications": [
+		{ "value": "Attack/Melee/Hack", "multiply": 2.0 },
+		{ "value": "Attack/Melee/Pierce", "multiply": 2.0 },
+		{ "value": "Attack/Melee/Crush", "multiply": 2.0 },
+		{ "value": "Armour/Pierce", "multiply": 0.8  },
+		{ "value": "UnitMotion/WalkSpeed", "multiply": 1.3 },
+		{ "value": "UnitMotion/Run/Speed", "multiply": 1.3 }
+	],
+	"auraName": "Wedge bonus",
+	"auraDescription": "Movement speed and melee attack damage is increased, but formation takes more damage from pierce attack."
+}

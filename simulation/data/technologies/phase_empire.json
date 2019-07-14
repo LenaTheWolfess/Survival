@@ -1,0 +1,5 @@
+{
+	"genericName": "Empire Phase",
+	"description": "Dummy technology for use in templates requirements, replaced by empire_city_generic or empire_city_{civ}.",
+	"icon": "imperial_phase.png"
+}

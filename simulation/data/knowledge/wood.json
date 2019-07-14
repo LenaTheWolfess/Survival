@@ -1,0 +1,7 @@
+{
+	"adds": 10,
+	"action": "Gather",
+	"type": "wood",
+	"once": false,
+	"count": 200
+}

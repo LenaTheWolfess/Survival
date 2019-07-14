@@ -1,0 +1,12 @@
+{
+	"genericName": "Slings",
+	"specificName": {
+	},
+	"description": "Research slings.",
+	"cost": { "rp": 5, "wood": 0, "stone": 10, "metal": 0 },
+	"requirements": { "tech": "phase_village" },
+	"icon": "javelin_thong.png",
+	"researchTime": 10,
+	"tooltip": "Unlock the ability to train slingers.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

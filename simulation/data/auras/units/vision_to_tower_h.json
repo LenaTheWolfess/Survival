@@ -1,0 +1,9 @@
+{
+	"type": "garrison",
+	"affects": ["DefenseTowerHigh"],
+	"modifications": [
+		{ "value": "Vision/Range",   "add":   60}
+	],
+	"auraDescription": "Gives vision range 60 for Stone and Wall towers when garrisoned in.",
+	"auraName": "Vision"
+}

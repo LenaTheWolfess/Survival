@@ -1,0 +1,12 @@
+{
+	"genericName": "Javalin shields",
+	"specificName": {
+	},
+	"description": "Research javelin shields.",
+	"cost": { "rp": 10, "wood": 30, "stone": 0, "metal": 0 },
+	"requirements": { "tech": "phase_village" },
+	"icon": "shields_generic_bronze.png",
+	"researchTime": 30,
+	"tooltip": "",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

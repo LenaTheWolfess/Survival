@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_support_male_citizen">
+  <Identity>
+    <Civ>athen</Civ>
+    <Lang>greek</Lang>
+    <SelectionGroupName>units/athen_support_citizen_male</SelectionGroupName>
+    <GenericName>Athenian Man</GenericName>
+    <Icon>units/athen_citizen_male.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/athenians/male_citizen.xml</Actor>
+  </VisualActor>
+</Entity>

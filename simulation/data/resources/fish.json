@@ -1,0 +1,12 @@
+{
+	"code": "fish",
+	"name": "Fish",
+	"description": "Fish in waters.",
+	"order": 1,
+	"subtypes": {
+		"fish": "Fish"
+	},
+	"truePrice": 200,
+	"properties": ["barterable", "tradable", "tributable"],
+	"aiAnalysisInfluenceGroup": "abundant"
+}

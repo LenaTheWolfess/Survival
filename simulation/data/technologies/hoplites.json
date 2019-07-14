@@ -1,0 +1,13 @@
+{
+	"genericName": "Hoplites",
+	"specificName": {
+	},
+	"description": "Unlock hoplites.",
+	"cost": { "rp": 150, "wood": 50, "stone": 0, "metal": 70 },
+	"requirements": { "tech": "spears" },
+	"icon": "spear.png",
+	"researchTime": 60,
+	"tooltip": "Unlock the ability to train hoplites.",
+	"requirementsTooltip": "Needs Spears.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

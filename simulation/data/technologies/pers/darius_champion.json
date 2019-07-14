@@ -1,0 +1,13 @@
+{
+	"genericName": "Kardakes",
+	"specificName": {
+	},
+	"description": "Unlock Kardakes.",
+	"cost": { "food": 600, "wood": 100, "stone": 0, "metal": 500 },
+	"requirements": {"all": [{ "tech": "heroes/darius" }, {"tech":"pers/champion_hoplite"}, {"tech":"pers/champion_javelin"}] },
+	"icon": "spear.png",
+	"researchTime": 180,
+	"tooltip": "Unlock the ability to train Kardakes.",
+	"requirementsTooltip": "Needs Champions hoplite, Champions javelins and Darius",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<variant name="carry_wood">
+  <animations>
+    <animation file="biped/new/male_carry_wood.dae" name="Walk" speed="20"/>
+    <animation file="biped/new/male_carry_wood_idle.dae" name="Idle" speed="20"/>
+    <animation file="biped/new/male_carry_wood.dae" name="Run" speed="20"/>
+  </animations>
+  <props>
+    <prop attachpoint="weapon_R"/>
+    <prop attachpoint="weapon_L"/>
+    <prop attachpoint="shield"/>
+    <prop attachpoint="shield_arm"/>
+    <prop attachpoint="weapon_bow"/>
+    <prop attachpoint="ammo"/>
+    <prop attachpoint="root" actor="props/units/tools/wagon_two_wheel.xml"/>
+  </props>
+</variant>

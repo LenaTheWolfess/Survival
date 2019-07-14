@@ -1,0 +1,14 @@
+{
+	"type": "range",
+	"radius": 10,
+	"affects": ["Organic"],
+	"affectedPlayers": ["Enemy"],
+	"modifications": [
+		{ "value": "Vision/Range",   "multiply": 0.9},
+		{ "value": "UnitMotion/WalkSpeed",   "multiply": 0.9},
+		{ "value": "UnitMotion/Run/Speed",   "multiply": 0.9}
+	],
+	"auraDescription": "Lower vision and speed of nearby units.",
+	"auraName": "Forest",
+	"stackable": true
+}

@@ -1,0 +1,7 @@
+{
+	"adds": 20,
+	"action": "Train",
+	"type": "Citizen",
+	"once": true,
+	"count": 1
+}

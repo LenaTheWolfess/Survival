@@ -1,0 +1,13 @@
+{
+	"genericName": "Halbadiers",
+	"specificName": {
+	},
+	"description": "Unlock halbadiers.",
+	"cost": { "rp": 250, "wood": 100, "stone": 0, "metal": 100 },
+	"requirements": { "tech": "phase_town" },
+	"requirementsTooltip": "Unlocked in Town Phase.",
+	"icon": "upgrade_advanced.png",
+	"researchTime": 720,
+	"tooltip": "Unlock the ability to train halbadiers.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

@@ -1,0 +1,13 @@
+{
+	"genericName": "Champions",
+	"specificName": {
+	},
+	"description": "Unlock champions.",
+	"cost": { "rp": 50, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": { "tech": "phase_city" },
+	"icon": "helmet_hero_side.png",
+	"researchTime": 0,
+	"tooltip": "Unlock the ability to train champions.",
+	"requirementsTooltip": "Unlocked in city phase.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

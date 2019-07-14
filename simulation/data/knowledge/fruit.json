@@ -1,0 +1,7 @@
+{
+	"adds": 10,
+	"action": "Gather",
+	"type": "fruit",
+	"once": false,
+	"count": 100
+}

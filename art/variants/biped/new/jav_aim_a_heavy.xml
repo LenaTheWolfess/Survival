@@ -1,0 +1,9 @@
+<variant name="aim">
+  <animations>
+    <animation event="0.50" file="biped/new/jav_aim_a.dae" load="0" name="aim" speed="80"/>
+  </animations>
+  <props>
+    <prop actor="" attachpoint="loaded-weapon_R"/>
+    <prop actor="props/units/weapons/spear.xml" attachpoint="projectile"/>
+  </props>
+</variant>

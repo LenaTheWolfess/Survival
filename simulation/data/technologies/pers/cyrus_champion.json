@@ -1,0 +1,13 @@
+{
+	"genericName": "Anusiya",
+	"specificName": {
+	},
+	"description": "Unlock Anusiya.",
+	"cost": { "food": 600, "wood": 100, "stone": 0, "metal": 500 },
+	"requirements": {"all": [{ "tech": "heroes/cyrus" }, {"tech":"pers/champion_spear"}] },
+	"icon": "spear.png",
+	"researchTime": 180,
+	"tooltip": "Unlock the ability to train Anusiya.",
+	"requirementsTooltip": "Needs Champions spearman and Cyrus",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

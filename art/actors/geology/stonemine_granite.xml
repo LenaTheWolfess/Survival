@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<actor version="1">
+  <castshadow/>
+  <group>
+    <variant frequency="1" name="formation-a">
+      <mesh>gaia/temperate_stone_mine_a.dae</mesh>
+      <textures>
+        <texture file="gaia/temp_stone.png" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant frequency="1" name="formation-b">
+      <mesh>gaia/temperate_stone_mine_b.dae</mesh>
+      <textures>
+        <texture file="gaia/temp_stone.png" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant frequency="1" name="formation-c">
+      <mesh>gaia/temperate_stone_mine_c.dae</mesh>
+      <textures>
+        <texture file="gaia/temp_stone.png" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant frequency="1" name="formation-d">
+      <mesh>gaia/temperate_stone_mine_a.dae</mesh>
+      <textures>
+        <texture file="gaia/temp_stone_b.png" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant frequency="1" name="formation-e">
+      <mesh>gaia/temperate_stone_mine_b.dae</mesh>
+      <textures>
+        <texture file="gaia/temp_stone_b.png" name="baseTex"/>
+      </textures>
+    </variant>
+    <variant frequency="1" name="formation-f">
+      <mesh>gaia/temperate_stone_mine_c.dae</mesh>
+      <textures>
+        <texture file="gaia/temp_stone_b.png" name="baseTex"/>
+      </textures>
+    </variant>
+  </group>
+  <material>default.xml</material>
+</actor>

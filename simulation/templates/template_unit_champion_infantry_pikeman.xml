@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_infantry_melee">
+  <Attack>
+    <Melee>
+      <Pierce>15</Pierce>
+      <MinRange>5</MinRange>
+      <MaxRange>7</MaxRange>
+      <PrepareTime>375</PrepareTime>
+      <RepeatTime>2000</RepeatTime>
+      <PreferredClasses datatype="tokens">Human</PreferredClasses>
+    </Melee>
+    <Secondary>
+      <Hack>5.0</Hack>
+      <Pierce>0.0</Pierce>
+      <Crush>0.0</Crush>
+      <Missle>0.0</Missle>
+      <AnimationVariant>secondary</AnimationVariant>
+      <EnergyPenetration>true</EnergyPenetration>
+      <EnergyCost>1</EnergyCost>
+      <MaxRange>3</MaxRange>
+      <MinRange>0</MinRange>
+      <PrepareTime>100</PrepareTime>
+      <RepeatTime>1000</RepeatTime>
+      <PreferredClasses datatype="tokens">Human</PreferredClasses>
+    </Secondary>
+  </Attack>
+  <Cost>
+    <Resources>
+      <wood>100</wood>
+    </Resources>
+  </Cost>
+  <Identity>
+    <VisibleClasses datatype="tokens">Melee Spear Pike</VisibleClasses>
+    <GenericName>Champion Pikeman</GenericName>
+    <Formations datatype="tokens">
+      special/formations/syntagma
+      special/formations/testudo
+    </Formations>
+  </Identity>
+</Entity>

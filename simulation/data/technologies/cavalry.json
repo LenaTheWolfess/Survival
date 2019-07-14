@@ -1,0 +1,13 @@
+{
+	"genericName": "Cavalry",
+	"specificName": {
+	},
+	"description": "Unlock cavalry.",
+	"cost": { "rp": 10, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": { "tech": "phase_town" },
+	"icon": "horse_rider.png",
+	"researchTime": 30,
+	"tooltip": "Unlock the ability to train cavalry.",
+	"requirementsTooltip": "Unlocked by town phase.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

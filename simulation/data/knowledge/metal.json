@@ -1,0 +1,7 @@
+{
+	"adds": 10,
+	"action": "Gather",
+	"type": "metal",
+	"once": false,
+	"count": 200
+}

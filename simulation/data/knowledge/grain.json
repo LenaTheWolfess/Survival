@@ -1,0 +1,7 @@
+{
+	"adds": 100,
+	"action": "Gather",
+	"type": "grain",
+	"once": false,
+	"count": 200
+}

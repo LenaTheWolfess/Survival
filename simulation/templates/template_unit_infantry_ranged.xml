@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_infantry">
+  <Attack>
+    <Melee>
+      <EnergyCost>2</EnergyCost>
+      <EnergyPenetration>true</EnergyPenetration>
+      <Hack>5</Hack>
+      <Pierce>0.0</Pierce>
+      <Crush>0.0</Crush>
+      <Missle>0.0</Missle>  
+      <MaxRange>2.2</MaxRange>
+      <PrepareTime>500</PrepareTime>
+      <RepeatTime>1000</RepeatTime>
+      <RestrictedClasses datatype="tokens">Structure</RestrictedClasses>
+      <PreferredClasses datatype="tokens">Human</PreferredClasses>
+    </Melee>
+    <Ranged>
+      <EnergyCost>5</EnergyCost>
+      <EnergyPenetration>true</EnergyPenetration>
+      <Ammo>20</Ammo>
+	  <RefillAmount>5</RefillAmount>
+	  <RefillTime>100000</RefillTime>
+      <Hack>0.0</Hack>
+      <Pierce>0.0</Pierce>
+      <Crush>0.0</Crush>
+      <Missle>0.0</Missle>
+      <MaxRange>20.0</MaxRange>
+      <MinRange>7.0</MinRange>
+      <PrepareTime>2000</PrepareTime>
+      <RepeatTime>4000</RepeatTime>
+      <Projectile>
+        <Spread>3.0</Spread>
+        <Gravity>9.81</Gravity>
+        <LaunchPoint y="3"/>
+        <Speed>75.0</Speed>
+      </Projectile>
+      <Delay>0</Delay>
+      <RestrictedClasses datatype="tokens">Structure</RestrictedClasses>
+      <PreferredClasses datatype="tokens">Human</PreferredClasses>
+    </Ranged>
+  </Attack>
+  <Cost>
+    <BuildTime>2</BuildTime>
+    <Resources>
+      <meat>0</meat>
+      <wood>20</wood>
+      <stone>0</stone>
+      <metal>0</metal>
+    </Resources>
+  </Cost>
+  <Identity>
+    <GenericName>Ranged</GenericName>
+    <VisibleClasses datatype="tokens">Ranged</VisibleClasses>
+    <Formations datatype="tokens">
+      special/formations/skirmish
+    </Formations>
+	<FormationGroup>InfantryRanged</FormationGroup>
+  </Identity>
+</Entity>

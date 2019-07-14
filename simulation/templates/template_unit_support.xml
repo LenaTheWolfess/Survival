@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit">
+  <Auras datatype="tokens">
+    units/vision_to_tower
+    units/vision_to_tower_h
+  </Auras>
+  <Armour>
+    <Hack>0</Hack>
+    <Pierce>0</Pierce>
+    <Crush>0</Crush>
+    <Missle>0</Missle>
+  </Armour>
+  <Cost>
+    <BuildTime>8</BuildTime>
+  </Cost>
+  <Energy>
+    <MaxPoints>70</MaxPoints>
+    <RegenRate>5</RegenRate>
+    <RunDegRate>10</RunDegRate>
+  </Energy>
+  <Identity>
+    <GenericName>Support</GenericName>
+    <Classes datatype="tokens">Human Organic</Classes>
+    <VisibleClasses datatype="tokens">Support</VisibleClasses>
+	<Formations disable=""/>
+  </Identity>
+  <Loot>
+    <xp>10</xp>
+    <meat>0</meat>
+    <wood>0</wood>
+    <stone>0</stone>
+    <metal>0</metal>
+  </Loot>
+  <Minimap>
+    <Type>support</Type>
+  </Minimap>
+  <Sound>
+    <SoundGroups>
+      <trained>interface/alarm/alarm_create_worker.xml</trained>
+    </SoundGroups>
+  </Sound>
+  <UnitAI>
+    <DefaultStance>passive</DefaultStance>
+  </UnitAI>
+  <Vision>
+    <Range>40</Range>
+  </Vision>
+</Entity>

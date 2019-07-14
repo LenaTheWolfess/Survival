@@ -1,0 +1,8 @@
+<variant name="combat">
+  <animations>
+    <animation event="0.50" file="biped/new/slinger_attack_a.dae" load="0.75" name="attack_ranged" speed="100"/>
+  </animations>
+  <props>
+    <prop actor="props/units/weapons/sling_attack.xml" attachpoint="weapon_R"/>
+  </props>
+</variant>

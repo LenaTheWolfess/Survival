@@ -1,0 +1,16 @@
+{
+	"genericName": "Upgrade spear riders",
+	"specificName": {
+	},
+	"description": "Promote unit.",
+	"cost": { "food": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": {"all": [{"tech": "advanced_armor"}, {"tech":"helmets"}, {"tech":"horse_spear"}]},
+	"icon": "upgrade_elite.png",
+	"supersedes": "sele/cav_spear_a",
+	"researchTime": 60,
+	"tooltip": "Equip spear riders with advanced armor and helmets.",
+	"requirementsTooltip": "Needs Advanced armor and Helmets.",
+	"modifications": [{"value": "Promotion/RequiredXp", "replace": 0}],
+	"affects": ["Cavalry Spear Advanced"],
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

@@ -1,0 +1,11 @@
+{
+  "affects": ["Organic"],
+  "auraName": "Walls",
+  "auraDescription": "Garrisoned units gets protection from ranged attacks, have greater attack range and vision.",
+  "modifications": [
+    { "value": "Armour/Missle",        "add":      4   },
+    { "value": "Attack/Ranged/Missle",  "multiply": 2 },
+    { "value": "Vision/Range",         "add":     30   }
+  ],
+  "type": "garrisonedUnits"
+}

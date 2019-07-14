@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="units/athen_cavalry_swordsman_a">
+  <Armour>
+   <Missle>0</Missle>  
+   <Pierce>0</Pierce>  
+   <Crush>1</Crush>  
+   <Hack>1</Hack> 
+  </Armour>
+  <Identity>
+    <Rank>Elite</Rank>
+    <GenericName>Heavy Greek Cavalry</GenericName>
+    <Icon>units/athen_cavalry_swordsman_e.png</Icon>
+	<RequiredTechnology>athen_cavalry_sword_e</RequiredTechnology>
+  </Identity>
+  <UnitMotion>
+    <WalkSpeed op="mul">0.9</WalkSpeed>
+     <Run><Speed  op="mul">0.9 </Speed></Run>
+  </UnitMotion>
+  <VisualActor>
+    <Actor>units/athenians/cavalry_swordsman_e_m.xml</Actor>
+  </VisualActor>
+</Entity>

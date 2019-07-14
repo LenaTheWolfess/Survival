@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actor version="1">
+  <castshadow/>
+  <group>
+    <variant frequency="1" name="Base">
+      <mesh>skeletal/new/m_tunic_short.dae</mesh>
+      <props>
+        <prop actor="props/units/heads/new/head_thrace.xml" attachpoint="head"/>
+        <prop actor="props/units/weapons/jav_ammo.xml" attachpoint="ammo"/>
+        <prop actor="" attachpoint="weapon_R"/>
+      </props>
+      <textures>
+        <texture file="skeletal/hele_isp_b_2.dds" name="baseTex"/>
+      </textures>
+    </variant>
+  </group>
+  <group>
+    <variant name="ammo" frequency="1"/>
+	<variant name ="noAmmo">
+	  <props>
+		<prop actor="props/units/weapons/knife.xml" attachpoint="weapon_R"/>
+        <prop actor="" attachpoint="back"/>
+	  </props>
+	</variant>
+	<variant name = "noRanged">
+	  <props>
+		<prop actor="props/units/weapons/knife.xml" attachpoint="weapon_R"/>
+	  </props>
+	</variant>
+  </group>
+  <group>
+     <variant name="base" frequency="1"/>
+	 <variant name="noAmmo" />
+	 <variant name ="noRanged"/>
+     <variant name="combat">
+      <props>
+        <prop actor="props/units/weapons/jav_loaded.xml" attachpoint="weapon_R"/>
+      </props>
+	</variant>
+  </group>
+  <group>
+    <variant name="base" frequency="1"/>
+    <variant file="biped/attack_ranged_javelinist.xml" name="attack_ranged"/>
+    <variant file="biped/base_swordsman_shieldarm_fast_relax.xml" name="noAmmo"/>
+    <variant file="biped/base_swordsman_shieldarm_fast_relax.xml" name="noRanged"/>
+    <variant file="biped/attack_ranged_second.xml" name="combat"/>
+  </group>
+  <group>
+    <variant file="biped/base_swordsman_shieldarm_fast_relax.xml" name="noAmmo"/>
+    <variant file="biped/base_swordsman_shieldarm_fast_relax.xml" name="noRanged"/>
+    <variant file="biped/base_skirmisher_relax.xml" frequency="1"/>
+    <variant file="biped/base_skirmisher_ready.xml" name="combat"/>
+    <variant file="biped/attack_ranged_second.xml"/>
+    <variant file="biped/carry_food.xml"/>
+    <variant file="biped/carry_meat.xml"/>
+    <variant file="biped/carry_wood.xml"/>
+    <variant file="biped/carry_stone.xml"/>
+    <variant file="biped/carry_metal.xml"/>
+    <variant file="biped/approach_grain.xml"/>
+    <variant file="biped/approach_slaughter.xml"/>
+    <variant file="biped/approach_fruit.xml"/>
+    <variant file="biped/approach_meat.xml"/>
+    <variant file="biped/approach_tree.xml"/>
+    <variant file="biped/approach_stone.xml"/>
+    <variant file="biped/approach_ore.xml"/>
+    <variant file="biped/approach_build.xml"/>
+    <variant file="biped/attack_capture.xml"/>
+    <variant file="biped/attack_slaughter.xml"/>
+    <variant file="biped/gather_tree.xml"/>
+    <variant file="biped/gather_grain.xml"/>
+    <variant file="biped/gather_fruit.xml"/>
+    <variant file="biped/gather_meat.xml"/>
+    <variant file="biped/gather_rock.xml"/>
+    <variant file="biped/gather_ore.xml"/>
+    <variant file="biped/gather_ruins.xml"/>
+    <variant file="biped/gather_praise.xml"/>
+    <variant file="biped/build.xml"/>
+    <variant file="biped/build_farm.xml"/>
+    <variant file="biped/death_infantry.xml"/>
+  </group>
+  <material>player_trans.xml</material>
+</actor>

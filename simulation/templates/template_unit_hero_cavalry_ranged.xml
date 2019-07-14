@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_hero_cavalry">
+  <Attack>
+    <Melee>
+      <Hack>11.0</Hack>
+      <Pierce>0</Pierce>
+      <Crush>0.0</Crush>
+      <Missle>0.0</Missle>
+      <MaxRange>3.5</MaxRange>
+      <PrepareTime>375</PrepareTime>
+      <RepeatTime>750</RepeatTime>
+      <RestrictedClasses datatype="tokens">Structure</RestrictedClasses>
+      <PreferredClasses datatype="tokens">Human</PreferredClasses>
+    </Melee>
+    <Ranged>
+      <Ammo>10</Ammo>
+      <CritChance>0.2</CritChance>
+      <CritDamage>50000</CritDamage>
+      <Missle>15</Missle>
+      <Pierce>0</Pierce>
+      <Crush>0</Crush>
+      <Hack>0</Hack>
+      <MaxRange>80.0</MaxRange>
+      <MinRange>7.0</MinRange>
+      <PrepareTime>750</PrepareTime>
+      <RepeatTime>2000</RepeatTime>
+      <Projectile>
+        <Spread>0.5</Spread>
+        <Gravity>9.81</Gravity>
+        <Speed>75.0</Speed>
+      </Projectile>
+      <Delay>0</Delay>
+      <RestrictedClasses datatype="tokens">Structure</RestrictedClasses>
+      <PreferredClasses datatype="tokens">Human</PreferredClasses>
+    </Ranged>
+  </Attack>
+  <Health>
+    <Max>1500</Max>
+  </Health>
+  <Identity>
+    <VisibleClasses datatype="tokens">Ranged</VisibleClasses>
+    <GenericName>Hero Ranged Cavalry</GenericName>
+    <Formations datatype="tokens">
+      special/formations/skirmish
+    </Formations>
+  </Identity>  
+  <UnitMotion>
+    <WalkSpeed op="mul">1.05</WalkSpeed>
+    <Run> <Speed op="mul">1.05</Speed> </Run>
+  </UnitMotion>
+</Entity>

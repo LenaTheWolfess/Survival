@@ -1,0 +1,15 @@
+{
+	"type": "formation",
+	"affects": ["Soldier"],
+	"modifications": [
+		{ "value": "Attack/Melee/Hack", "multiply": 3.00 },
+		{ "value": "Attack/Melee/Pierce", "multiply": 3.00 },
+		{ "value": "Attack/Melee/Crush", "multiply": 3.00 },
+		{ "value": "Armour/Missle", "multiply": 8.0  },
+		{ "value": "Armour/Shield/Missle", "multiply": 8.0 },
+		{ "value": "UnitMotion/WalkSpeed", "multiply": 0.5 },
+		{ "value": "UnitMotion/Run/Speed", "multiply": 0.5 }
+	],
+	"auraName": "Tetsudo bonus",
+	"auraDescription": "Formation moves slower. Impossible to hurt with missile attacks."
+}

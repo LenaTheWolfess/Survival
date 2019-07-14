@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_formation">
+  <Auras datatype="tokens">
+    formations/formation_wedge
+  </Auras>
+  <Formation>
+    <Icon>formations/wedge.png</Icon>
+    <RequiredMemberCount>6</RequiredMemberCount>
+    <DisabledTooltip>only cavalry allowed (at least 6)</DisabledTooltip>
+    <FormationName>Wedge</FormationName>
+    <FormationShape>triangle</FormationShape>
+    <ShiftRows>true</ShiftRows>
+    <Sloppyness>0.25</Sloppyness>
+    <UnitSeparationWidthMultiplier>0.6</UnitSeparationWidthMultiplier>
+    <UnitSeparationDepthMultiplier>0.6</UnitSeparationDepthMultiplier>
+  </Formation>
+  <FormationAttack>
+    <CanAttackAsFormation>false</CanAttackAsFormation>
+  </FormationAttack>
+</Entity>

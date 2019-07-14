@@ -1,0 +1,13 @@
+{
+	"genericName": "Improved Scaled armor",
+	"specificName": {
+	},
+	"description": "Improve scaled armor.",
+	"cost": { "rp": 250, "wood": 100, "stone": 0, "metal": 100 },
+	"requirements": { "tech": "scaled_armor" },
+	"supersedes": "scaled_armor",
+	"icon": "armor_scale.png",
+	"researchTime": 60,
+	"tooltip": "",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

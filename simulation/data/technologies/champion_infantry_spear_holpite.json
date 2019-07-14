@@ -1,0 +1,14 @@
+{
+	"genericName": "Champion hoplite",
+	"specificName": {
+	},
+	"description": "Unlock hoplite champion.",
+	"cost": { "rp": 250, "wood": 100, "stone": 0, "metal": 100 },
+	"requirements": {"all": [{ "tech": "champion_infantry" }, { "tech": "hoplites"}] },
+	"supersedes": "hoplites",
+	"icon": "fist_spear.png",
+	"researchTime": 360,
+	"tooltip": "Unlock the ability to train hoplite champion.",
+	"requirementsTooltip": "Needs Champions and hoplites.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

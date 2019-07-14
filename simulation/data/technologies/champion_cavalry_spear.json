@@ -1,0 +1,13 @@
+{
+	"genericName": "Champion spear cavalry",
+	"specificName": {
+	},
+	"description": "Unlock champion spear cavalry.",
+	"cost": { "rp": 250, "wood": 100, "stone": 0, "metal": 100 },
+	"requirements": {"all": [{ "tech": "champion_cavalry" }, { "tech": "spears"}] },
+	"icon": "spear_cavalry.png",
+	"researchTime": 360,
+	"tooltip": "Unlock the ability to train champion spear cavalry.",
+	"requirementsTooltip": "Needs Champion cavalry and Spears",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

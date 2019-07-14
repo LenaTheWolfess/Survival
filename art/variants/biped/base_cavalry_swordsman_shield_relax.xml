@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<variant name = "relax">
+  <animations>
+    <animation file="biped/rider/cavalry/javelin/idle_relax.dae" name="idle" speed="80"/>
+    <animation file="biped/rider/cavalry/javelin/trot.dae" name="Walk" speed="7"/>
+    <animation file="biped/rider/cavalry/archer/gallop.dae" name="Run" speed="7"/>
+  </animations>
+</variant>

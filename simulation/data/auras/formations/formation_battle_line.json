@@ -1,0 +1,20 @@
+{
+	"type": "formation",
+	"affects": ["Soldier"],
+	"modifications": [
+		{ "value": "Attack/Melee/Hack", "multiply": 3.00 },
+		{ "value": "Attack/Melee/Pierce", "multiply": 3.00 },
+		{ "value": "Attack/Melee/Crush", "multiply": 3.00 },
+		{ "value": "Armour/Pierce", "multiply": 1.50  },
+		{ "value": "Armour/Hack", "multiply": 1.50  },
+		{ "value": "Armour/Crush", "multiply": 1.50  },
+		{ "value": "Armour/Shield/Pierce", "multiply": 2.0  },
+		{ "value": "Armour/Shield/Hack", "multiply": 2.0  },
+		{ "value": "Armour/Shield/Crush", "multiply": 2.0  },
+		{ "value": "Armour/Shield/Missle", "multiply": 2.0  },
+		{ "value": "UnitMotion/WalkSpeed", "multiply": 0.8 },
+		{ "value": "UnitMotion/Run/Speed", "multiply": 0.8 }
+	],
+	"auraName": "Battle line bonus",
+	"auraDescription": "Members of formation deals higher melee damage and have increased armour."
+}

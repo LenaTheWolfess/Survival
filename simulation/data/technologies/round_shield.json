@@ -1,0 +1,12 @@
+{
+	"genericName": "Round shields",
+	"specificName": {
+	},
+	"description": "Research round shields.",
+	"cost": { "rp": 20, "wood": 50, "stone": 0, "metal": 50 },
+	"requirements": { "tech": "phase_village" },
+	"icon": "shields_generic_silver.png",
+	"researchTime": 30,
+	"tooltip": "",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

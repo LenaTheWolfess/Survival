@@ -1,0 +1,15 @@
+{
+	"genericName": "Upgrade swordmen",
+	"specificName": {
+	},
+	"description": "Promote unit.",
+	"cost": { "rp": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": {"all": [{"tech":"swords"}, {"tech":"vertical_shield"}]},
+	"icon": "upgrade_advanced.png",
+	"researchTime": 20,
+	"tooltip": "Equip swordmen with shields.",
+	"requirementsTooltip": "Needs Vertical shield.",
+	"modifications": [{"value": "Promotion/RequiredXp", "replace": 0}],
+	"affects": ["Infantry Sword Basic"],
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

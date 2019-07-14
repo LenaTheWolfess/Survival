@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion">
+  <TrainingRestrictions>
+    <Category>Cavalry</Category>
+  </TrainingRestrictions>
+  <Attack>
+    <MountDamage>500</MountDamage>
+  </Attack>
+  <Armour>
+    <Hack>0</Hack>
+    <Pierce>0</Pierce>
+    <Crush>0</Crush>
+    <Missle>0</Missle>
+  </Armour>
+  <Cost>
+    <BatchSize>1</BatchSize>
+    <Population>1</Population>
+    <BuildTime op="add">5</BuildTime>
+    <Resources>
+      <grain>50</grain>
+      <wood>0</wood>
+      <stone>0</stone>
+      <metal>0</metal>
+    </Resources>
+  </Cost>
+  <Consumer>
+	<Time>10000</Time>
+	<Groups>
+	  <Horse>
+		<And>
+		  <Grain>
+			<Code>grain</Code>
+			<Count>1</Count>
+		  </Grain>
+		</And>
+		<Punish>1</Punish>
+	  </Horse>
+	</Groups>
+  </Consumer>
+   <Energy>
+    <MaxPoints>350</MaxPoints>
+    <RegenRate>35</RegenRate>
+    <RunDegRate>10</RunDegRate>
+  </Energy>
+  <Footprint>
+    <Circle radius="2.5"/>
+    <Height>5.0</Height>
+  </Footprint>
+  <Health>
+    <Max>150</Max>
+  </Health>
+  <Identity>
+    <GenericName>Champion Cavalry</GenericName>
+    <VisibleClasses datatype="tokens">Cavalry</VisibleClasses>
+    <Formations datatype="tokens">
+      special/formations/wedge
+    </Formations>
+	<FormationGroup>ChampionCavalry</FormationGroup>
+  </Identity>
+  <Position>
+    <Anchor>pitch</Anchor>
+  </Position>
+  <Selectable>
+    <Overlay>
+      <Texture>
+        <MainTexture>arrow/256x256.png</MainTexture>
+        <MainTextureMask>arrow/256x256_mask.png</MainTextureMask>
+      </Texture>
+    </Overlay>
+  </Selectable>
+  <Sound>
+    <SoundGroups>
+      <select>voice/{lang}/civ/civ_{gender}_select.xml</select>
+      <order_walk>voice/{lang}/civ/civ_{gender}_walk.xml</order_walk>
+      <order_attack>voice/{lang}/civ/civ_{gender}_attack.xml</order_attack>
+      <order_gather>voice/{lang}/civ/civ_{gender}_gather.xml</order_gather>
+      <order_garrison>voice/{lang}/civ/civ_{gender}_garrison.xml</order_garrison>
+      <walk>actor/mounted/movement/walk.xml</walk>
+      <run>actor/mounted/movement/walk.xml</run>
+      <attack_melee>attack/weapon/sword.xml</attack_melee>
+      <death>actor/fauna/death/death_horse.xml</death>
+      <trained>interface/alarm/alarm_create_cav.xml</trained>
+    </SoundGroups>
+  </Sound>
+  <StatusBars>
+    <HeightOffset>6.5</HeightOffset>
+  </StatusBars>
+  <UnitMotion>
+    <PassabilityClass>horse</PassabilityClass>
+    <WalkSpeed op="mul">1.3</WalkSpeed>
+    <Run> <Speed op="mul">1.8</Speed> </Run>
+  </UnitMotion>
+  <Vision>
+    <Range>50</Range>
+  </Vision>
+</Entity>

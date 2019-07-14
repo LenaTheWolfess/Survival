@@ -1,0 +1,15 @@
+{
+	"type": "formation",
+	"affects": ["Soldier"],
+	"modifications": [
+		{ "value": "Attack/Melee/Pierce", "multiply": 2.0 },
+		{ "value": "Armour/Shield/Pierce", "multiply": 3.0  },
+		{ "value": "Armour/Shield/Missle", "multiply": 3.0  },
+		{ "value": "Armour/Shield/Hack", "multiply": 3.0  },
+		{ "value": "Armour/Shield/Crush", "multiply": 3.0  },
+		{ "value": "UnitMotion/WalkSpeed", "multiply": 0.4 },
+		{ "value": "UnitMotion/Run/Speed", "multiply": 0.4 }
+	],
+	"auraName": "Phalanx bonus",
+	"auraDescription": "Slow defensive formation with excelent defense from front."
+}

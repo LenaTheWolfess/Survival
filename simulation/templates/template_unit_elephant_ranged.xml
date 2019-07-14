@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_elephant">
+<Attack>
+    <Melee>
+      <Hack>20</Hack>
+      <Pierce>0.0</Pierce>
+      <Crush>150.0</Crush>
+      <Missle>0.0</Missle>
+      <MaxRange>8.0</MaxRange>
+      <PrepareTime>1000</PrepareTime>
+      <RepeatTime>8000</RepeatTime>
+      <RestrictedClasses datatype="tokens">Structure</RestrictedClasses>
+      <PreferredClasses datatype="tokens">Human</PreferredClasses>
+    </Melee>
+    <Ranged>
+      <Ammo>50</Ammo>
+	  <RefillAmount>5</RefillAmount>
+	  <RefillTime>100000</RefillTime>
+      <Hack>0.0</Hack>
+      <Pierce>0.0</Pierce>
+      <Crush>0.0</Crush>
+      <Missle>0.0</Missle>
+      <MaxRange>16.0</MaxRange>
+      <MinRange>7.0</MinRange>
+      <PrepareTime>1000</PrepareTime>
+      <RepeatTime>1500</RepeatTime>
+      <Projectile>
+        <Spread>3.0</Spread>
+        <Gravity>9.81</Gravity>
+        <LaunchPoint y="3"/>
+        <Speed>75.0</Speed>
+      </Projectile>
+      <Delay>0</Delay>
+      <RestrictedClasses datatype="tokens">Structure</RestrictedClasses>
+      <PreferredClasses datatype="tokens">Human</PreferredClasses>
+    </Ranged>
+  </Attack>
+  <Cost>
+	<BatchSize>1</BatchSize>
+  </Cost>
+  <Identity>
+ 	<BannerCode>elephant_banner</BannerCode>
+  </Identity>
+  <Energy>
+    <MaxPoints>150</MaxPoints>
+    <RegenRate>5</RegenRate>
+    <RunDegRate>10</RunDegRate>
+  </Energy>
+  <Morale>
+    <MaxPoints>200</MaxPoints>
+	<RegenRate>0</RegenRate>
+  </Morale>
+  <Promotion>
+    <RequiredXp>150</RequiredXp>
+  </Promotion>
+</Entity>

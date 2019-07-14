@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="units/athen_support_healer_a">
+  <Auras datatype="tokens">
+    units/faith
+    units/faith2
+  </Auras>
+  <Identity>
+    <Rank>Elite</Rank>
+    <RequiredTechnology>phase_empire</RequiredTechnology>
+    <SelectionGroupName>units/athen_support_healer_e</SelectionGroupName>
+	<GenericName>High Priest</GenericName>
+  </Identity>
+  <ResourceTrickle>
+	<Rates>
+	  <coin>5.0</coin>
+	</Rates>
+	<Interval>20000</Interval>
+  </ResourceTrickle>
+  <VisualActor>
+    <Actor>units/athenians/healer_e.xml</Actor>
+  </VisualActor>
+</Entity>

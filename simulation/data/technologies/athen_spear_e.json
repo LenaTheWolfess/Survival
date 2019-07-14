@@ -1,0 +1,15 @@
+{
+	    "autoResearch": true,
+    "genericName": "Unlock Heavy spearmen",
+	"specificName": {
+	},
+	"description": "Unlock unit.",
+	"cost": { "rp": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"supersedes": "athen_spear_a",
+	"requirements": {"all": [{"tech": "phase_empire"}, {"tech":"spears"},{"tech": "helmets"},{"tech": "basic_armor"}]},
+	"icon": "armor_plates_spear.png",
+	"researchTime": 0,
+	"tooltip": "Equip spearmen with helmets and basic armor.",
+	"requirementsTooltip": "Needs Helmets and Basic Armor.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

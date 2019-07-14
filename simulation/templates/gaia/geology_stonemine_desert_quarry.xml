@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_gaia_geo_rock_slabs">
+  <ResourceSupply>
+	<SpawnEntityOnExhaustion>
+		gaia/geology_stone_desert_small
+	</SpawnEntityOnExhaustion>
+  </ResourceSupply>
+  <VisualActor>
+    <Actor>geology/stonemine_desert_quarry.xml</Actor>
+  </VisualActor>
+</Entity>

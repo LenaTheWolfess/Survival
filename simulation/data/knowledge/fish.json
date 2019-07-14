@@ -1,0 +1,7 @@
+{
+	"adds": 10,
+	"action": "Gather",
+	"type": "fish",
+	"once": false,
+	"count": 200
+}

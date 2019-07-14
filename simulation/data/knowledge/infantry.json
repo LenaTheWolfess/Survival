@@ -1,0 +1,7 @@
+{
+	"adds": 100,
+	"action": "Train",
+	"type": "Infantry",
+	"once": true,
+	"count": 1
+}

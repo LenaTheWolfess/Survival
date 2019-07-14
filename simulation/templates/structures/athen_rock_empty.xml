@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_structure_resource_field">
+  <Identity>
+    <Civ>athen</Civ>
+    <SpecificName>Agrós</SpecificName>
+	<Classes datatype="tokens">EmptyField</Classes>
+  </Identity>
+  <ResourceSupply disable = ""/>
+  <ResourceRegrow>
+	<Time>1000</Time>
+	<MaxToComplete>100</MaxToComplete>
+	<Multiplier>1.0</Multiplier>
+	<EntityRegrow>structures/athen_field</EntityRegrow>
+  </ResourceRegrow>
+  <VisualActor>
+    <Actor>structures/plot_field_found.xml</Actor>
+  </VisualActor>
+</Entity>

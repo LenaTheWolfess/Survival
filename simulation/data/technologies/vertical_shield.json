@@ -1,0 +1,12 @@
+{
+	"genericName": "Vertical shields",
+	"specificName": {
+	},
+	"description": "Unlock vertical shields.",
+	"cost": { "rp": 250, "wood": 100, "stone": 0, "metal": 100 },
+	"requirements": { "tech": "phase_village" },
+	"icon": "shield_parma.png",
+	"researchTime": 60,
+	"tooltip": "",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

@@ -1,0 +1,13 @@
+{
+	"genericName": "Champion javelin cavalry",
+	"specificName": {
+	},
+	"description": "Unlock javelin cavalry.",
+	"cost": { "rp": 250, "wood": 100, "stone": 0, "metal": 100 },
+	"requirements": {"all": [{ "tech": "champion_cavalry" }, { "tech": "javelins"}] },
+	"icon": "accuracy_bolt.png",
+	"researchTime": 360,
+	"tooltip": "Unlock the ability to train champion javelin cavalry.",
+	"requirementsTooltip": "Needs Champion cavalry and Javelins.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

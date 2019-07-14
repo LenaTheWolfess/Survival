@@ -1,0 +1,7 @@
+{
+	"adds": 50,
+	"action": "Kill",
+	"type": "Sheep",
+	"once": true,
+	"count": 1
+}

@@ -1,0 +1,12 @@
+{
+	"code": "grain",
+	"name": "Grain",
+	"description": "Harvest from fields.",
+	"order": 1,
+	"subtypes": {
+		"grain": "Grain"
+	},
+	"truePrice": 400,
+	"properties": ["barterable", "tradable", "tributable"],
+	"aiAnalysisInfluenceGroup": "abundant"
+}

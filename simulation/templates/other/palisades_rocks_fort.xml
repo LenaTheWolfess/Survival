@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <Entity parent="template_structure_defense_wall_tower">
+  <Auras datatype="tokens">
+    structures/rocks_fort
+  </Auras>
+  <Identity>
+    <Civ>gaia</Civ>
+    <SpecificName>Palisade Fort</SpecificName>
+    <GenericName>Wooden Tower</GenericName>
+    <Icon>structures/palisade_fort.png</Icon>
+    <Classes datatype="tokens">-StoneWall Palisade Tower PalisadeTower</Classes>
+     <RequiredTechnology>phase_village</RequiredTechnology>
+  </Identity>
+  <BuildingAI disable=""/>
+  <Attack disable= ""/>
+  <Cost>
+    <BuildTime>7</BuildTime>
+    <Resources>
+      <wood>20</wood>
+      <stone>0</stone>
+    </Resources>
+  </Cost>
+   <GarrisonHolder>
+    <Max>2</Max>
+    <List datatype="tokens">Infantry+Ranged</List>
+    <EjectHealth>0.1</EjectHealth>
+    <EjectClassesOnDestroy datatype="tokens">Unit</EjectClassesOnDestroy>
+    <BuffHeal>0</BuffHeal>
+    <LoadingRange>2</LoadingRange>
+    <VisibleGarrisonPoints>
+      <Archer1>
+        <X>1</X><Y>8</Y><Z>-1</Z>
+        <Angle>180.0</Angle>
+      </Archer1>
+      <Archer2>
+        <X>-1</X><Y>8</Y><Z>-1</Z>
+        <Angle>180.0</Angle>
+      </Archer2>
+    </VisibleGarrisonPoints>
+  </GarrisonHolder>
+  <Loot>
+    <wood>20</wood>
+    <stone>0</stone>
+  </Loot>
+  <ProductionQueue disable=""/>
+  <TerritoryInfluence disable=""/>
+  <Upgrade disable=""/>
+  <WallPiece>
+    <Length>8.0</Length>
+  </WallPiece>
+  <VisualActor>
+    <Actor>props/special/palisade_rocks_fort.xml</Actor>
+  </VisualActor>
+</Entity>

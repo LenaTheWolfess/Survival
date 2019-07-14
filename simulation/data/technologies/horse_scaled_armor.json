@@ -1,0 +1,13 @@
+{
+	"genericName": "Horse scaled armor",
+	"specificName": {
+	},
+	"description": "Unlock horse scaled armor.",
+	"cost": { "rp": 250, "wood": 0, "stone": 0, "metal": 100 },
+	"supersedes": "cavalry",
+	"requirements": {"all": [{ "tech": "cavalry" }, { "tech": "scaled_armor"}] },
+	"icon": "horseshoe_silver.png",
+	"researchTime": 90,
+	"requirementsTooltip": "Needs Cavalry and Scaled armor.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

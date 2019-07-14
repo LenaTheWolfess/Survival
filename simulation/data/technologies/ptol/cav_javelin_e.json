@@ -1,0 +1,16 @@
+{
+	"genericName": "Upgrade javelins riders",
+	"specificName": {
+	},
+	"description": "Promote unit.",
+	"cost": { "food": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": {"all": [{"tech": "helmets"}, {"tech":"horse_javelins"}]},
+	"icon": "upgrade_elite.png",
+	"supersedes": "ptol/cav_javelin_a",
+	"researchTime": 10,
+	"tooltip": "Equip javelin riders with Helmets.",
+	"requirementsTooltip": "Needs Helmets.",
+	"modifications": [{"value": "Promotion/RequiredXp", "replace": 0}],
+	"affects": ["Cavalry Javelin Advanced"],
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

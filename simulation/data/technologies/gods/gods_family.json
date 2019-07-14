@@ -1,0 +1,13 @@
+{
+	"pair": "gods/gods_family_vs_build",
+	"genericName": "God of family",
+	"description": "Whorship God of family.",
+	"cost": {"food": 0, "wood": 0, "stone": 0, "metal": 0},
+	"requirements": {"tech": "phase_village"},
+	"icon": "wives_festival.png",
+	"researchTime": 0,
+	"tooltip": "50% faster training of workers.",
+	"modifications": [{ "value": "Cost/BuildTime", "multiply": 0.5 }],
+	"affects": ["Worker"],
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

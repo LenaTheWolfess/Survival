@@ -1,0 +1,13 @@
+{
+	"pair": "gods/gods_animals_vs_forge",
+	"genericName": "God of animals",
+	"description": "Whorship God of animals.",
+	"cost": {"food": 0, "wood": 0, "stone": 0, "metal": 0},
+	"requirements": {"tech": "phase_town"},
+	"icon": "fish.png",
+	"researchTime": 0,
+	"tooltip": "50% faster training of cavalry.",
+	"modifications": [{ "value": "Cost/BuildTime", "multiply": 0.5 }],
+	"affects": ["Cavalry"],
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

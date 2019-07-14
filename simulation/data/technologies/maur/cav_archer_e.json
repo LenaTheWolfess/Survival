@@ -1,0 +1,16 @@
+{
+	"genericName": "Upgrade archer elephants",
+	"specificName": {
+	},
+	"description": "Promote unit.",
+	"cost": { "food": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": {"all": [{"tech": "basic_armor"}, {"tech":"horse_archery"}]},
+	"icon": "upgrade_elite.png",
+	"supersedes": "maur/cav_archer_a",
+	"researchTime": 30,
+	"tooltip": "Equip archer riders with Basic armor.",
+	"requirementsTooltip": "Needs Basic armor.",
+	"modifications": [{"value": "Promotion/RequiredXp", "replace": 0}],
+	"affects": ["Elephant Archer Advanced"],
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

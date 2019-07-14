@@ -1,0 +1,15 @@
+{
+	"genericName": "Upgrade axemen",
+	"specificName": {
+	},
+	"description": "Promote unit.",
+	"cost": { "food": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": {"all": [{"tech":"axes"}, {"tech":"vertical_shield"}, {"tech":"basic_armor"}]},
+	"icon": "upgrade_advanced.png",
+	"researchTime": 20,
+	"tooltip": "Equip axemen with shields and basic armor.",
+	"requirementsTooltip": "Needs Vertical shield and Basic armor.",
+	"modifications": [{"value": "Promotion/RequiredXp", "replace": 0}],
+	"affects": ["Infantry Axe Basic"],
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

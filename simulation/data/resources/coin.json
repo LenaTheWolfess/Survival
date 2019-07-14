@@ -1,0 +1,12 @@
+{
+	"code": "coin",
+	"name": "Coin",
+	"description": "Every citizen pays you 1 coin per time.",
+	"order": 1,
+	"subtypes": {
+		"coin": "Coin"
+	},
+	"truePrice": 1000,
+	"properties": ["barterable", "tributable"],
+	"aiAnalysisInfluenceGroup": "ignore"
+}

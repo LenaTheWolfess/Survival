@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<actor version="1">
+  <castshadow/>
+  <group>
+    <variant frequency="1" name="wagon">
+      <animations>
+        <animation file="mechanical/wagon_two_wheel_empty_idle.dae" name="Idle" speed="100"/>
+        <animation file="mechanical/wagon_two_wheel_empty_move.dae" name="Walk" speed="10"/>
+        <animation file="mechanical/wagon_two_wheel_empty_move.dae" name="Run" speed="10"/>
+      </animations>
+      <mesh>props/special/wagon_two_wheel_empty.dae</mesh>
+	  <props>
+        <prop actor="units/hellenes/trader_h.xml" attachpoint="horse"/>
+	  </props>
+      <textures>
+        <texture file="props/wooden_wagon.png" name="baseTex"/>
+      </textures>
+    </variant>
+  </group>
+  <group>
+	<variant name="empty" frequency= "1">
+      <props>
+        <prop attachpoint="cargo"/>
+      </props>
+	</variant>
+	<variant name="wood">
+      <props>
+        <prop actor="props/units/shuttle_wood.xml" attachpoint="cargo"/>
+      </props>
+	</variant>
+	<variant name="stone">
+      <props>
+        <prop actor="props/units/shuttle_stone.xml" attachpoint="cargo"/>
+      </props>
+	</variant>
+	<variant name="metal">
+      <props>
+        <prop actor="props/units/shuttle_metal.xml" attachpoint="cargo"/>
+      </props>
+	</variant>
+	<variant name="fruit">
+      <props>
+        <prop actor="props/units/shuttle_basket.xml" attachpoint="cargo"/>
+      </props>
+	</variant>
+	<variant name="grain">
+      <props>
+        <prop actor="props/units/shuttle_basket.xml" attachpoint="cargo"/>
+      </props>
+	</variant>
+	<variant name="food">
+      <props>
+        <prop actor="props/units/shuttle_meat_male_L.xml" attachpoint="cargo"/>
+      </props>
+	</variant>
+  </group>
+  <material>player_trans.xml</material>
+</actor>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_formation">
+  <Formation>
+    <Icon>formations/null.png</Icon>
+    <FormationName>Free</FormationName>
+	<RequiredMemberCount>1</RequiredMemberCount>
+	<Sloppyness>0.75</Sloppyness>
+  </Formation>
+  <FormationAttack>
+    <CanAttackAsFormation>false</CanAttackAsFormation>
+  </FormationAttack>
+</Entity>

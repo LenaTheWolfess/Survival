@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="units/athen_infantry_marine_archer_b">
+ <Armour>
+    <Missle>1</Missle>  
+    <Pierce>1</Pierce>  
+    <Crush>1</Crush>  
+    <Hack>1</Hack>  
+    <Shield>
+       <Missle>1</Missle>  
+       <Pierce>0</Pierce>  
+       <Crush>1</Crush>  
+       <Hack>1</Hack>  
+    </Shield>
+  </Armour>
+  <Cost>
+    <BuildTime>1.2</BuildTime>
+    <Resources>
+      <metal>3</metal>
+    </Resources>
+  </Cost>
+  <Identity>
+    <Rank>Advanced</Rank>
+    <GenericName>Medium Cretan Archer</GenericName>
+	<RequiredTechnology>athen_archer_a</RequiredTechnology>
+    <Icon>units/athen_infantry_archer_a.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/athenians/infantry_archer_a.xml</Actor>
+  </VisualActor>
+</Entity>

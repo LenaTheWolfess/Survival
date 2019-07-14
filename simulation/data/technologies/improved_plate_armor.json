@@ -1,0 +1,13 @@
+{
+	"genericName": "Improved Plate armor",
+	"specificName": {
+	},
+	"description": "Improve plate armor.",
+	"cost": { "rp": 250, "wood": 100, "stone": 0, "metal": 100 },
+	"supersedes": "plate_armor",
+	"requirements": { "tech": "plate_armor" },
+	"icon": "armor_plates_gold.png",
+	"researchTime": 60,
+	"tooltip": "",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

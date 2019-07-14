@@ -1,0 +1,16 @@
+{
+	"genericName": "Upgrade archers",
+	"specificName": {
+	},
+	"description": "Promote unit.",
+	"cost": { "food": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": {"all": [{"tech": "archery"}, {"tech":"basic_armor"}]},
+	"icon": "upgrade_elite.png",
+	"supersedes": "maur/archer_a",
+	"researchTime": 10,
+	"tooltip": "Equip archers with basic armor.",
+	"requirementsTooltip": "Needs Basic armor.",
+	"modifications": [{"value": "Promotion/RequiredXp", "replace": 0}],
+	"affects": ["Infantry Archer Advanced"],
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

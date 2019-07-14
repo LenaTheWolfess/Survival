@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_hero">
+  <Armour>
+    <Hack>0</Hack>
+    <Pierce>0</Pierce>
+    <Crush>0</Crush>
+    <Missle>0</Missle>
+  </Armour>
+  <Cost>
+    <BuildTime>40</BuildTime>
+    <Resources>
+      <meat>200</meat>
+      <wood>200</wood>
+      <metal>150</metal>
+    </Resources>
+  </Cost>
+  <Footprint>
+    <Circle radius="1.5"/>
+    <Height>2.5</Height>
+  </Footprint>
+  <Health>
+    <Max>1000</Max>
+  </Health>
+  <Identity>
+    <VisibleClasses datatype="tokens">Infantry</VisibleClasses>
+    <GenericName>Hero</GenericName>
+  </Identity>
+</Entity>

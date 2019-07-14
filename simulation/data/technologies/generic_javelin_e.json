@@ -1,0 +1,16 @@
+{
+	"genericName": "Upgrade javelins",
+	"specificName": {
+	},
+	"description": "Promote unit.",
+	"cost": { "rp": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": {"tech": "phase_city"},
+	"supersedes": "generic_javelin_a",
+	"icon": "upgrade_elite.png",
+	"researchTime": 0,
+	"tooltip": "",
+	"requirementsTooltip": "Needs city phase.",
+	"modifications": [{"value": "Promotion/RequiredXp", "replace": 0}],
+	"affects": ["Infantry Javelin Advanced"],
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

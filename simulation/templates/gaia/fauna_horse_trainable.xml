@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="gaia/fauna_horse">
+  <Cost>
+    <BuildTime>35</BuildTime>
+    <Resources>
+      <grain>50</grain>
+    </Resources>
+  </Cost>
+  <Consumer>
+    <Time>10000</Time>
+	<Groups>
+		<Food>
+		  <And>
+			<Grain>
+			  <Code>grain</Code>
+			  <Count>1</Count>
+			</Grain>
+		 </And>
+		 <Punish>5</Punish>
+		</Food>
+	</Groups>
+  </Consumer>
+  <ResourceSupply disable = ""/>
+  <Visibility>
+    <RetainInFog>false</RetainInFog>
+  </Visibility>
+</Entity>

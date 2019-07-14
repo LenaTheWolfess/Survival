@@ -1,0 +1,15 @@
+{
+	"genericName": "Upgrade archer",
+	"specificName": {
+	},
+	"description": "Promote unit.",
+	"cost": { "rp": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": {"all": [{"tech":"archery"}, {"tech": "phase_town"}]},
+	"icon": "upgrade_advanced.png",
+	"researchTime": 0,
+	"tooltip": "",
+	"requirementsTooltip": "Needs town phase.",
+	"modifications": [{"value": "Promotion/RequiredXp", "replace": 0}],
+	"affects": ["Infantry Archer Basic"],
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

@@ -1,0 +1,14 @@
+{
+	"genericName": "Champion infantry javelin",
+	"specificName": {
+	},
+	"description": "Unlock javelin champion.",
+	"cost": { "rp": 250, "wood": 100, "stone": 0, "metal": 100 },
+	"requirements": {"all": [{ "tech": "champion_infantry" }, { "tech": "javelins"}] },
+	"supersedes": "javelins",
+	"icon": "javelin_thong.png",
+	"researchTime": 360,
+	"tooltip": "Unlock the ability to train javelin champion infantry.",
+	"requirementsTooltip": "Needs Champions and Javelins.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object name="tech_rows">
+	<object name="sSection" type="image" style="SectionBox">
+		<object name="sHeader" type="image" style="StructLine">
+			<object name="sGenericName" size= "50 15 100% 35" type="text" font="sans-bold-20" textcolor="white"
+					text_align="center"	text_valign="top"/>
+			<object name="sIcon" size="5 5 45 45" type="image" style="TechIcon" 
+				sprite="stretched:pregame/shell/logo/wfg_logo_white.png"/>
+		</object>
+		<object name="sPhase" size="5 55 100% 90">
+			<object name="sPhaseGenericName" size= "50 0% 100% 100%" type="text" font="sans-bold-20" textcolor="white"
+					text_align="center"	text_valign="center"/>
+			<object name="sPhaseIcon" size="10 5 45 35" type="image" style="TechIcon" 
+				sprite="stretched:pregame/shell/logo/wfg_logo_white.png"/>
+		</object>
+		<object name="sCost" type="text" font="sans-bold-16" 
+			textcolor="white" text_align="center" text_valign="top"
+			size= "5 95 100% 130"/>
+		<object name="sDescription" type="text" font="sans-12" 
+			textcolor="white" text_align="center"	text_valign="top"
+			size= "5 135 100% 100%"/>
+	</object>
+	<object name="pSection" size = "70% 0 100% 100%" type="image" style="SectionBox">
+		<object name="pHeader" type="image" style="StructLine">
+			<object name="pGenericName" size= "50 15 100% 35" type="text" font="sans-bold-20" textcolor="white"
+					text_align="center"	text_valign="top"/>
+			<object name="pIcon" size="5 5 45 45" type="image" style="TechIcon" 
+				sprite="stretched:pregame/shell/logo/wfg_logo_white.png"/>
+		</object>
+		<object name="pPhase" size="5 55 100% 90">
+			<object name="pPhaseGenericName" size= "50 0% 100% 100%" type="text" font="sans-bold-20" textcolor="white"
+					text_align="center"	text_valign="center"/>
+			<object name="pPhaseIcon" size="10 5 45 35" type="image" style="TechIcon" 
+				sprite="stretched:pregame/shell/logo/wfg_logo_white.png"/>
+		</object>
+		<object name="pCost" type="text" font="sans-bold-16" 
+			textcolor="white" text_align="center" text_valign="top"
+			size= "5 95 100% 130"/>
+		<object name="pDescription" type="text" font="sans-12" 
+			textcolor="white" text_align="center"	text_valign="top"
+			size= "5 135 100% 100%"/>
+	</object>
+	<object name="struct_row" type="image" style="StructLine">
+		<repeat count="30" var="s">
+			<object type="button" style="TechIcon" name="struct[s]_icon" 
+				sprite="stretched:pregame/shell/logo/wfg_logo_white.png"/>
+		</repeat>
+	</object>
+	<object name="start_row" type="image" style="StructLine">
+		<repeat count="30" var="k">
+			<object type="button" style="TechIcon" name="tech[k]_icon"
+				sprite="stretched:pregame/shell/logo/wfg_logo_white.png"/>
+		</repeat>
+	</object>
+
+	<object name="tSection" style="TreeDisplay" size="30% 0 70% 100%" >
+		<object name="req_caption" 	font="sans-bold-12" textcolor="white"
+				text_align="center"	text_valign="top" type="text"/>
+		<object name="req_struct" type="button" style="TechIcon" sprite="stretched:pregame/shell/logo/wfg_logo_white.png"/>
+		<repeat count="30" var="u">
+			<object type="button" style="TechIcon" name="req[u]_icon" 
+				sprite="stretched:pregame/shell/logo/wfg_logo_white.png"/>
+		</repeat>
+			<object name="root_caption" 	font="sans-bold-20" textcolor="white"
+				text_align="center"	text_valign="top" type="text"/>
+		<object name="root" type="button" style="TechIcon" sprite="stretched:pregame/shell/logo/wfg_logo_white.png"/>
+		<object name="pair_caption" 	font="sans-bold-12" textcolor="white"
+				text_align="center"	text_valign="top" type="text"/>
+		<object name="pair" type="button" style="TechIcon" sprite="stretched:pregame/shell/logo/wfg_logo_white.png"/>
+		<object name="unlock_caption" 	font="sans-bold-12" textcolor="white"
+				text_align="center"	text_valign="top" type="text"/>
+		<repeat count="30" var="u">
+			<object type="button" style="TechIcon" name="unlock[u]_icon" 
+				sprite="stretched:pregame/shell/logo/wfg_logo_white.png"/>
+		</repeat>
+		<object name="unlock_unit_caption" 	font="sans-bold-12" textcolor="white"
+			text_align="center"	text_valign="top" type="text"/>
+		<repeat count="30" var="u">
+			<object type="button" style="TechIcon" name="unlock_unit[u]_icon" 
+				sprite="stretched:pregame/shell/logo/wfg_logo_white.png"/>
+		</repeat>
+	</object>
+</object>

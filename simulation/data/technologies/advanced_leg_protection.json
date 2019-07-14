@@ -1,0 +1,13 @@
+{
+	"genericName": "Advanced leg protection",
+	"specificName": {
+	},
+	"description": "Research Advanced leg protection.",
+	"cost": { "rp": 15, "wood": 0, "stone": 0, "metal": 50 },
+	"supersedes": "medium_leg_protection",
+	"requirements": { "tech": "medium_leg_protection" },
+	"icon": "armor_greaves.png",
+	"researchTime": 30,
+	"tooltip": "",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

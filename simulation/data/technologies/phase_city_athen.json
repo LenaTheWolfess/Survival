@@ -1,0 +1,17 @@
+{
+	"autoResearch": true,
+	"genericName": "City Phase",
+	"specificName": {
+		"athen": "Megalópolis"
+	},
+	"description": "Advances from a bustling town to a veritable metropolis.",
+	"cost": { "rp": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": {"all": [{ "entity": { "class": "House", "number": 8 } }, { "entity": { "class": "Market", "number": 1 } }, { "entity": { "class": "Temple", "number": 1 } }, { "entity": { "class": "Citizen", "number": 40 } } ] },
+	"requirementsTooltip": "",
+	"supersedes": "phase_town_athen",
+	"replaces": ["phase_city"],
+	"icon": "city_phase.png",
+	"researchTime": 0,
+	"tooltip": "Advance to City Phase.",
+	"soundComplete": "interface/alarm/alarm_phase.xml"
+}

@@ -1,0 +1,16 @@
+{
+	"genericName": "Upgrade archer riders",
+	"specificName": {
+	},
+	"description": "Promote unit.",
+	"cost": { "food": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": {"all": [{"tech": "advanced_armor"}, {"tech":"horse_archery"}]},
+	"icon": "upgrade_elite.png",
+	"supersedes": "ptol/cav_archer_a",
+	"researchTime": 10,
+	"tooltip": "Equip archer riders with Advanced armor.",
+	"requirementsTooltip": "Needs Advanced armor.",
+	"modifications": [{"value": "Promotion/RequiredXp", "replace": 0}],
+	"affects": ["Cavalry Archer Advanced"],
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

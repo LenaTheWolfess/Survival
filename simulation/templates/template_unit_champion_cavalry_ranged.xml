@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_cavalry">
+  <Attack>
+   <Melee>
+      <EnergyCost>2</EnergyCost>
+      <EnergyPenetration>true</EnergyPenetration>
+      <Hack>10</Hack>
+      <Pierce>0.0</Pierce>
+      <Crush>0.0</Crush>
+      <Missle>0.0</Missle>  
+      <MaxRange>2.2</MaxRange>
+      <PrepareTime>500</PrepareTime>
+      <RepeatTime>1000</RepeatTime>
+      <RestrictedClasses datatype="tokens">Structure</RestrictedClasses>
+      <PreferredClasses datatype="tokens">Human</PreferredClasses>
+    </Melee>
+    <Ranged>
+      <EnergyCost>5</EnergyCost>
+      <EnergyPenetration>true</EnergyPenetration>
+      <Ammo>35</Ammo>
+      <CritChance>0.1</CritChance>
+      <CritDamage>50000</CritDamage>
+	  <RefillAmount>5</RefillAmount>
+	  <RefillTime>100000</RefillTime>
+      <Hack>0.0</Hack>
+      <Pierce>0.0</Pierce>
+      <Crush>0.0</Crush>
+      <Missle>0.0</Missle>
+      <MaxRange>40.0</MaxRange>
+      <MinRange>7.0</MinRange>
+      <PrepareTime>500</PrepareTime>
+      <RepeatTime>1000</RepeatTime>
+      <Projectile>
+        <Spread>1.0</Spread>
+        <Gravity>9.81</Gravity>
+        <LaunchPoint y="3"/>
+        <Speed>75.0</Speed>
+      </Projectile>
+      <Delay>0</Delay>
+      <RestrictedClasses datatype="tokens">Structure</RestrictedClasses>
+      <PreferredClasses datatype="tokens">Human</PreferredClasses>
+    </Ranged>
+  </Attack>
+  <Cost>
+    <Resources>
+      <wood>35</wood>
+    </Resources>
+  </Cost>
+  <Identity>
+    <VisibleClasses datatype="tokens">Ranged</VisibleClasses>
+	<FormationGroup>ChampionCavalryRanged</FormationGroup>
+  </Identity>
+</Entity>

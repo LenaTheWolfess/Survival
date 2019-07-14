@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="units/athen_support_healer_b">
+  <Auras datatype="tokens">
+    units/faith
+    units/faith2
+  </Auras>
+  <Identity>
+    <Rank>Advanced</Rank>
+    <RequiredTechnology>phase_city</RequiredTechnology>
+	<GenericName>Priest</GenericName>
+    <SelectionGroupName>units/athen_support_healer_a</SelectionGroupName>
+  </Identity>
+  <VisualActor>
+    <Actor>units/athenians/healer_a.xml</Actor>
+  </VisualActor>
+</Entity>

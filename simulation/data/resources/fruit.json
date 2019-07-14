@@ -1,0 +1,13 @@
+{
+	"code": "fruit",
+	"name": "Fruit",
+	"description": "Harvest from berry bushes or trees.",
+	"order": 1,
+	"subtypes": {
+		"apple": "Apple",
+		"berry": "Berry"
+	},
+	"truePrice": 50,
+	"properties": ["barterable", "tradable", "tributable"],
+	"aiAnalysisInfluenceGroup": "abundant"
+}

@@ -1,0 +1,13 @@
+{
+	"genericName": "Slinger shield upgrade",
+	"specificName": {
+	},
+	"description": "Upgrade slinger shields.",
+	"cost": { "rp": 250, "wood": 100, "stone": 0, "metal": 100 },
+	"supersedes": "slinger_shield",
+	"requirements": { "tech": "slinger_shield" },
+	"icon": "shields_generic_bronze_2.png",
+	"researchTime": 60,
+	"tooltip": "",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

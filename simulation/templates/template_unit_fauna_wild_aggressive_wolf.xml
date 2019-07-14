@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_fauna_wild_aggressive">
+  <Attack>
+    <Melee>
+      <Hack>0.0</Hack>
+      <Pierce>20.0</Pierce>
+      <Crush>10.0</Crush>
+	  <Missle>0</Missle>
+      <MaxRange>4.0</MaxRange>
+      <RepeatTime>1000</RepeatTime>
+    </Melee>
+  </Attack>
+  <Footprint>
+    <Square width="1.4" depth="2.8"/>
+    <Height>1.5</Height>
+  </Footprint>
+  <Identity>
+    <Civ>gaia</Civ>
+  </Identity>
+  <Position>
+    <Anchor>pitch</Anchor>
+  </Position>
+  <AnimalAI>
+	<DefaultStance>violent</DefaultStance>
+    <RoamDistance>8.0</RoamDistance>
+    <FleeDistance>24.0</FleeDistance>
+    <RoamTimeMin>2000</RoamTimeMin>
+    <RoamTimeMax>8000</RoamTimeMax>
+    <FeedTimeMin>15000</FeedTimeMin>
+    <FeedTimeMax>60000</FeedTimeMax>
+    <NaturalBehaviour>violent</NaturalBehaviour>
+  </AnimalAI>
+  <UnitAI disable = ""/>
+  <Vision>
+    <Range>40</Range>
+  </Vision>
+</Entity>

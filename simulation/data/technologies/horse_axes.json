@@ -1,0 +1,14 @@
+{
+	"autoResearch": true,
+	"genericName": "Axe cavalry",
+	"specificName": {
+	},
+	"description": "Unlock axe cavalry.",
+	"cost": { "rp": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": {"all": [{ "tech": "cavalry" }, { "tech": "axes"}] },
+	"icon": "spear_cavalry.png",
+	"researchTime": 0,
+	"tooltip": "Unlock the ability to train axe cavalry.",
+	"requirementsTooltip": "Needs Cavalry and Axes.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

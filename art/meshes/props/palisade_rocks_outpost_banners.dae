@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.0">
+  <asset>
+    <contributor>
+      <author></author>
+      <authoring_tool>FBX COLLADA exporter</authoring_tool>
+      <comments></comments>
+    </contributor>
+    <created>2012-01-19T20:51:11Z</created>
+    <modified>2012-01-19T20:51:11Z</modified>
+    <revision></revision>
+    <title></title>
+    <subject></subject>
+    <keywords></keywords>
+    <unit meter="0.025400"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_materials>
+    <material id="Material_material" name="Material_material">
+      <instance_effect url="#Material_material-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="Material_material-fx" name="Material_material">
+      <profile_COMMON>
+        <technique sid="standard">
+          <phong>
+            <emission>
+              <color sid="emission">0.000000  0.000000 0.000000 1.000000</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0.000000  0.000000 0.000000 1.000000</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.640000  0.640000 0.640000 1.000000</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.500000  0.500000 0.500000 1.000000</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">49.999991</float>
+            </shininess>
+            <reflective>
+              <color sid="reflective">0.000000  0.000000 0.000000 1.000000</color>
+            </reflective>
+            <reflectivity>
+              <float sid="reflectivity">1.000000</float>
+            </reflectivity>
+            <transparent>
+              <color sid="transparent">1.000000  1.000000 1.000000 1.000000</color>
+            </transparent>
+            <transparency>
+              <float sid="transparency">0.000000</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="banners-lib" name="bannersMesh">
+      <mesh>
+        <source id="banners-lib-Position">
+          <float_array id="banners-lib-Position-array" count="84">
+-2.470775 -3.401885 4.917968
+-1.857164 -3.401885 4.917968
+-2.438317 -3.401885 4.805265
+-1.889622 -3.401885 4.805265
+-2.438316 -3.401885 3.158596
+-1.889622 -3.401885 3.158596
+-2.163969 -3.401885 3.549085
+-2.163969 -3.392683 3.549085
+-1.889622 -3.392683 3.158596
+-2.438316 -3.392683 3.158596
+-1.889622 -3.392683 4.805265
+-2.438317 -3.392683 4.805265
+-1.857164 -3.392683 4.917968
+-2.470775 -3.392683 4.917968
+1.817502 -3.392683 4.917968
+2.431113 -3.392683 4.917968
+1.849960 -3.392683 4.805265
+2.398654 -3.392683 4.805265
+1.849960 -3.392683 3.158596
+2.398654 -3.392683 3.158596
+2.124307 -3.392683 3.549085
+2.124307 -3.401885 3.549085
+2.398654 -3.401885 3.158596
+1.849960 -3.401885 3.158596
+2.398654 -3.401885 4.805265
+1.849960 -3.401885 4.805265
+2.431113 -3.401885 4.917968
+1.817502 -3.401885 4.917968
+</float_array>
+          <technique_common>
+            <accessor source="#banners-lib-Position-array" count="28" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="banners-lib-Normal0">
+          <float_array id="banners-lib-Normal0-array" count="180">
+-0.000001 -1.000000 0.000000
+-0.000001 -1.000000 0.000000
+-0.000001 -1.000000 0.000000
+-0.000001 -1.000000 0.000000
+-0.000001 -1.000000 0.000000
+-0.000001 -1.000000 0.000000
+-0.000001 -1.000000 -0.000000
+-0.000001 -1.000000 -0.000000
+-0.000001 -1.000000 -0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+-0.000001 -1.000000 -0.000000
+-0.000001 -1.000000 -0.000000
+-0.000001 -1.000000 -0.000000
+0.000001 1.000000 0.000000
+0.000001 1.000000 0.000000
+0.000001 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000001 1.000000 0.000000
+0.000001 1.000000 0.000000
+0.000001 1.000000 0.000000
+0.000001 1.000000 0.000000
+0.000001 1.000000 0.000000
+0.000001 1.000000 0.000000
+0.000001 1.000000 0.000000
+0.000001 1.000000 0.000000
+0.000001 1.000000 0.000000
+0.000001 1.000000 0.000000
+0.000001 1.000000 0.000000
+0.000001 1.000000 0.000000
+0.000001 1.000000 0.000000
+0.000001 1.000000 0.000000
+0.000001 1.000000 0.000000
+0.000001 1.000000 0.000000
+0.000001 1.000000 0.000000
+0.000001 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000001 1.000000 0.000000
+0.000001 1.000000 0.000000
+0.000001 1.000000 0.000000
+-0.000001 -1.000000 -0.000000
+-0.000001 -1.000000 -0.000000
+-0.000001 -1.000000 -0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+-0.000001 -1.000000 -0.000000
+-0.000001 -1.000000 -0.000000
+-0.000001 -1.000000 -0.000000
+-0.000001 -1.000000 0.000000
+-0.000001 -1.000000 0.000000
+-0.000001 -1.000000 0.000000
+-0.000001 -1.000000 0.000000
+-0.000001 -1.000000 0.000000
+-0.000001 -1.000000 0.000000
+</float_array>
+          <technique_common>
+            <accessor source="#banners-lib-Normal0-array" count="60" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="banners-lib-UV0">
+          <float_array id="banners-lib-UV0-array" count="104">
+0.001883 0.719642
+0.001883 0.689863
+0.007993 0.689878
+0.007993 0.719627
+0.076100 0.704753
+0.007993 0.719627
+0.007993 0.689878
+0.097272 0.689878
+0.076100 0.704753
+0.007993 0.689878
+0.076100 0.704753
+0.097272 0.719627
+0.007993 0.719627
+0.076100 0.704753
+0.007993 0.719627
+0.097272 0.719627
+0.097272 0.689878
+0.007993 0.689878
+0.076100 0.704753
+0.076100 0.704753
+0.007993 0.689878
+0.007993 0.719627
+0.007993 0.689878
+0.001883 0.689863
+0.001883 0.719642
+0.007993 0.719627
+0.007993 0.689878
+0.001883 0.689863
+0.001883 0.719642
+0.007993 0.719627
+0.076100 0.704753
+0.007993 0.689878
+0.007993 0.719627
+0.097272 0.689878
+0.007993 0.689878
+0.076100 0.704753
+0.076100 0.704753
+0.007993 0.719627
+0.097272 0.719627
+0.076100 0.704753
+0.097272 0.719627
+0.007993 0.719627
+0.097272 0.689878
+0.076100 0.704753
+0.007993 0.689878
+0.076100 0.704753
+0.007993 0.719627
+0.007993 0.689878
+0.001883 0.719642
+0.001883 0.689863
+0.007993 0.689878
+0.007993 0.719627
+</float_array>
+          <technique_common>
+            <accessor source="#banners-lib-UV0-array" count="52" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="banners-lib-Vertex">
+          <input semantic="POSITION" source="#banners-lib-Position"/>
+        </vertices>
+        <polygons material="Material_material" count="20">
+          <input semantic="VERTEX" offset="0" source="#banners-lib-Vertex"/>
+          <input semantic="NORMAL" offset="1" source="#banners-lib-Normal0"/>
+          <input semantic="TEXCOORD" offset="2" set="0" source="#banners-lib-UV0"/>
+          <p>1 0 0 0 1 1 2 2 2</p>
+          <p>2 3 2 3 4 3 1 5 0</p>
+          <p>6 6 4 3 7 5 2 8 6</p>
+          <p>4 9 7 6 10 8 2 11 9</p>
+          <p>6 12 10 5 13 11 3 14 12</p>
+          <p>7 15 13 10 16 14 8 17 15</p>
+          <p>9 18 16 11 19 17 7 20 18</p>
+          <p>7 21 19 11 22 20 10 23 21</p>
+          <p>11 24 22 13 25 23 12 26 24</p>
+          <p>12 27 24 10 28 25 11 29 22</p>
+          <p>16 30 26 14 31 27 15 32 28</p>
+          <p>15 33 28 17 34 29 16 35 26</p>
+          <p>20 36 30 16 37 31 17 38 32</p>
+          <p>18 39 33 16 40 34 20 41 35</p>
+          <p>20 42 36 17 43 37 19 44 38</p>
+          <p>21 45 39 22 46 40 24 47 41</p>
+          <p>23 48 42 21 49 43 25 50 44</p>
+          <p>21 51 45 24 52 46 25 53 47</p>
+          <p>26 54 48 27 55 49 25 56 50</p>
+          <p>25 57 50 24 58 51 26 59 48</p>
+        </polygons>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="RootNode" name="RootNode">
+      <node id="banners" name="banners">
+        <matrix sid="matrix">1.083906 0.000000 0.000000 0.000000 0.000000 1.083906 0.000000 0.000000 0.000000 0.000000 1.083906 0.000000 0.000000 0.000000 0.000000 1.000000</matrix>
+        <instance_geometry url="#banners-lib">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Material_material" target="#Material_material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#RootNode"/>
+  </scene>
+</COLLADA>
+

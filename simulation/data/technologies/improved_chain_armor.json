@@ -1,0 +1,12 @@
+{
+	"genericName": "Improved Chain armor",
+	"specificName": {
+	},
+	"description": "Improve chain armor.",
+	"cost": { "rp": 250, "wood": 100, "stone": 0, "metal": 100 },
+	"requirements": { "tech": "chain_armor" },
+	"icon": "armor_scale.png",
+	"researchTime": 60,
+	"tooltip": "",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

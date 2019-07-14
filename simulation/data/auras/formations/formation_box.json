@@ -1,0 +1,17 @@
+{
+	"type": "formation",
+	"affects": ["Soldier"],
+	"modifications": [
+		{ "value": "Attack/Melee/Hack", "multiply": 3.0 },
+		{ "value": "Attack/Melee/Pierce", "multiply": 3.0 },
+		{ "value": "Attack/Melee/Crush", "multiply": 3.0 },
+		{ "value": "Armour/Pierce", "multiply": 1.8  },
+		{ "value": "Armour/Hack", "multiply": 1.8 },
+		{ "value": "Armour/Crush", "multiply": 1.8  },
+		{ "value": "Armour/Shield/Missle", "multiply": 1.8  },
+		{ "value": "UnitMotion/WalkSpeed", "multiply": 0.9 },
+		{ "value": "UnitMotion/Run/Speed", "multiply": 0.9 }
+	],
+	"auraName": "Box bonus",
+	"auraDescription": "Deals more damage and have better protection."
+}

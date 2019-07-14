@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_infantry_melee">
+  <Attack>
+    <Melee>
+      <Pierce>15</Pierce>
+      <MaxRange>4.5</MaxRange>
+      <RepeatTime>1000</RepeatTime>
+      <PreferredClasses datatype="tokens">Cavalry</PreferredClasses>
+    </Melee>
+  </Attack>
+  <Cost>
+    <Resources>
+      <wood>100</wood>
+    </Resources>
+  </Cost>
+  <Identity>
+    <GenericName>Champion Spearman</GenericName>
+    <VisibleClasses datatype="tokens">Melee Spear</VisibleClasses>
+    <Formations datatype="tokens">
+      special/formations/testudo
+      special/formations/anti_cavalry
+    </Formations>
+  </Identity>
+</Entity>

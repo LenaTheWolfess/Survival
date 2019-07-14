@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_champion_infantry_swordsman">
+  <Attack>
+    <Ranged>
+      <Ammo>1</Ammo>
+      <RefillAmount>1</RefillAmount>
+      <RefillTime>100000</RefillTime>
+      <AnimationVariant>secondary</AnimationVariant>
+      <Missle>50</Missle>
+      <Pierce>0</Pierce>
+      <Hack>0</Hack>
+      <Crush>0</Crush>
+      <MaxRange>28.0</MaxRange>
+      <MinRange>7.0</MinRange>
+      <Projectile>
+        <Speed>62.5</Speed>
+        <Spread>1.0</Spread>
+        <Gravity>9.81</Gravity>
+        <LaunchPoint y="3"/>
+      </Projectile>
+      <PrepareTime>2000</PrepareTime>
+      <RepeatTime>3000</RepeatTime>
+      <Delay>0</Delay>
+      <RestrictedClasses datatype="tokens">Structure</RestrictedClasses>
+      <PreferredClasses datatype="tokens">Infantry</PreferredClasses>
+    </Ranged>
+  </Attack>
+  <Consumer disable = ""/>
+  <Cost>
+    <BuildTime op="mul">0.75</BuildTime>
+    <Resources>
+      <coin>10</coin>
+      <metal>0</metal>
+      <meat>0</meat>
+      <stone>0</stone>
+      <wood>0</wood>
+    </Resources>
+  </Cost>
+  <Identity>
+    <Civ>gaia</Civ>
+    <Lang>greek</Lang>
+    <GenericName>Thracian Black Cloak</GenericName>
+    <SpecificName>Rhomphaiaphoros</SpecificName>
+    <VisibleClasses datatype="tokens">Mercenary</VisibleClasses>
+    <Icon>units/athen_black_cloak.png</Icon>
+    <RequiredTechnology>phase_town</RequiredTechnology>
+  </Identity>
+  <Payed>
+    <Interval>60000</Interval>
+	<Sum>10</Sum>
+	<Code>coin</Code>
+  </Payed>
+  <VisualActor>
+    <Actor>units/hellenes/infantry_swordsman_c_thracian_blackcloak.xml</Actor>
+  </VisualActor>
+</Entity>

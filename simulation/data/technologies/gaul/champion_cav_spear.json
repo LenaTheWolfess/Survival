@@ -1,0 +1,13 @@
+{
+	"genericName": "Champion spear cavalry",
+	"specificName": {
+	},
+	"description": "Unlock champion spear cavalry.",
+	"cost": { "food": 800, "wood": 300, "stone": 0, "metal": 400 },
+	"requirements": {"all": [{ "tech": "improved_chain_armor"},{ "tech": "helmets"}, { "tech": "champion_cavalry" }, {"tech":"spears"}, {"tech":"vertical_shield"}]},
+	"icon": "spear_cavalry.png",
+	"researchTime": 240,
+	"tooltip": "Unlock the ability to train champion spear cavalry.",
+	"requirementsTooltip": "Needs Champion cavalry, Spears, Vertical shield, Helmets and Improved chain armor.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

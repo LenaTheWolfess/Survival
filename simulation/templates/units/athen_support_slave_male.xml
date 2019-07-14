@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_support_slave">
+  <Identity>
+    <Civ>athen</Civ>
+    <Lang>greek</Lang>
+    <SpecificName>Doûlos</SpecificName>
+    <Icon>units/athen_slave_male.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/athenians/slave_male.xml</Actor>
+  </VisualActor>
+</Entity>

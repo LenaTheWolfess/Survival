@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_unit_hero_infantry_spearman_hoplite">
+  <Armour>
+    <Hack>5</Hack>
+    <Crush>4</Crush>
+    <Pierce>3</Pierce>
+    <Missle>3</Missle>
+    <Shield>
+      <Hack>5</Hack>
+      <Crush>5</Crush>
+      <Pierce>5</Pierce>
+      <Missle>5</Missle>
+    </Shield>
+  </Armour>
+  <Auras datatype="tokens">
+    units/heroes/athen_hero_pericles_1
+    units/heroes/athen_hero_pericles_2
+  </Auras>
+  <Identity>
+    <Civ>athen</Civ>
+    <Lang>greek</Lang>
+    <GenericName>Pericles</GenericName>
+    <SpecificName>Periklēs</SpecificName>
+	<FormationCompany>athen_champion_infantry</FormationCompany>
+    <Icon>units/athen_hero_pericles.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/athenians/hero_infantry_spearman_pericles.xml</Actor>
+  </VisualActor>
+</Entity>

@@ -1,0 +1,7 @@
+{
+	"adds": 50,
+	"action": "Kill",
+	"type": "Hunt",
+	"once": false,
+	"count": 10
+}

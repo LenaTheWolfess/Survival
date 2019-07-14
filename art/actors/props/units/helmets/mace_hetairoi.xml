@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<actor version="1">
+  <castshadow/>
+  <group>
+    <variant file="helmets/hele_boeotian_laurel_tinned.xml" frequency="2"/>
+    <variant file="helmets/hele_boeotian_plumed_tin_01.xml" frequency="2"/>
+  </group>
+  <material>playercolor_spec.xml</material>
+</actor>

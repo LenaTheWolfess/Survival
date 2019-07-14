@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="gaia/fauna_goat">
+  <Cost>
+    <BuildTime>60</BuildTime>
+    <Resources>
+      <grain>50</grain>
+    </Resources>
+  </Cost>
+  <ResourceSupply>
+    <Amount>80</Amount>
+  </ResourceSupply>
+  <ResourceTrickle>
+	<Interval>10000</Interval>
+    <Rates>
+      <animal>4</animal>
+	</Rates>
+  </ResourceTrickle>
+  <Consumer>
+    <Time>10000</Time>
+	<Groups>
+		<Food>
+		  <And>
+			<Grain>
+			  <Code>grain</Code>
+			  <Count>1</Count>
+			</Grain>
+		 </And>
+		 <Punish>10</Punish>
+		</Food>
+	</Groups>
+  </Consumer>
+  <Visibility>
+    <RetainInFog>false</RetainInFog>
+  </Visibility>
+</Entity>

@@ -1,0 +1,13 @@
+{
+	"pair": "gods/gods_farms_vs_war",
+	"genericName": "God of war",
+	"description": "Whorship God of war.",
+	"cost": {"food": 0, "wood": 0, "stone": 0, "metal": 0},
+	"requirements": {"tech": "phase_city"},
+	"icon": "battle_axe.png",
+	"researchTime": 0,
+	"tooltip": "50% faster training for infantry.",
+	"modifications": [{ "value": "Cost/BuildTime", "multiply": 0.5 }],
+	"affects": ["Infantry"],
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

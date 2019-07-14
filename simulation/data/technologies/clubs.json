@@ -1,0 +1,12 @@
+{
+	"genericName": "Clubs",
+	"specificName": {
+	},
+	"description": "Unlock clubmen.",
+	"cost": { "rp": 50, "wood": 50, "stone": 0, "metal": 100 },
+	"requirements": { "tech": "forging"},
+	"icon": "sword.png",
+	"researchTime": 20,
+	"tooltip": "Unlock the ability to train clubmen.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

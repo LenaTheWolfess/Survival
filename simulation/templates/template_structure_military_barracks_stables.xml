@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_structure_military_barracks">
+  <BuildRestrictions>
+    <Category>Stables</Category>
+  </BuildRestrictions>
+  <GarrisonHolder>
+    <Train> 
+      <TrainList datatype="tokens">Cavalry</TrainList>
+    </Train>
+    <List datatype="tokens">Cavalry Infantry</List>
+  </GarrisonHolder>
+  <Identity>
+    <GenericName>Stables</GenericName>
+    <Tooltip>Train citizen-soldier cavalry. Research training improvements.</Tooltip>
+    <Icon>structures/pers_stable.png</Icon>
+    <VisibleClasses datatype="tokens">Stables</VisibleClasses>
+  </Identity>
+  <ProductionQueue>
+    <BatchTimeModifier>1.0</BatchTimeModifier>
+	<Groups>
+		<Sword>
+			<GenericName>Cavalry swordsmen</GenericName>
+			<Icon>technologies/sword_cavalry.png</Icon>
+			<Tooltip>Choose among cavalry swordsmen</Tooltip>
+			<Entities datatype="tokens">
+			  units/{civ}_cavalry_swordsman_b
+			  units/{civ}_cavalry_swordsman_a
+			  units/{civ}_cavalry_swordsman_e
+			</Entities>
+		</Sword>
+		<Spear>
+			<GenericName>Cavalry spearmen</GenericName>
+			<Icon>technologies/spear_cavalry.png</Icon>
+			<Tooltip>Choose among cavalry spearmen</Tooltip>
+			<Entities datatype="tokens">
+			  units/{civ}_cavalry_spearman_b
+			  units/{civ}_cavalry_spearman_a
+			  units/{civ}_cavalry_spearman_e
+			</Entities>
+		</Spear>
+		<Axe>
+			<GenericName>Cavalry Axemen</GenericName>
+			<Icon>technologies/battle_axe.png</Icon>
+			<Tooltip>Choose among cavalry axemen</Tooltip>
+			<Entities datatype="tokens">
+			  units/{civ}_cavalry_axeman_b
+			  units/{civ}_cavalry_axeman_a
+			  units/{civ}_cavalry_axeman_e
+			</Entities>
+		</Axe>
+		<Javelin>
+			<GenericName>Cavalry Javelinists</GenericName>
+			<Icon>technologies/javelin_thong.png</Icon>
+			<Tooltip>Choose among cavalry javelinists</Tooltip>
+			<Entities datatype="tokens">
+			  units/{civ}_cavalry_javelinist_b
+			  units/{civ}_cavalry_javelinist_a
+			  units/{civ}_cavalry_javelinist_e
+			</Entities>
+		</Javelin>
+		<Archer>
+			<GenericName>Cavalry Archers</GenericName>
+			<Icon>technologies/archery_tradition.png</Icon>
+			<Tooltip>Choose among cavalry arhcers</Tooltip>
+			<Entities datatype="tokens">
+			  units/{civ}_cavalry_archer_b
+			  units/{civ}_cavalry_archer_a
+			  units/{civ}_cavalry_archer_e
+			</Entities>
+		</Archer>
+	</Groups>
+  </ProductionQueue>
+</Entity>

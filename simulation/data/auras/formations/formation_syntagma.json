@@ -1,0 +1,13 @@
+{
+	"type": "formation",
+	"affects": ["Soldier"],
+	"modifications": [
+		{ "value": "Attack/Melee/Pierce", "multiply": 8.0 },
+		{ "value": "Armour/Missle", "multiply": 2.0  },
+		{ "value": "Armour/Shield/Missle", "multiply": 2.0  },
+		{ "value": "UnitMotion/WalkSpeed", "multiply": 0.3 },
+		{ "value": "UnitMotion/Run/Speed", "multiply": 0.3 }
+	],
+	"auraName": "Syntagma bonus",
+	"auraDescription": "Very slow formation, but with the biggest pierce attack bonus. Formation has also increased attack resistance against ranged attacks."
+}

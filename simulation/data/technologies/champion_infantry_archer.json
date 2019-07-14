@@ -1,0 +1,14 @@
+{
+	"genericName": "Champion archer",
+	"specificName": {
+	},
+	"description": "Unlock archer champion.",
+	"cost": { "rp": 250, "wood": 100, "stone": 0, "metal": 100 },
+	"requirements": {"all": [{ "tech": "champion_infantry" }, { "tech": "archery"}] },
+	"supersedes": "archery",
+	"icon": "arrow.png",
+	"researchTime": 360,
+	"tooltip": "Unlock the ability to train archer champion.",
+	"requirementsTooltip": "Needs Champions and Archery.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

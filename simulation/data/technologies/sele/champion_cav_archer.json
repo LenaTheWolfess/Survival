@@ -1,0 +1,13 @@
+{
+	"genericName": "Champion archer cavalry",
+	"specificName": {
+	},
+	"description": "Unlock champion archer cavalry.",
+	"cost": { "food": 600, "wood": 100, "stone": 0, "metal": 800 },
+	"requirements": {"all": [{"tech": "champion_cavalry" }, {"tech":"plate_armor"}, { "tech": "archery"}, {"tech":"helmets"}, {"tech":"sele/horse_armor"}] },
+	"icon": "archery_tradition.png",
+	"researchTime": 240,
+	"tooltip": "Unlock the ability to train champion archer cavalry.",
+	"requirementsTooltip": "Needs Champion cavalry, Archery, Plate armor, Helmets and Horse armor.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

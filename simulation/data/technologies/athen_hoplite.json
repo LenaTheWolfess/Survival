@@ -1,0 +1,14 @@
+{
+	    "autoResearch": true,
+    "genericName": "Hoplites",
+	"specificName": {
+	},
+	"description": "Unlock hoplites.",
+	"cost": { "rp": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": {"all": [{"tech": "spears"}, {"tech": "round_med_shield" }]},
+	"icon": "spear.png",
+	"researchTime": 0,
+	"tooltip": "Unlock the ability to train hoplites.",
+	"requirementsTooltip": "Needs Spears and Round shields.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

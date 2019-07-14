@@ -1,0 +1,14 @@
+{
+	"autoResearch": true,
+	"genericName": "Spear riders",
+	"specificName": {
+	},
+	"description": "Unlock spearmen riders.",
+	"cost": { "rp": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": {"all": [{ "tech": "cavalry" }, { "tech": "spears"}] },
+	"icon": "spear_cavalry.png",
+	"researchTime": 0,
+	"tooltip": "Unlock the ability to train spearmen riding horses.",
+	"requirementsTooltip": "Needs Cavalry and Spears.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

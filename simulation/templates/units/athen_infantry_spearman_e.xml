@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="units/athen_infantry_spearman_a">
+  <Armour>
+    <Missle>1</Missle>  
+    <Pierce>1</Pierce>  
+    <Crush>2</Crush>  
+    <Hack>2</Hack> 
+  </Armour>
+  <Cost>
+    <BuildTime>2</BuildTime>
+    <Resources>
+      <metal>9</metal>
+    </Resources>
+  </Cost>
+  <Identity>
+    <Rank>Elite</Rank>
+    <GenericName>Heavy Spearman</GenericName>
+	<RequiredTechnology>athen_spear_e</RequiredTechnology>
+    <Icon>units/athen_infantry_spearman_e.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/athenians/infantry_spearman_e.xml</Actor>
+  </VisualActor>
+</Entity>

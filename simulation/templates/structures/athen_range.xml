@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_structure_military_barracks_range">
+  <Footprint>
+    <Square width="27.0" depth="25.0"/>
+    <Height>12.0</Height>
+  </Footprint>
+  <Health>
+    <SpawnEntityOnDeath>decay|rubble/rubble_stone_5x5</SpawnEntityOnDeath>
+  </Health>
+  <Identity>
+    <Civ>athen</Civ>
+  </Identity>
+  <Obstruction>
+    <Static width="26.0" depth="24.0"/>
+  </Obstruction>
+  <ProductionQueue>
+	<Groups>
+		<Archer>
+			<Entities datatype="tokens">
+				units/athen_infantry_marine_archer_b
+				units/athen_infantry_marine_archer_a
+				units/athen_infantry_marine_archer_e
+			</Entities>
+		</Archer>
+	</Groups>
+    <Technologies datatype="tokens">
+      javelins
+      archery
+      slings
+      athen_champion_archer
+      athen_javelin_a
+      athen_javelin_e
+      athen_slinger_a
+      athen_slinger_e
+      athen_archer_a
+      athen_archer_e
+    </Technologies>
+  </ProductionQueue>
+  <VisualActor>
+    <Actor>structures/hellenes/range.xml</Actor>
+    <FoundationActor>structures/fndn_5x5.xml</FoundationActor>
+  </VisualActor>
+</Entity>

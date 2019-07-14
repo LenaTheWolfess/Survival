@@ -1,0 +1,13 @@
+{
+	"genericName": "Plate armor",
+	"specificName": {
+	},
+	"description": "Research plate armor.",
+	"cost": { "rp": 60, "wood": 200, "stone": 0, "metal": 300 },
+	"supersedes": "chain_armor",
+	"requirements": { "tech": "chain_armor" },
+	"icon": "armor_plates_iron.png",
+	"researchTime": 60,
+	"tooltip": "",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}

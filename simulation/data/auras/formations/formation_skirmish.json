@@ -1,0 +1,15 @@
+{
+	"type": "formation",
+	"affects": ["Soldier"],
+	"modifications": [
+		{ "value": "Armour/Missle", "add": 2.0  },
+		{ "value": "Armour/Shield/Missle", "multiply": 2.00  },
+		{ "value": "Armour/Shield/Crush", "multiply": 1.50  },
+		{ "value": "Armour/Crush", "add": 1.50  },
+		{ "value": "Attack/Ranged/Missle", "multiply": 3.0 },
+		{ "value": "Attack/Ranged/Crush", "multiply": 3.0 },
+		{ "value": "Attack/Ranged/RepeatTime", "multiply": 2.0 }
+	],
+	"auraName": "Skirmish bonus",
+	"auraDescription": "ranged attack: 3x damage, but 2x repeat time"
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="units/athen_infantry_slinger_b">
+  <Armour>
+    <Missle>1</Missle>  
+    <Pierce>1</Pierce>  
+    <Crush>1</Crush>  
+    <Hack>1</Hack>  
+    <Shield>
+       <Missle>1</Missle>  
+       <Pierce>0</Pierce>  
+       <Crush>1</Crush>  
+       <Hack>1</Hack>  
+    </Shield>
+  </Armour>
+  <Cost>
+    <BuildTime>1.2</BuildTime>
+    <Resources>
+      <metal>4</metal>
+    </Resources>
+  </Cost>
+  <Identity>
+    <Rank>Advanced</Rank>
+    <GenericName>Medium Athenian Slinger Militia</GenericName>
+	<RequiredTechnology>athen_slinger_a</RequiredTechnology>
+    <Icon>units/athen_infantry_slinger_a.png</Icon>
+  </Identity>
+  <VisualActor>
+    <Actor>units/athenians/infantry_slinger_a.xml</Actor>
+  </VisualActor>
+</Entity>

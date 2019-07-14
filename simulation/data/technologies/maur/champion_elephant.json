@@ -1,0 +1,13 @@
+{
+	"genericName": "Champion elephant",
+	"specificName": {
+	},
+	"description": "Unlock champion elephant.",
+	"cost": { "food": 600, "wood": 100, "stone": 0, "metal": 500 },
+	"requirements": {"all": [{"tech": "champion_cavalry" }, {"tech":"elephant_armor"}] },
+	"icon": "archery_tradition.png",
+	"researchTime": 180,
+	"tooltip": "Unlock the ability to train maceman champion.",
+	"requirementsTooltip": "Needs Champion cavalry, Elephant armor.",
+	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"
+}
