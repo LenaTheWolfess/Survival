@@ -2,7 +2,7 @@
 <actor version="1">
   <castshadow/>
   <group>
-    <variant file="biped/base_swordsman_shieldarm.xml">
+    <variant>
       <mesh>skeletal/new/m_armor_tunic_long.dae</mesh>
       <props>
         <prop actor="props/units/heads/hele_themistocles.xml" attachpoint="helmet"/>
@@ -24,8 +24,17 @@
     </variant>
   </group>
   <group>
+     <variant name="base" frequency="1">
+      <props>
+        <prop actor="props/temp/l_sheath_xiphos.xml" attachpoint="sheath_L"/>
+        <prop actor="" attachpoint="weapon_R"/>
+      </props>
+    </variant>
+    <variant name="combat"/>
+  </group>
+  <group>
     <variant file="biped/base_swordsman_shieldarm_relax.xml" frequency="1" />
-   <variant file="biped/base_swordsman_shieldarmy.xml" name="combat"/>
+   <variant file="biped/base_swordsman_shieldarm.xml" name="combat"/>
     <variant file="biped/attack_capture.xml"/>
     <variant file="biped/attack_slaughter.xml"/>
     <variant file="biped/gather_praise.xml"/>

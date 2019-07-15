@@ -10,7 +10,7 @@
       </animations>
       <mesh>props/special/catafalque_two_wheel.dae</mesh>
       <props>
-        <prop actor="units/hellenes/trader_h.xml" attachpoint="horse"/>
+        <prop actor="units/athenians/trader_h.xml" attachpoint="horse"/>
       </props>
       <textures>
         <texture file="props/catafalque.png" name="baseTex"/>
