@@ -7,6 +7,6 @@
 		"meat": "Meat"
 	},
 	"truePrice": 100,
-	"properties": ["barterable", "tradable", "tributable"],
+	"properties": ["barterable", "tradable", "tributable", "leftPanel"],
 	"aiAnalysisInfluenceGroup": "abundant"
 }

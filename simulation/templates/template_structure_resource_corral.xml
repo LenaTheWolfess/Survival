@@ -42,14 +42,14 @@
 			  units/{civ}_horse_trainable
 			</Entities>
 		</Animals>
-		<Production>
+		<Wagons>
 			<GenericName>Wagons</GenericName>
 			<Icon>technologies/handcart_empty.png</Icon>
 			<Tooltip>Choose among wagons</Tooltip>
 			<Entities datatype="tokens">
 			  units/{civ}_wagon
 			</Entities>
-		</Production>
+		</Wagons>
 	</Groups>
     <Technologies datatype="tokens">
       gather_capacity_carts

@@ -570,7 +570,12 @@ g_SelectionPanels.ConstructionGroups = {
 	"conflictsWith": [],
 	"getItems": function()
 	{
-		return getAllBuildableGroupsFromSelection();
+		let groups = getAllBuildableGroupsFromSelection();
+		if (!g_selectedBuildingGroup && groups.length) {
+			g_selectedBuildingGroup = groups[0].id;
+			g_allBuildableEntities = undefined;
+		}
+		return groups;
 	},
 	"rowLength": 10,
 	"setupButton" : function(data) {
@@ -580,7 +585,7 @@ g_SelectionPanels.ConstructionGroups = {
 			g_allBuildableEntities = undefined;
 		};
 		
-		data.button.tooltip = data.item.Name + "\n" + data.item.Tooltip;
+		data.button.tooltip = "[font=\"sans-bold-16\"]" + data.item.Name + "[/font] \n" + data.item.Tooltip;
 		data.icon.sprite = "stretched:session/portraits/" + data.item.Icon;
 		setPanelObjectPosition(data.button, data.i, data.rowLength);
 		return true;
@@ -1323,7 +1328,12 @@ g_SelectionPanels.TrainingGroups = {
 	"conflictsWith": [],
 	"getItems": function()
 	{
-		return getAllTrainableGroupsFromSelection();
+		let groups =  getAllTrainableGroupsFromSelection();
+		if (!g_selectedTrainingGroup && groups.length) {
+			g_selectedTrainingGroup = groups[0].id;
+			g_allTrainableEntities = undefined;
+		}
+		return groups;
 	},
 	"rowLength": 10,
 	"setupButton" : function(data) {
@@ -1333,7 +1343,7 @@ g_SelectionPanels.TrainingGroups = {
 			g_allTrainableEntities = undefined;
 		};
 		
-		data.button.tooltip = data.item.Name + "\n" + data.item.Tooltip;
+		data.button.tooltip = "[font=\"sans-bold-16\"]" + data.item.Name + "[/font] \n" + data.item.Tooltip;
 		data.icon.sprite = "stretched:session/portraits/" + data.item.Icon;
 		setPanelObjectPosition(data.button, data.i, data.rowLength);
 		return true;
@@ -1350,8 +1360,17 @@ g_SelectionPanels.Training = {
 	{
 		if (!g_selectedTrainingGroup)
 			return [];
-		
-		return getAllTrainableEntitiesFromSelection(g_selectedTrainingGroup);
+		let ents = getAllTrainableEntitiesFromSelection(g_selectedTrainingGroup);
+		if (!ents || !ents.length) {
+			g_allTrainableGroups = undefined;
+			let groups =  getAllTrainableGroupsFromSelection();
+			if (groups.length) {
+				g_selectedTrainingGroup = groups[0].id;
+				g_allTrainableEntities = undefined;
+			}
+			return getAllTrainableEntitiesFromSelection(g_selectedTrainingGroup);
+		}
+		return ents;
 	},
 	"setupButton": function(data)
 	{

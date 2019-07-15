@@ -7,6 +7,6 @@
 		"rp": "Research"
 	},
 	"truePrice": 500,
-	"properties": [],
+	"properties": ["topPanel"],
 	"aiAnalysisInfluenceGroup": "ignore"
 }

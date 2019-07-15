@@ -34,20 +34,8 @@
   <Builder>
     <Rate>1.0</Rate>
 	<Groups>
-		<Production>
-			<GenericName>Economic</GenericName>
-			<Icon>structures/farmstead.png</Icon>
-			<Tooltip>Economic buildings</Tooltip>
-			<Entities datatype="tokens">
-				structures/{civ}_corral
-				structures/{civ}_storehouse
-				structures/{civ}_farmstead
-				structures/{civ}_field_empty
-				structures/{civ}_dock
-			</Entities>
-		</Production>
-		<Town>
-			<GenericName>Town</GenericName>
+		<A>
+			<GenericName>Civic</GenericName>
 			<Icon>structures/house.png</Icon>
 			<Tooltip>Town buildings</Tooltip>
 			<Entities datatype="tokens">
@@ -58,9 +46,21 @@
 				structures/{civ}_wonder
 				structures/{civ}_theatron
 			</Entities>
-		</Town>
-		<Army>
-			<GenericName>Army</GenericName>
+		</A>
+		<B>
+			<GenericName>Economic</GenericName>
+			<Icon>structures/farmstead.png</Icon>
+			<Tooltip>Economic buildings</Tooltip>
+			<Entities datatype="tokens">
+				structures/{civ}_corral
+				structures/{civ}_storehouse
+				structures/{civ}_farmstead
+				structures/{civ}_field_empty
+				structures/{civ}_dock
+			</Entities>
+		</B>
+		<C>
+			<GenericName>Military</GenericName>
 			<Icon>structures/barracks.png</Icon>
 			<Tooltip>Buildings to train soldiers</Tooltip>
 			<Entities datatype="tokens">
@@ -75,8 +75,8 @@
 				structures/{civ}_prytaneion
 				structures/{civ}_royal_stoa
 			</Entities>
-		</Army>
-		<Defense>
+		</C>
+		<D>
 			<GenericName>Defense</GenericName>
 			<Icon>structures/defense_tower.png</Icon>
 			<Tooltip>Buildings to build defense</Tooltip>
@@ -88,7 +88,7 @@
 				structures/{civ}_wallset_stone
 				structures/{civ}_fortress
 			</Entities>
-		</Defense>
+		</D>
 	</Groups>
   </Builder>
   <Consumer>

@@ -7,6 +7,6 @@
 		"grain": "Grain"
 	},
 	"truePrice": 400,
-	"properties": ["barterable", "tradable", "tributable"],
+	"properties": ["barterable", "tradable", "tributable", "leftPanel"],
 	"aiAnalysisInfluenceGroup": "abundant"
 }

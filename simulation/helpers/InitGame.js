@@ -51,6 +51,7 @@ function InitGame(settings)
 	{
 		let cmpPlayer = QueryPlayerIDInterface(i);
 		cmpPlayer.SetCheatsEnabled(!!settings.CheatsEnabled);
+		/*
 		if (settings.PlayerData[i] && settings.PlayerData[i].AI && settings.PlayerData[i].AI != "")
 		{
 			let AIDiff = +settings.PlayerData[i].AIDiff;
@@ -62,6 +63,7 @@ function InitGame(settings)
 			cmpPlayer.SetTradeRateMultiplier(rate[AIDiff]);
 			cmpPlayer.SetTimeMultiplier(time[AIDiff]);
 		}
+		*/
 		if (settings.PopulationCap)
 			cmpPlayer.SetMaxPopulation(settings.PopulationCap);
 

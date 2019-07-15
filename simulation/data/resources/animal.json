@@ -8,6 +8,6 @@
 		"milk": "Milk"
 	},
 	"truePrice": 300,
-	"properties": ["barterable", "tradable", "tributable"],
+	"properties": ["barterable", "tradable", "tributable", "leftPanel"],
 	"aiAnalysisInfluenceGroup": "ignore"
 }

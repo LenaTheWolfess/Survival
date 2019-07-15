@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<object size="0 0 100% 100%" name="resourceSecondCounts" hidden = "false">
+	<repeat count="10">
+		<object name="resourceSecond[n]" size="0 0 89 100%" type="image" style="resourceCounter" tooltip_style="sessionToolTipBold">
+			<object size="0 -2 40 38" type="image" name="resourceSecond[n]_icon" ghost="true"/>
+			<object size="34 -2 100%-2 38" type="text" style="resourceText" name="resourceSecond[n]_count"/>
+			<action on="Press">
+				saveSettingAndWriteToUserConfig("gui.session.respoptooltipsort", (+Engine.ConfigDB_GetValue("user", "gui.session.respoptooltipsort") + 2) % 3 - 1);
+				updatePlayerDisplay();
+			</action>
+		</object>
+	</repeat>
+</object>

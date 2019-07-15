@@ -121,13 +121,13 @@
 		</object>
 
 		<!-- Formation Detail Panel -->
-		<object name="selectionFormation"
+		<object name="resourcesPanel"
 			type="image"
 			size="15% 70% 30% 100%"
 			hidden="false"
 			sprite="selectionDetailsPanel"
 			>
-			<include directory="gui/session/selection_panels_formation/"/>
+			<include directory="gui/session/resources/"/>
 		</object>
 		<!-- Supplemental Details Panel (Left of Selection Details) -->
 		<object

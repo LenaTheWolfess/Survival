@@ -2,12 +2,12 @@
 	"code": "stone",
 	"name": "Stone",
 	"description": "Mine from rocks, stone quarries or ruins.",
-	"order": 3,
+	"order": 4,
 	"subtypes": {
 		"rock": "Rock",
 		"ruins": "Ruins"
 	},
 	"truePrice": 150,
-	"properties": ["barterable", "tradable", "tributable"],
+	"properties": ["barterable", "tradable", "tributable", "topPanel"],
 	"aiAnalysisInfluenceGroup": "sparse"
 }

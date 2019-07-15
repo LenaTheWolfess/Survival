@@ -2,11 +2,11 @@
 	"code": "metal",
 	"name": "Metal",
 	"description": "Mine from metal mines or quarries.",
-	"order": 4,
+	"order": 5,
 	"subtypes": {
 		"ore": "Ore"
 	},
 	"truePrice": 400,
-	"properties": ["barterable", "tradable", "tributable"],
+	"properties": ["barterable", "tradable", "tributable", "topPanel"],
 	"aiAnalysisInfluenceGroup": "sparse"
 }

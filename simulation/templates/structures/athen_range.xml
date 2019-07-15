@@ -24,16 +24,16 @@
 		</Archer>
 	</Groups>
     <Technologies datatype="tokens">
-      javelins
       archery
+      javelins
       slings
       athen_champion_archer
+      athen_archer_a
+      athen_archer_e
       athen_javelin_a
       athen_javelin_e
       athen_slinger_a
       athen_slinger_e
-      athen_archer_a
-      athen_archer_e
     </Technologies>
   </ProductionQueue>
   <VisualActor>

@@ -19,6 +19,16 @@
   <ProductionQueue>
 	<BatchTimeModifier>1.0</BatchTimeModifier>
 	<Groups>
+		<Archer>
+			<GenericName>Archers</GenericName>
+			<Icon>technologies/arrow.png</Icon>
+			<Tooltip>Choose among archers</Tooltip>
+			<Entities datatype="tokens">
+			  units/{civ}_infantry_archer_b
+			  units/{civ}_infantry_archer_a
+			  units/{civ}_infantry_archer_e
+			</Entities>
+		</Archer>
 		<Javelin>
 			<GenericName>Javelinist</GenericName>
 			<Icon>technologies/javelin_thong.png</Icon>
@@ -39,16 +49,6 @@
 			  units/{civ}_infantry_slinger_e
 			</Entities>
 		</Slinger>
-		<Archer>
-			<GenericName>Archers</GenericName>
-			<Icon>technologies/arrow.png</Icon>
-			<Tooltip>Choose among archers</Tooltip>
-			<Entities datatype="tokens">
-			  units/{civ}_infantry_archer_b
-			  units/{civ}_infantry_archer_a
-			  units/{civ}_infantry_archer_e
-			</Entities>
-		</Archer>
 	</Groups>
   </ProductionQueue>
   <Sound>

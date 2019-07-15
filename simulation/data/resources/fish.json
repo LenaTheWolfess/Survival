@@ -7,6 +7,6 @@
 		"fish": "Fish"
 	},
 	"truePrice": 200,
-	"properties": ["barterable", "tradable", "tributable"],
+	"properties": ["barterable", "tradable", "tributable", "leftPanel"],
 	"aiAnalysisInfluenceGroup": "abundant"
 }

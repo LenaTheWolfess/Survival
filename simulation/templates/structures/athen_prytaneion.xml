@@ -41,7 +41,7 @@
 	  <Hero>
 	    <GenericName>Heroes</GenericName>
 		<Tooltip>Choose among heroes</Tooltip>
-		<Icon>technologies/hero_phase.png</Icon>
+		<Icon>technologies/hero_face.png</Icon>
 		<Entities datatype="tokens">
           units/athen_hero_themistocles
           units/athen_hero_pericles

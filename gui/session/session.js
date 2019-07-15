@@ -686,13 +686,13 @@ function updateTopPanel()
 	followPlayerLabel.hidden = Engine.GetTextWidth(followPlayerLabel.font, followPlayerLabel.caption + "  ") +
 		followPlayerLabel.getComputedSize().left > viewPlayer.getComputedSize().left;
 
-	let resCodes = g_ResourceData.GetCodes();
+	let resCodes = g_ResourceData.GetCodes("topPanel");
 	let r = 0;
 	for (let res of resCodes)
 	{
 		if (!Engine.GetGUIObjectByName("resource[" + r + "]"))
 		{
-			////warn("Current GUI limits prevent displaying more than " + r + " resources in the top panel!");
+			//warn("Current GUI limits prevent displaying more than " + r + " resources in the top panel!");
 			break;
 		}
 		Engine.GetGUIObjectByName("resource[" + r + "]_icon").sprite = "stretched:session/icons/resources/" + res + ".png";
@@ -700,20 +700,29 @@ function updateTopPanel()
 		++r;
 	}
 	
-	let buttonSideLength = Engine.GetGUIObjectByName("resource[0]").size.right;
-	for (let b = 0; b < r; ++b) {
-		let button = Engine.GetGUIObjectByName("resource[" + b + "]");
-		let size = button.size;
-		size.top = 42 + (4 + 32) * b;
-		size.bottom = size.top + 32;
-		button.size = size;
+	let rs = 0;
+	let resCodesSecond = g_ResourceData.GetCodes("leftPanel");
+	let ln = resCodesSecond.length;
+	for (let res of resCodesSecond)
+	{
+		if (!Engine.GetGUIObjectByName("resourceSecond[" + rs + "]"))
+		{
+			//warn("Current GUI limits prevent displaying more than " + r + " resources in the top panel!");
+			break;
+		}
+		Engine.GetGUIObjectByName("resourceSecond[" + rs + "]_icon").sprite = "stretched:session/icons/resources/" + res + ".png";
+		let rOb = Engine.GetGUIObjectByName("resourceSecond[" + rs + "]");
+		rOb.hidden = !isPlayer;
+		rOb.size = "2% 4+" + (32*rs) + " 100% 4+"+ (32+(32*rs));
+		++rs;
 	}
-	
+	horizontallySpaceObjects("resourceCounts", 5);
 	hideRemaining("resourceCounts", r);
+	hideRemaining("resourceSecondCounts", rs);
 	
 	let resPop = Engine.GetGUIObjectByName("population");
 	let resPopSize = resPop.size;
-	resPopSize.left = Engine.GetGUIObjectByName("resource[" + (r - 1) + "]").size.left;
+	resPopSize.left = Engine.GetGUIObjectByName("resource[" + (r - 1) + "]").size.right;
 	resPop.size = resPopSize;
 
 	Engine.GetGUIObjectByName("population").hidden = !isPlayer;
@@ -1415,7 +1424,7 @@ function updatePlayerDisplay()
 		"order": tooltipSort == 0 ? translate("Unordered") : tooltipSort == 1 ? translate("Descending") : translate("Ascending")
 	});
 
-	let resCodes = g_ResourceData.GetCodes();
+	let resCodes = g_ResourceData.GetCodes("topPanel");
 	for (let r = 0; r < resCodes.length; ++r)
 	{
 		let resourceObj = Engine.GetGUIObjectByName("resource[" + r + "]");
@@ -1436,6 +1445,29 @@ function updatePlayerDisplay()
 		resourceObj.tooltip = tooltip;
 
 		Engine.GetGUIObjectByName("resource[" + r + "]_count").caption = Math.floor(viewedPlayerState.resourceCounts[res]);
+	}
+	
+	let resCodesSecond = g_ResourceData.GetCodes("leftPanel");
+	for (let r = 0; r < resCodesSecond.length; ++r)
+	{
+		let resourceObj = Engine.GetGUIObjectByName("resourceSecond[" + r + "]");
+		if (!resourceObj)
+			break;
+
+		let res = resCodesSecond[r];
+
+		let tooltip = '[font="' + g_ResourceTitleFont + '"]' +
+			resourceNameFirstWord(res) + '[/font]';
+
+		let descr = g_ResourceData.GetResource(res).description;
+		if (descr)
+			tooltip += "\n" + translate(descr);
+
+		tooltip += orderHotkeyTooltip + getAllyStatTooltip(res, viewablePlayerStates, tooltipSort);
+
+		resourceObj.tooltip = tooltip;
+
+		Engine.GetGUIObjectByName("resourceSecond[" + r + "]_count").caption = Math.floor(viewedPlayerState.resourceCounts[res]);
 	}
 
 	Engine.GetGUIObjectByName("resourcePop").caption = sprintf(translate("%(popCount)s/%(popLimit)s"), viewedPlayerState);
