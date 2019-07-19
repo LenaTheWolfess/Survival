@@ -50,6 +50,12 @@
 				<Count>10</Count>
 			</Fruit>
 	    </Or>
+		<And>
+		  <Water>
+		    <Code>water</Code>
+			<Count>1</Count>
+		  </Water>
+		</And>
 		<Punish>2</Punish>
 	  </Food>
 	  <Horse>
@@ -81,7 +87,7 @@
   </Health>
   <Identity>
     <Classes datatype="tokens">CitizenSoldier Human Organic</Classes>
-    <VisibleClasses datatype="tokens">Cavalry Soldier</VisibleClasses>
+    <VisibleClasses datatype="tokens">Cavalry Soldier Citizen</VisibleClasses>
     <GenericName>Cavalry</GenericName>
     <Rank>Basic</Rank>
     <Formations datatype="tokens">

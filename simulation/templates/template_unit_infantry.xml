@@ -54,7 +54,7 @@
   <Identity>
     <GenericName>Infantry</GenericName>
     <Classes datatype="tokens">CitizenSoldier Human Organic</Classes>
-    <VisibleClasses datatype="tokens">Infantry Soldier</VisibleClasses>
+    <VisibleClasses datatype="tokens">Infantry Soldier Citizen</VisibleClasses>
     <Rank>Basic</Rank>
   </Identity>
   <Consumer>
@@ -80,6 +80,12 @@
 			</Fruit>
 	    </Or>
 		<Punish>2</Punish>
+		<And>
+		  <Water>
+		    <Code>water</Code>
+			<Count>1</Count>
+		  </Water>
+		</And>
 	  </Food>
 	</Groups>
   </Consumer>

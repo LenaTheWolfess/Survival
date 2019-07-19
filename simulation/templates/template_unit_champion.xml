@@ -46,6 +46,12 @@
 				<Count>20</Count>
 			</Fruit>
 	    </Or>
+		<And>
+		  <Water>
+		    <Code>water</Code>
+			<Count>1</Count>
+		  </Water>
+		</And>
 		<Punish>2</Punish>
 	  </Food>
 	</Groups>
