@@ -5,6 +5,6 @@
     <SpecificName>Oîkos</SpecificName>
   </Identity>
   <VisualActor>
-    <Actor>structures/hellenes/house.xml</Actor>
+    <Actor>structures/athenians/house.xml</Actor>
   </VisualActor>
 </Entity>

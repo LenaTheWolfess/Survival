@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_structure_resource">
+  <Auras datatype="tokens">
+    resources/provide_water
+  </Auras>
+  <Armour>
+    <Hack>15</Hack>
+    <Pierce>40</Pierce>
+    <Crush>5</Crush>
+    <Missle>20</Missle>
+  </Armour>
+  <BuildRestrictions>
+    <Category>Well</Category>
+    <Territory>neutral own</Territory>
+    <Distance>
+      <FromClass>Well</FromClass>
+      <MinDistance>40</MinDistance>
+    </Distance>
+  </BuildRestrictions>
+  <Cost>
+    <BuildTime>50</BuildTime>
+    <Resources>
+      <stone>100</stone>
+      <wood>10</wood>
+    </Resources>
+  </Cost>
+  <Footprint>
+    <Square width="9.0" depth="9.0"/>
+    <Height>5.0</Height>
+  </Footprint>
+  <Health>
+    <Max>250</Max>
+  </Health>
+  <Identity>
+    <GenericName>Well</GenericName>
+    <VisibleClasses datatype="tokens">Well</VisibleClasses>
+    <Tooltip>Provides water</Tooltip>
+    <Icon>structures/field.png</Icon>
+  </Identity>
+  <Loot>
+    <stone>50</stone>
+    <wood>5</wood>
+  </Loot>
+  <Minimap>
+    <Color r="119" g="82" b="46"/>
+  </Minimap>
+  <Obstruction>
+    <Static width="22.0" depth="22.0"/>
+  </Obstruction>
+  <ProductionQueue disable=""/>
+  <RallyPoint disable=""/>
+  <ResourceSupply disable=""/>
+  <Sound>
+    <SoundGroups>
+      <select>interface/select/building/sel_field.xml</select>
+      <constructed>interface/complete/building/complete_field.xml</constructed>
+      <death>attack/destruction/building_collapse_large.xml</death>
+    </SoundGroups>
+  </Sound>
+  <StatusBars>
+    <HeightOffset>8.0</HeightOffset>
+  </StatusBars>
+  <Vision>
+    <Range>0</Range>
+  </Vision>
+  <VisualActor>
+    <Actor>structures/athenians/well_1_b.xml</Actor>
+    <FoundationActor>structures/fndn_1x1.xml</FoundationActor>
+    <SelectionShape>
+      <Footprint/>
+    </SelectionShape>
+  </VisualActor>
+</Entity>

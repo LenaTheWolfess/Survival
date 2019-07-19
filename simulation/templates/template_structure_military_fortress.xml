@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_structure_military">
   <AlertRaiser>
-    <List datatype="tokens">Citizen</List>
+    <List datatype="tokens">Citizen Slave</List>
     <RaiseAlertRange>140</RaiseAlertRange>
     <EndOfAlertRange>190</EndOfAlertRange>
     <SearchRange>100</SearchRange>
@@ -37,7 +37,6 @@
       </RangeOverlay>
     </Ranged>
   </Attack>
-  <ProductionQueue disable = ""/>
   <BuildingAI>
     <DefaultArrowCount>0</DefaultArrowCount>
     <GarrisonArrowMultiplier>1</GarrisonArrowMultiplier>
@@ -55,7 +54,7 @@
     <RegenRate>10.0</RegenRate>
   </Capturable>
   <Cost>
-    <PopulationBonus>30</PopulationBonus>
+    <PopulationBonus>0</PopulationBonus>
     <BuildTime>500</BuildTime>
     <Resources>
       <wood>0</wood>
@@ -67,7 +66,10 @@
     <Height>8.0</Height>
   </Footprint>
   <GarrisonHolder>
-    <Max>20</Max>
+    <Training>
+      <ClassesRequired datatype="tokens">Citizen+Male</ClassesRequired>
+    </Training>
+    <Max>80</Max>
     <MaxAttackers>20</MaxAttackers>
     <EjectHealth>0.075</EjectHealth>
     <EjectClassesOnDestroy datatype="tokens">Unit</EjectClassesOnDestroy>
@@ -95,6 +97,33 @@
   <Obstruction>
     <Static width="25.0" depth="25.0"/>
   </Obstruction>
+  <ProductionQueue>
+    <BatchTimeModifier>0.8</BatchTimeModifier>
+	<Groups>
+		<Af>
+			<GenericName>Melee infantry</GenericName>
+			<Icon>technologies/sword.png</Icon>
+			<Tooltip>Choose among melee infantry</Tooltip>
+			<Entities datatype="tokens">
+			  units/{civ}_infantry_swordman_b
+			  units/{civ}_infantry_spearman_b
+			  units/{civ}_infantry_spearman_hoplite_b
+			  units/{civ}_infantry_pikeman_b
+			  units/{civ}_infantry_axeman_b
+			</Entities>
+		</Af>
+		<Bf>
+			<GenericName>Ranged infantry</GenericName>
+			<Icon>structures/range.png</Icon>
+			<Tooltip>Choose among ranged infantry</Tooltip>
+			<Entities datatype="tokens">
+			  units/{civ}_infantry_archer_b
+			  units/{civ}_infantry_javelinist_b
+			  units/{civ}_infantry_slinger_b
+			</Entities>
+		</Bf>
+	</Groups>
+  </ProductionQueue>
   <Sound>
     <SoundGroups>
       <select>interface/select/building/sel_fortress.xml</select>

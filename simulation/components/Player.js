@@ -209,7 +209,7 @@ Player.prototype.AddPopulationBonuses = function(num)
 
 Player.prototype.GetPopulationLimit = function()
 {
-	return Math.min(this.GetMaxPopulation(), this.popBonuses);
+	return this.GetMaxPopulation();
 };
 
 Player.prototype.SetMaxPopulation = function(max)
@@ -333,15 +333,15 @@ Player.prototype.UseResource = function(type, amount)
  */
 Player.prototype.AddResources = function(amounts)
 {
-	for (var type in amounts)
+	for (let type in amounts)
 		this.resourceCount[type] += +amounts[type];
 };
 
 Player.prototype.GetNeededResources = function(amounts)
 {
 	// Check if we can afford it all
-	var amountsNeeded = {};
-	for (var type in amounts)
+	let amountsNeeded = {};
+	for (let type in amounts)
 		if (this.resourceCount[type] != undefined && amounts[type] > this.resourceCount[type])
 			amountsNeeded[type] = amounts[type] - Math.floor(this.resourceCount[type]);
 

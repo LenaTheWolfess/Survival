@@ -152,6 +152,10 @@ function selectCiv(civCode)
 		let newProdUnits = {};
 		for (let prod of structInfo.production.units)
 		{
+			if (!g_ParsedData.units[prod]) {
+				error("selectCiv : g_ParsedData.units[" + prod + "] is undefined");
+				continue;
+			}
 			let phase = getPhaseOfTemplate(g_ParsedData.units[prod]);
 			if (phase === false)
 				continue;

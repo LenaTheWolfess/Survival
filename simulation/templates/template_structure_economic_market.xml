@@ -56,11 +56,13 @@
     </Technologies>
 	<Groups>
 		<Merchants>
-			<GenericName>Merchants</GenericName>
+			<GenericName>All</GenericName>
 			<Icon>units/hele_support_trader.png</Icon>
-			<Tooltip>Choose among merchants</Tooltip>
+			<Tooltip>Choose among units</Tooltip>
 			<Entities datatype="tokens">
 				units/{civ}_support_trader
+			    units/{civ}_support_slave_male
+			    units/{civ}_support_slave_female
 			</Entities>
 		</Merchants>
 	</Groups>

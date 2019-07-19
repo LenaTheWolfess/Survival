@@ -35,31 +35,44 @@
     <Rate>1.0</Rate>
 	<Groups>
 		<A>
+			<GenericName>Housing</GenericName>
+			<Icon>structures/house.png</Icon>
+			<Tooltip>Different types of houses</Tooltip>
+			<Entities datatype="tokens">
+				structures/{civ}_house_b
+				structures/{civ}_house_b_b
+				structures/{civ}_house_b_a
+				structures/{civ}_house_e
+				structures/{civ}_house_e_b
+				structures/{civ}_house_e_a
+			</Entities>
+		</A>
+		<B>
 			<GenericName>Civic</GenericName>
 			<Icon>structures/house.png</Icon>
 			<Tooltip>Town buildings</Tooltip>
 			<Entities datatype="tokens">
-				structures/{civ}_house
 				structures/{civ}_market
 				structures/{civ}_temple
 				structures/{civ}_civil_centre
 				structures/{civ}_wonder
 				structures/{civ}_theatron
 			</Entities>
-		</A>
-		<B>
+		</B>
+		<C>
 			<GenericName>Economic</GenericName>
 			<Icon>structures/farmstead.png</Icon>
 			<Tooltip>Economic buildings</Tooltip>
 			<Entities datatype="tokens">
+				structures/{civ}_well
 				structures/{civ}_corral
 				structures/{civ}_storehouse
 				structures/{civ}_farmstead
 				structures/{civ}_field_empty
 				structures/{civ}_dock
 			</Entities>
-		</B>
-		<C>
+		</C>
+		<D>
 			<GenericName>Military</GenericName>
 			<Icon>structures/barracks.png</Icon>
 			<Tooltip>Buildings to train soldiers</Tooltip>
@@ -75,8 +88,8 @@
 				structures/{civ}_prytaneion
 				structures/{civ}_royal_stoa
 			</Entities>
-		</C>
-		<D>
+		</D>
+		<E>
 			<GenericName>Defense</GenericName>
 			<Icon>structures/defense_tower.png</Icon>
 			<Tooltip>Buildings to build defense</Tooltip>
@@ -88,7 +101,7 @@
 				structures/{civ}_wallset_stone
 				structures/{civ}_fortress
 			</Entities>
-		</D>
+		</E>
 	</Groups>
   </Builder>
   <Consumer>
@@ -113,6 +126,12 @@
 				<Count>10</Count>
 			</Fruit>
 	    </Or>
+		<And>
+		  <Water>
+		    <Code>water</Code>
+			<Count>1</Count>
+		  </Water>
+		</And>
 		<Punish>2</Punish>
 	  </Food>
 	</Groups>

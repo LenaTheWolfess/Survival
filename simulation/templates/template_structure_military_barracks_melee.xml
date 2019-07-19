@@ -4,10 +4,10 @@
     <Train> 
       <TrainList datatype="tokens">Melee+Infantry</TrainList>
     </Train>
-    <List datatype="tokens">Infantry</List>
+    <List datatype="tokens">Infantry Citizen+Male</List>
   </GarrisonHolder>
   <Cost>
-    <PopulationBonus>15</PopulationBonus>
+    <PopulationBonus>0</PopulationBonus>
   </Cost>
   <Identity>
     <GenericName>Barracks</GenericName>

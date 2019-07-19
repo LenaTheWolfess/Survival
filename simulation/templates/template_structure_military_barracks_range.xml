@@ -41,7 +41,7 @@
 		</Javelin>
 		<Slinger>
 			<GenericName>Slingers</GenericName>
-			<Icon>units/athen_infantry_slinger.png</Icon>
+			<Icon>technologies/sling.png</Icon>
 			<Tooltip>Choose among slingers</Tooltip>
 			<Entities datatype="tokens">
 			  units/{civ}_infantry_slinger_b

@@ -1,1 +1,10 @@
 art/textures/WIP
+art/actors/structures/athenians/wall*
+art/textures/skins/structural/ao
+art/meshes/structural/athen_wall_tower.png
+art/meshes/structural/wall_test*
+art/meshes/structural/athen
+simulation/helpers/Walls.js
+simulation/templates/other/wallset_palisade.xml
+simulation/templates/structural/athen_wall*
+maps/backup

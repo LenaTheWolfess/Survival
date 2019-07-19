@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<actor version="1">
+  <castshadow/>
+  <group>
+    <variant name="base" frequency="1">
+      <mesh>structural/hele_house_b.dae</mesh>
+      <props>
+        <prop actor="props/structures/hellenes/house_b_shields.xml" attachpoint="root"/>
+        <prop actor="props/structures/hellenes/house_b_nature.xml" attachpoint="root"/>
+        <prop actor="props/structures/hellenes/house_b_struct.xml" attachpoint="root"/>
+        <prop actor="props/structures/hellenes/house_b_props_a.xml" attachpoint="root"/>
+        <prop actor="props/structures/hellenes/house_b_decor.xml" attachpoint="root"/>
+        <prop actor="props/structures/decals/dirt_small.xml" attachpoint="root"/>
+		<prop actor="props/structures/athenians/fence_stone_b.xml" attachpoint="root"/>
+      </props>
+      <textures>
+        <texture file="structural/hele_struct_b.dds" name="baseTex"/>
+        <texture file="structural/hele_struct_b_norm.png" name="normTex"/>
+	    <texture file="structural/hele_struct_b_spec.png" name="specTex"/>
+		<texture file="structural/ao/hele_house_b.png" name="aoTex"/>
+      </textures>
+    </variant>
+  </group>
+  <group>
+    <variant name="alive" frequency="1"/>
+    <variant name="death">
+      <props>
+        <prop actor="particle/destruction_smoke_small.xml" attachpoint="dust"/>
+        <prop actor="particle/destruction_dust_small.xml" attachpoint="dust"/>
+        <prop actor="particle/destruction_dust_small_gray.xml" attachpoint="dust"/>
+      </props>
+    </variant>
+  </group>
+  <material>player_trans_ao_parallax_spec.xml</material>
+</actor>

@@ -14,6 +14,9 @@
     <Height>12.0</Height>
   </Footprint>
   <GarrisonHolder>
+    <Training>
+      <ClassesRequired datatype="tokens">Citizen+Male</ClassesRequired>
+    </Training>
     <Train> 
       <Points>10</Points>
     </Train>

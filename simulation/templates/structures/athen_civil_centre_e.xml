@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="structures/athen_civil_centre_a">
+  <Identity>
+    <VisibleClasses datatype="tokens">CityCivilCentre</VisibleClasses>
+  </Identity>
+  <Upgrade>
+    <CC>
+      <Entity>structures/athen_civil_centre_c</Entity>
+    </CC>
+  </Upgrade>
+  <VisualActor>
+    <Actor>structures/athenians/civil_centre_e.xml</Actor>
+  </VisualActor>
+</Entity>

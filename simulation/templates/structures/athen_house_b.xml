@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="structures/athen_house">
+  <Identity>
+    <RequiredTechnology>phase_village</RequiredTechnology>
+  </Identity>
+  <Footprint>
+    <Square width="16.0" depth="16.0"/>
+  </Footprint>
+  <Obstruction>
+    <Static width="14.0" depth="14.0"/>
+  </Obstruction>
+  <Upgrade>
+    <fence>
+      <Entity>structures/athen_house_b_b</Entity>
+      <Tooltip>Build wooden fence</Tooltip>
+      <RequiredTechnology>phase_town</RequiredTechnology>
+      <Cost>
+        <wood>20</wood>
+        <stone>0</stone>
+      </Cost>
+      <Time>10</Time>
+    </fence>
+    <fenceStone>
+      <Entity>structures/athen_house_b_a</Entity>
+      <Tooltip>Build stone fence</Tooltip>
+      <RequiredTechnology>phase_city</RequiredTechnology>
+      <Cost>
+        <wood>0</wood>
+        <stone>20</stone>
+      </Cost>
+      <Time>10</Time>
+    </fenceStone>
+  </Upgrade>
+  <VisualActor>
+    <Actor>structures/athenians/house_b.xml</Actor>
+  </VisualActor>
+</Entity>

@@ -548,8 +548,8 @@ ProductionQueue.prototype.RemoveBatch = function(id)
  */
 ProductionQueue.prototype.GetQueue = function()
 {
-	var out = [];
-	for (var item of this.queue)
+	let out = [];
+	for (let item of this.queue)
 	{
 		out.push({
 			"id": item.id,
@@ -557,6 +557,7 @@ ProductionQueue.prototype.GetQueue = function()
 			"technologyTemplate": item.technologyTemplate,
 			"count": item.count,
 			"neededSlots": item.neededSlots,
+			"neededUnits": item.neededUnits,
 			"progress": 1 - (item.timeRemaining / (item.timeTotal || 1)),
 			"timeRemaining": item.timeRemaining,
 			"metadata": item.metadata,
@@ -817,7 +818,13 @@ ProductionQueue.prototype.ProgressTimeout = function(data)
 	// with items that take fractions of a second)
 	let time = g_ProgressInterval;
 	let cmpPlayer = QueryOwnerInterface(this.entity);
-
+	let cmpGarrisonHolder = Engine.QueryInterface(this.entity, IID_GarrisonHolder);
+	let hasUnits = 0;
+	let needsUnits = false;
+	if (cmpGarrisonHolder && cmpGarrisonHolder.NeedUnits()) {
+		needsUnits = true;
+		hasUnits = cmpGarrisonHolder.HasUnits();
+	}
 	while (time > 0 && this.queue.length)
 	{
 		let item = this.queue[0];
@@ -827,22 +834,34 @@ ProductionQueue.prototype.ProgressTimeout = function(data)
 			if (item.unitTemplate)
 			{
 				// If something change population cost
-				var template = Engine.QueryInterface(SYSTEM_ENTITY, IID_TemplateManager).GetTemplate(item.unitTemplate);
+				let template = Engine.QueryInterface(SYSTEM_ENTITY, IID_TemplateManager).GetTemplate(item.unitTemplate);
 				item.population = ApplyValueModificationsToTemplate("Cost/Population", +template.Cost.Population, item.player, template);
 
-				// Batch's training hasn't started yet.
-				// Try to reserve the necessary population slots
-				item.neededSlots = cmpPlayer.TryReservePopulationSlots(item.population * item.count);
-				if (item.neededSlots)
-				{
-					// Not enough slots available - don't train this batch now
-					// (we'll try again on the next timeout)
-
-					// Set flag that training is blocked
-					cmpPlayer.BlockTraining();
-					break;
+				if (needsUnits) {
+					item.neededunits = item.population*item.count - hasUnits;
+					if (hasUnits < item.population*item.count) {
+						cmpPlayer.BlockTraining();
+						break;
+					}
+					hasUnits--;
+					// We will convert that unit so lock it
+					if (item.population)
+						cmpGarrisonHolder.LockUnits(item.population * item.count);
+					item.neededSlots = 0;
 				}
-
+				else {					
+					// Batch's training hasn't started yet.
+					// Try to reserve the necessary population slots
+					item.neededSlots = cmpPlayer.TryReservePopulationSlots(item.population * item.count);
+					if (item.neededSlots)
+					{
+						// Not enough slots available - don't train this batch now
+						// (we'll try again on the next timeout)
+						// Set flag that training is blocked
+						cmpPlayer.BlockTraining();
+						break;
+					}
+				}
 				// Unset flag that training is blocked
 				cmpPlayer.UnBlockTraining();
 			}
@@ -875,6 +894,10 @@ ProductionQueue.prototype.ProgressTimeout = function(data)
 			{
 				// All entities spawned, this batch finished
 				cmpPlayer.UnReservePopulationSlots(item.population * numSpawned);
+				if (needsUnits) {
+					cmpGarrisonHolder.UnlockUnits(item.population * numSpawned);
+					cmpGarrisonHolder.DeleteUnits(item.population * numSpawned);
+				}
 				time -= item.timeRemaining;
 				this.queue.shift();
 				// Unset flag that training is blocked
@@ -912,6 +935,10 @@ ProductionQueue.prototype.ProgressTimeout = function(data)
 				{
 					// Only partially finished
 					cmpPlayer.UnReservePopulationSlots(item.population * numSpawned);
+					if (needsUnits) {
+						cmpGarrisonHolder.UnlockUnits(item.population * numSpawned);
+						cmpGarrisonHolder.DeleteUnits(item.population * numSpawned);
+					}
 					item.count -= numSpawned;
 					Engine.PostMessage(this.entity, MT_ProductionQueueChanged, { });
 				}

@@ -2,6 +2,18 @@ function GarrisonHolder() {}
 
 GarrisonHolder.prototype.Schema =
 	"<optional>"+
+		"<element name='Training'>"+
+			"<interleave>"+
+				"<element name='ClassesRequired'>"+
+					"<attribute name='datatype'>" +
+						"<value>tokens</value>" +
+					"</attribute>" +
+					"<text/>" +
+				"</element>"+
+			"</interleave>"+
+		"</element>"+
+	"</optional>"+
+	"<optional>"+
 	  "<element name='FormationTake'>"+
 	     "<data type='boolean'/>"+
 	  "</element>"+
@@ -119,6 +131,8 @@ GarrisonHolder.prototype.Schema =
 GarrisonHolder.prototype.Init = function()
 {
 	// Garrisoned Units
+	this.hasUnits = 0;
+	this.lockedUnits = 0;
 	this.entities = [];
 	this.attackerEntities = [];
 	this.timer = undefined;
@@ -210,6 +224,14 @@ GarrisonHolder.prototype.GetTrainableClasses = function()
 	return [];
 };
 
+GarrisonHolder.prototype.GetTrainingClasses = function()
+{
+	if (this.template.Training && this.template.Training.ClassesRequired && this.template.Training.ClassesRequired._string)
+		return this.template.Training.ClassesRequired._string.split(/\s+/);
+
+	return [];
+};
+
 GarrisonHolder.prototype.GetTrainPoints = function()
 {
 	if (!this.template.Train)
@@ -271,6 +293,52 @@ GarrisonHolder.prototype.GetAttackPower = function()
 {
 	return this.attackerEntities.length;
 };
+
+GarrisonHolder.prototype.NeedUnits = function()
+{
+	return !!this.template.Training;
+}
+GarrisonHolder.prototype.LockUnits = function(count)
+{
+	this.lockedUnits += count;
+}
+GarrisonHolder.prototype.UnlockUnits = function(count)
+{
+	this.lockedUnits -= count;
+	if (this.lockedUnits < 0) {
+		error("GarrisonHolder.UnlockUnits(count) gives negative result = " + this.lockedUnits);
+		this.lockedUnits = 0;
+	}
+}
+GarrisonHolder.prototype.HasUnits = function()
+{
+	return this.hasUnits - this.lockedUnits;
+}
+
+GarrisonHolder.prototype.AddTrainingUnit = function(entity)
+{
+	let cmpIdentity = Engine.QueryInterface(entity, IID_Identity);
+	if (cmpIdentity && MatchesClassList(cmpIdentity.GetClassesList(), this.GetTrainingClasses()))
+		this.hasUnits++;
+}
+
+GarrisonHolder.prototype.RemoveTrainingUnit = function(entity, forced = false)
+{
+	let cmpIdentity = Engine.QueryInterface(entity, IID_Identity);
+	if (cmpIdentity && MatchesClassList(cmpIdentity.GetClassesList(), this.GetTrainingClasses())) {
+		if (this.lockedUnits < this.hasUnits) {
+			this.hasUnits--;
+			return true;
+		}
+		if (forced) {
+			this.hasUnits--;
+			this.lockedUnits--;
+			return true;
+		}
+		return false;
+	}
+	return true;
+}
 
 GarrisonHolder.prototype.GetMainAttacker = function()
 {
@@ -656,6 +724,7 @@ GarrisonHolder.prototype.PerformGarrison = function(entity)
 
 	// Actual garrisoning happens here
 	this.entities.push(entity);
+	this.AddTrainingUnit(entity);
 	this.UpdateGarrisonFlag();
 	let cmpUnitAI = Engine.QueryInterface(entity, IID_UnitAI);
 	if (cmpUnitAI) {
@@ -678,6 +747,23 @@ GarrisonHolder.prototype.PerformGarrison = function(entity)
 	Engine.PostMessage(this.entity, MT_GarrisonedUnitsChanged, { "added": [entity], "removed": [] });
 	return true;
 };
+
+GarrisonHolder.prototype.DeleteUnits = function(amount)
+{
+	let toDelete = [];
+	for (let ent of this.entities) {
+		if (!amount)
+			break;
+		let cmpIdentity = Engine.QueryInterface(ent, IID_Identity);
+		if (cmpIdentity && MatchesClassList(cmpIdentity.GetClassesList(), this.GetTrainingClasses())) {
+			toDelete.push(ent);
+			this.hasUnits--;
+			amount--;
+		}
+	}
+	for (let ent of toDelete)
+		Engine.DestroyEntity(ent);
+}
 
 /**
  * Simply eject the unit from the garrisoning entity without moving it
@@ -749,10 +835,11 @@ GarrisonHolder.prototype.Eject = function(entity, forced)
 	let cmpEntPosition = Engine.QueryInterface(entity, IID_Position);
 	let cmpEntUnitAI = Engine.QueryInterface(entity, IID_UnitAI);
 
+	let ents;
 	if (attacker)
-		var ents = this.visibleAttackPoints;
+		ents = this.visibleAttackPoints;
 	else 
-		var ents = this.visibleGarrisonPoints;
+		ents = this.visibleGarrisonPoints;
 	for (let vgp of ents)
 	{
 		if (vgp.entity != entity)
@@ -922,9 +1009,13 @@ GarrisonHolder.prototype.PerformEject = function(entities, forced)
 		if (this.Eject(entity, forced))
 		{
 			let cmpEntOwnership = Engine.QueryInterface(entity, IID_Ownership);
-			if (cmpOwnership && cmpEntOwnership && cmpOwnership.GetOwner() == cmpEntOwnership.GetOwner())
+			if (cmpOwnership && cmpEntOwnership && cmpOwnership.GetOwner() == cmpEntOwnership.GetOwner()) {
 		//	if (cmpEntOwnership && cmpEntOwnership.GetOwner() ==  g_ViewedPlayer)
-				ejectedEntities.push(entity);
+				if (this.RemoveTrainingUnit(entity, forced))
+					ejectedEntities.push(entity);
+				else
+					success = false;
+			}
 		}
 		else
 		{

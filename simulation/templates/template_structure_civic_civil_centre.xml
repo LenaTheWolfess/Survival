@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity parent="template_structure_civic">
   <AlertRaiser>
-    <List datatype="tokens">Citizen</List>
+    <List datatype="tokens">Citizen Slave</List>
     <RaiseAlertRange>140</RaiseAlertRange>
     <EndOfAlertRange>190</EndOfAlertRange>
     <SearchRange>100</SearchRange>
@@ -59,7 +59,7 @@
     <RegenRate>5.0</RegenRate>
   </Capturable>
   <Cost>
-    <PopulationBonus>20</PopulationBonus>
+    <PopulationBonus>0</PopulationBonus>
     <BuildTime>500</BuildTime>
     <Resources>
       <meat>0</meat>
@@ -73,7 +73,10 @@
     <Height>8.0</Height>
   </Footprint>
   <GarrisonHolder>
-    <Max>20</Max>
+    <Training>
+      <ClassesRequired datatype="tokens">Citizen+Male</ClassesRequired>
+    </Training>
+    <Max>40</Max>
     <EjectHealth>0.1</EjectHealth>
     <EjectClassesOnDestroy datatype="tokens">Unit</EjectClassesOnDestroy>
     <List datatype="tokens">Support Infantry Cavalry</List>
@@ -104,18 +107,28 @@
   <ProductionQueue>
     <BatchTimeModifier>0.8</BatchTimeModifier>
 	<Groups>
-		<Production>
-			<GenericName>All</GenericName>
-			<Icon>technologies/population.png</Icon>
-			<Tooltip>All units</Tooltip>
+		<Acc>
+			<GenericName>Melee infantry</GenericName>
+			<Icon>technologies/sword.png</Icon>
+			<Tooltip>Choose among melee infantry</Tooltip>
 			<Entities datatype="tokens">
-			  units/{civ}_support_female_citizen
-			  units/{civ}_support_male_citizen
-			  units/{civ}_support_slave_male
-			  units/{civ}_support_slave_female
-			  units/{civ}_cavalry_hunter
+			  units/{civ}_infantry_swordman_b
+			  units/{civ}_infantry_spearman_b
+			  units/{civ}_infantry_spearman_hoplite_b
+			  units/{civ}_infantry_pikeman_b
+			  units/{civ}_infantry_axeman_b
 			</Entities>
-		</Production>
+		</Acc>
+		<Bcc>
+			<GenericName>Ranged infantry</GenericName>
+			<Icon>structures/range.png</Icon>
+			<Tooltip>Choose among ranged infantry</Tooltip>
+			<Entities datatype="tokens">
+			  units/{civ}_infantry_archer_b
+			  units/{civ}_infantry_javelinist_b
+			  units/{civ}_infantry_slinger_b
+			</Entities>
+		</Bcc>
 	</Groups>
     <Technologies datatype="tokens">
       phase_town_{civ}
@@ -141,7 +154,7 @@
   </Sound>
   <TerritoryInfluence>
     <Root>true</Root>
-    <Radius>140</Radius>
+    <Radius>500</Radius>
     <Weight>10000</Weight>
   </TerritoryInfluence>
   <Vision>

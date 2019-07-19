@@ -10,9 +10,11 @@
 	"requirementsTooltip": "Unlocked in City Phase.",
 	"icon": "population.png",
 	"researchTime": 40,
-	"tooltip": "Houses +20% population cap bonus.",
+	"tooltip": "Houses +2 population cap bonus each.",
 	"modifications": [
-		{ "value": "Cost/PopulationBonus", "multiply": 1.2 }
+		{ "value": "Cost/PopulationBonus", "add": 2 },
+		{ "value": "GarrisonHolder/Max", "add": 2 },
+		{ "value": "Cost/Resources/wood", "add": 25 }
 	],
 	"affects": ["House"],
 	"soundComplete": "interface/alarm/alarm_upgradearmory.xml"

@@ -6,7 +6,7 @@
 	},
 	"description": "Advances from a small village to a bustling town.",
 	"cost": { "rp": 0, "wood": 0, "stone": 0, "metal": 0 },
-	"requirements": {"all": [{ "entity": { "class": "House", "number": 3 } }, { "entity": { "class": "Farmstead", "number": 1 } }, { "entity": { "class": "Citizen", "number": 25 } }] },
+	"requirements": {"all": [{ "entity": { "class": "TownCivilCentre", "number": 1 } }, { "entity": { "class": "House", "number": 3 } }, { "entity": { "class": "Farmstead", "number": 1 } }, { "entity": { "class": "Citizen", "number": 25 } }] },
 	"requirementsTooltip": "",
 	"supersedes": "phase_village",
 	"replaces": ["phase_town"],

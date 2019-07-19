@@ -7,7 +7,19 @@
     <Civ>athen</Civ>
     <SpecificName>Agorá</SpecificName>
   </Identity>
+  <Upgrade>
+    <CC>
+      <Entity>structures/athen_civil_centre_a</Entity>
+      <Tooltip></Tooltip>
+      <RequiredTechnology>phase_village</RequiredTechnology>
+      <Cost>
+        <wood>0</wood>
+        <stone>0</stone>
+      </Cost>
+      <Time>10</Time>
+    </CC>
+  </Upgrade>
   <VisualActor>
-    <Actor>structures/athenians/civil_centre.xml</Actor>
+    <Actor>structures/athenians/civil_centre_b.xml</Actor>
   </VisualActor>
 </Entity>

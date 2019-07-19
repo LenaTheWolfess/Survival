@@ -45,8 +45,8 @@ Cost.prototype.GetBatchSize = function()
 
 Cost.prototype.GetBuildTime = function()
 {
-	var cmpPlayer = QueryOwnerInterface(this.entity);
-	var buildTime = (+this.template.BuildTime) * cmpPlayer.GetTimeMultiplier();
+	let cmpPlayer = QueryOwnerInterface(this.entity);
+	let buildTime = (+this.template.BuildTime) * cmpPlayer.GetTimeMultiplier();
 	return ApplyValueModificationsToEntity("Cost/BuildTime", buildTime, this.entity);
 };
 
@@ -94,21 +94,21 @@ Cost.prototype.OnValueModification = function(msg)
 		return;
 
 	// foundations shouldn't give a pop bonus and a pop cost
-	var cmpFoundation = Engine.QueryInterface(this.entity, IID_Foundation);
+	let cmpFoundation = Engine.QueryInterface(this.entity, IID_Foundation);
 	if (cmpFoundation)
 		return;
 
 	// update the population costs
-	var newPopCost = Math.round(ApplyValueModificationsToEntity("Cost/Population", +this.template.Population, this.entity));
-	var popCostDifference = newPopCost - this.populationCost;
+	let newPopCost = Math.round(ApplyValueModificationsToEntity("Cost/Population", +this.template.Population, this.entity));
+	let popCostDifference = newPopCost - this.populationCost;
 	this.populationCost = newPopCost;
 
 	// update the population bonuses
-	var newPopBonus = Math.round(ApplyValueModificationsToEntity("Cost/PopulationBonus", +this.template.PopulationBonus, this.entity));
-	var popDifference = newPopBonus - this.populationBonus;
+	let newPopBonus = Math.round(ApplyValueModificationsToEntity("Cost/PopulationBonus", +this.template.PopulationBonus, this.entity));
+	let popDifference = newPopBonus - this.populationBonus;
 	this.populationBonus = newPopBonus;
 
-	var cmpPlayer = QueryOwnerInterface(this.entity);
+	let cmpPlayer = QueryOwnerInterface(this.entity);
 	if (!cmpPlayer)
 		return;
 	if (popCostDifference)

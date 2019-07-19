@@ -1,0 +1,14 @@
+{
+	"autoResearch": true,
+	"genericName": "Empire Phase",
+	"description": "Advances to the empire phase.",
+	"cost": { "rp": 0, "wood": 0, "stone": 0, "metal": 0 },
+	"requirements": {"all": [{ "entity": { "class": "EmpireCivilCentre", "number": 1 } }, {"entity": { "class": "House", "number": 16 } }, { "entity": { "class": "Temple", "number": 2 } },  {"entity": { "class": "Market", "number": 2 } }, { "entity": { "class": "CivCentre", "number": 2} } ] },
+	"requirementsTooltip": "",
+	"supersedes": "phase_city_athen",
+	"replaces": ["phase_empire"],
+	"icon": "imperial_phase.png",
+	"researchTime": 0,
+	"tooltip": "Advance to Imperial Phase.",
+	"soundComplete": "interface/alarm/alarm_phase.xml"
+}

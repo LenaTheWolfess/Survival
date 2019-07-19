@@ -4,7 +4,7 @@
     <Category>Stoa</Category>
   </BuildRestrictions>
   <Cost>
-    <PopulationBonus>10</PopulationBonus>
+    <PopulationBonus>0</PopulationBonus>
     <BuildTime>150</BuildTime>
     <Resources>
       <meat>0</meat>

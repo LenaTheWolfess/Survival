@@ -1850,7 +1850,9 @@ function reportGame()
 
 	let resourcesTypes = [
 		"wood",
-		"food",
+		"meat",
+		"grain",
+		"coin",
 		"stone",
 		"metal"
 	];
@@ -1930,9 +1932,19 @@ function reportGame()
 		playerCivs += player.civ + ",";
 		teams += player.team + ",";
 		teamsLocked = teamsLocked && player.teamsLocked;
-		for (let resourcesCounterType of resourcesCounterTypes)
-			for (let resourcesType of resourcesTypes)
+		for (let resourcesCounterType of resourcesCounterTypes) {
+			if (playerStatistics[resourcesCounterType] === undefined) {
+				error("session.js: playerStatistics["+resourcesCounterType+"] is undefined");
+				continue;
+			}
+			for (let resourcesType of resourcesTypes) {		
+				if (playerStatistics[resourcesCounterType][resourcesType] === undefined) {
+					error("session.js: playerStatistics["+resourcesCounterType+"]["+resourcesType+"] is undefined");
+					continue;
+				}
 				playerStatistics[resourcesCounterType][resourcesType] += player.sequences[resourcesCounterType][resourcesType][maxIndex] + ",";
+			}
+		}
 		playerStatistics.resourcesGathered.vegetarianFood += player.sequences.resourcesGathered.vegetarianFood[maxIndex] + ",";
 
 		for (let unitCounterType of unitsCountersTypes)

@@ -1402,7 +1402,13 @@ GuiInterface.prototype.SetWallPlacementPreview = function(player, cmd)
 
 	let previewEntities = [];
 	if (end.pos)
-		previewEntities = GetWallPlacement(this.placementWallEntities, wallSet, start, end); // see helpers/Walls.js
+		previewEntities = GetWallPlacement(
+			this.placementWallEntities, 
+			wallSet, 
+			start, 
+			end,
+			end.snappedEnt && end.snappedEnt != INVALID_ENTITY
+		); // see helpers/Walls.js
 
 	// For wall placement, we may (and usually do) need to have wall pieces overlap each other more than would
 	// otherwise be allowed by their obstruction shapes. However, during this preview phase, this is not so much of
@@ -1500,7 +1506,7 @@ GuiInterface.prototype.SetWallPlacementPreview = function(player, cmd)
 					});
 			}
 		}
-		else
+		else if (!previewEntities.length || previewEntities[previewEntities.length-1].template != wallSet.templates.tower)
 			previewEntities.push({
 				"template": wallSet.templates.tower,
 				"pos": end.pos,

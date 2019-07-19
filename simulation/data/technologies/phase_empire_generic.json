@@ -3,7 +3,7 @@
 	"genericName": "Empire Phase",
 	"description": "Advances to the empire phase.",
 	"cost": { "rp": 0, "wood": 0, "stone": 0, "metal": 0 },
-	"requirements": {"all": [ {"entity": { "class": "House", "number": 16 } }, { "entity": { "class": "Temple", "number": 2 } },  {"entity": { "class": "Market", "number": 2 } }, { "entity": { "class": "CivCentre", "number": 2} } ] },
+	"requirements": {"all": [{ "entity": { "class": "EmpireCivilCentre", "number": 1 } }, {"entity": { "class": "House", "number": 16 } }, { "entity": { "class": "Temple", "number": 2 } },  {"entity": { "class": "Market", "number": 2 } }, { "entity": { "class": "CivCentre", "number": 2} } ] },
 	"requirementsTooltip": "",
 	"supersedes": "phase_city",
 	"replaces": ["phase_empire"],

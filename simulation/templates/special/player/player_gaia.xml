@@ -16,6 +16,7 @@
         <coin>1.0</coin>
 		<rp>1.0</rp>
 		<animal>1.0</animal>
+		<water>1.0</water>
       </Buy>
       <Sell>
         <meat>1.0</meat>
@@ -28,6 +29,7 @@
         <coin>1.0</coin>
 		<rp>1.0</rp>
 		<animal>1.0</animal>
+		<water>1.0</water>
       </Sell>
     </BarterMultiplier>
   </Player>

@@ -18,10 +18,10 @@
     <GarrisonRegenRate>4.0</GarrisonRegenRate>
   </Capturable>
   <Cost>
-    <PopulationBonus>5</PopulationBonus>
+    <PopulationBonus>1</PopulationBonus>
     <BuildTime>30</BuildTime>
     <Resources>
-      <wood>75</wood>
+      <wood>25</wood>
     </Resources>
   </Cost>
   <Footprint>
@@ -29,7 +29,7 @@
     <Height>5.0</Height>
   </Footprint>
   <GarrisonHolder>
-    <Max>5</Max>
+    <Max>1</Max>
     <BuffHeal>0</BuffHeal>
     <EjectHealth>0.1</EjectHealth>
     <EjectClassesOnDestroy datatype="tokens">Unit</EjectClassesOnDestroy>
@@ -37,18 +37,24 @@
     <LoadingRange>1</LoadingRange>
   </GarrisonHolder>
   <Health>
-    <Max>800</Max>
+    <Max>200</Max>
     <SpawnEntityOnDeath>decay|rubble/rubble_stone_2x2</SpawnEntityOnDeath>
   </Health>
   <Identity>
     <GenericName>House</GenericName>
-    <Tooltip>Increase the population limit.</Tooltip>
+    <Tooltip>Home for citizens.</Tooltip>
     <VisibleClasses datatype="tokens">Village House</VisibleClasses>
     <Icon>structures/house.png</Icon>
   </Identity>
   <Obstruction>
     <Static width="11.0" depth="11.0"/>
   </Obstruction>
+  <ResourceTrickle>
+    <Interval>10000</Interval>
+	<Rates>
+		<water>0.0</water>
+	</Rates>
+  </ResourceTrickle>
   <ProductionQueue>
     <BatchTimeModifier>1.0</BatchTimeModifier>
 	<Groups>
@@ -57,8 +63,8 @@
 			<Icon>technologies/population.png</Icon>
 			<Tooltip>All units</Tooltip>
 			<Entities datatype="tokens">
-			  units/{civ}_support_female_citizen_house
-			  units/{civ}_support_male_citizen_house
+			  units/{civ}_support_female_citizen
+			  units/{civ}_support_male_citizen
 			</Entities>
 		</Production>
 	</Groups>
@@ -66,7 +72,6 @@
       health_females_01
       pop_house_01
       pop_house_02
-      unlock_females_house
     </Technologies>
   </ProductionQueue>
   <Sound>

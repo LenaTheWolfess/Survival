@@ -4,7 +4,20 @@
     <Civ>athen</Civ>
     <SpecificName>Empórios</SpecificName>
   </Identity>
+  <Obstruction>
+    <Static disable = ""/>
+	<Obstructions>
+	 <Centre width="4.0" depth="4.0" x="0" z="0"/>
+	 <TentL width="6.0" depth="8.0" x="10" z="0"/>
+	 <TentR width="6.0" depth="8.0" x="-10" z="0"/>
+	 <TentTR width="8.0" depth="8.0" x="-5" z="-10"/>	 
+	 <TentTL width="6.0" depth="8.0" x="5" z="-10"/>	
+	 <TentBL width="8.0" depth="8.0" x="5" z="10"/>	
+	 <TentBR width="6.0" depth="8.0" x="5" z="10"/>
+	</Obstructions>
+  </Obstruction>
   <VisualActor>
     <Actor>structures/hellenes/market.xml</Actor>
   </VisualActor>
 </Entity>
+

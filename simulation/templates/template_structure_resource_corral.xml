@@ -42,6 +42,14 @@
 			  units/{civ}_horse_trainable
 			</Entities>
 		</Animals>
+		<Hunter>
+			<GenericName>Hunters</GenericName>
+			<Icon>technologies/population.png</Icon>
+			<Tooltip>Choose among hunters</Tooltip>
+			<Entities datatype="tokens">
+			  units/{civ}_cavalry_hunter
+			</Entities>
+		</Hunter>
 		<Wagons>
 			<GenericName>Wagons</GenericName>
 			<Icon>technologies/handcart_empty.png</Icon>
