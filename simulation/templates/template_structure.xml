@@ -89,6 +89,7 @@
   <OverlayRenderer/>
   <ProductionQueue>
     <TechCostMultiplier>
+	  <water>1.0</water>
 	  <rp>1.0</rp>
       <fish>1.0</fish>
       <fruit>1.0</fruit>

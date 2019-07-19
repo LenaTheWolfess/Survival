@@ -1,0 +1,15 @@
+{
+	"type": "range",
+	"radius": 40,
+	"affects": ["House"],
+	"modifications": [
+		{ "value": "ResourceTrickle/Rates/water", "add": 1 }
+	],
+	"auraName": "Water",
+	"auraDescription": "Provides water for nearby houses.",
+	"rangeOverlay" : {
+		"lineTexture": "outline_border.png",
+		"lineTextureMask": "outline_border_mask.png",
+		"lineThickness": 0.075
+	}
+}

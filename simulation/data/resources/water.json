@@ -1,0 +1,12 @@
+{
+	"code": "water",
+	"name": "Water",
+	"description": "Get water from well.",
+	"order": 1,
+	"subtypes": {
+		"water": "Water"
+	},
+	"truePrice": 200,
+	"properties": ["barterable", "tradable", "tributable", "leftPanel"],
+	"aiAnalysisInfluenceGroup": "abundant"
+}
