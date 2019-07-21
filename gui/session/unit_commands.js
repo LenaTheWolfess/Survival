@@ -30,15 +30,15 @@ var g_unitPanelButtons = {
  */
 function setPanelObjectPosition(object, index, rowLength, vMargin = 1, hMargin = 1)
 {
-	var size = object.size;
+	let size = object.size;
 	// horizontal position
-	var oWidth = size.right - size.left;
-	var hIndex = index % rowLength;
+	let oWidth = size.right - size.left;
+	let hIndex = index % rowLength;
 	size.left = hIndex * (oWidth + vMargin);
 	size.right = size.left + oWidth;
 	// vertical position
-	var oHeight = size.bottom - size.top;
-	var vIndex = Math.floor(index / rowLength);
+	let oHeight = size.bottom - size.top;
+	let vIndex = Math.floor(index / rowLength);
 	size.top = vIndex * (oHeight + hMargin);
 	size.bottom = size.top + oHeight;
 	object.size = size;
@@ -46,15 +46,15 @@ function setPanelObjectPosition(object, index, rowLength, vMargin = 1, hMargin =
 
 function setPanelObjectPositionH(object, index, rowLength, vMargin = 1, hMargin = 1)
 {
-	var size = object.size;
+	let size = object.size;
 	// horizontal position
-	var oWidth = size.right - size.left;
-	var hIndex = index % rowLength;
+	let oWidth = size.right - size.left;
+	let hIndex = index % rowLength;
 	size.top = hIndex * (oWidth + vMargin);
 	size.bottom = size.top + oWidth;
 	// vertical position
-	var oHeight = size.right - size.left;
-	var vIndex = Math.floor(index / rowLength);
+	let oHeight = size.right - size.left;
+	let vIndex = Math.floor(index / rowLength);
 	size.left = vIndex * (oHeight + hMargin);
 	size.right = size.left + oHeight;
 	object.size = size;

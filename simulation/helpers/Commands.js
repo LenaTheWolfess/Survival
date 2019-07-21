@@ -119,15 +119,15 @@ var g_Commands = {
 	},
 	"chat": function(player, cmd, data)
 	{
-		var cmpGuiInterface = Engine.QueryInterface(SYSTEM_ENTITY, IID_GuiInterface);
+		let cmpGuiInterface = Engine.QueryInterface(SYSTEM_ENTITY, IID_GuiInterface);
 		cmpGuiInterface.PushNotification({ "type": cmd.type, "players": [player], "message": cmd.message });
 	},
 
 	"aichat": function(player, cmd, data)
 	{
-		var cmpGuiInterface = Engine.QueryInterface(SYSTEM_ENTITY, IID_GuiInterface);
-		var notification = { "players": [player] };
-		for (var key in cmd)
+		let cmpGuiInterface = Engine.QueryInterface(SYSTEM_ENTITY, IID_GuiInterface);
+		let notification = { "players": [player] };
+		for (let key in cmd)
 			notification[key] = cmd[key];
 		cmpGuiInterface.PushNotification(notification);
 	},
@@ -159,7 +159,7 @@ var g_Commands = {
 			warn("Invalid command: Could not set "+player+" diplomacy status of player "+cmd.player+" to "+cmd.to);
 		}
 
-		var cmpGuiInterface = Engine.QueryInterface(SYSTEM_ENTITY, IID_GuiInterface);
+		let cmpGuiInterface = Engine.QueryInterface(SYSTEM_ENTITY, IID_GuiInterface);
 		cmpGuiInterface.PushNotification({
 			"type": "diplomacy",
 			"players": [player],
@@ -178,7 +178,7 @@ var g_Commands = {
 		if (!data.cmpPlayer.GetCheatsEnabled())
 			return;
 
-		var cmpGuiInterface = Engine.QueryInterface(SYSTEM_ENTITY, IID_GuiInterface);
+		let cmpGuiInterface = Engine.QueryInterface(SYSTEM_ENTITY, IID_GuiInterface);
 		cmpGuiInterface.PushNotification({
 			"type": "aichat",
 			"players": [player],
@@ -193,7 +193,7 @@ var g_Commands = {
 		if (!data.cmpPlayer.GetCheatsEnabled())
 			return;
 
-		var cmpGuiInterface = Engine.QueryInterface(SYSTEM_ENTITY, IID_GuiInterface);
+		let cmpGuiInterface = Engine.QueryInterface(SYSTEM_ENTITY, IID_GuiInterface);
 		cmpGuiInterface.PushNotification({
 			"type": "aichat",
 			"players": [player],
@@ -202,13 +202,13 @@ var g_Commands = {
 
 		// Reveal the map for all players, not just the current player,
 		// primarily to make it obvious to everyone that the player is cheating
-		var cmpRangeManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_RangeManager);
+		let cmpRangeManager = Engine.QueryInterface(SYSTEM_ENTITY, IID_RangeManager);
 		cmpRangeManager.SetLosRevealAll(-1, cmd.enable);
 	},
 
 	"walk": function(player, cmd, data)
 	{
-		GetFormationUnitAIs(data.entities, player).forEach(cmpUnitAI => {
+		GetAutoFormationUnitAIs(data.entities, player).forEach(cmpUnitAI => {
 			cmpUnitAI.Walk(cmd.x, cmd.z, cmd.queued);
 		});
 	},
@@ -1535,13 +1535,59 @@ function TryConstructWall(player, cmpPlayer, controlAllUnits, cmd)
  */
 function RemoveFromFormation(ents)
 {
-	var formation = ExtractFormations(ents);
-	for (var fid in formation.members)
+	let formation = ExtractFormations(ents);
+	for (let fid in formation.members)
 	{
-		var cmpFormation = Engine.QueryInterface(+fid, IID_Formation);
+		let cmpFormation = Engine.QueryInterface(+fid, IID_Formation);
 		if (cmpFormation)
 			cmpFormation.RemoveMembers(formation.members[fid]);
 	}
+}
+
+function GetAutoFormationUnitAIs(ents, player)
+{
+	return GetFormationUnitAIs(ents, player);
+	
+	if (ents.length < 8)
+		return GetFormationUnitAIs(ents, player);
+	
+	// Separate out the units that don't support the chosen formation
+	let formedEnts = [];
+	let nonformedEnts = [];
+	for (let ent of ents)
+	{
+		// Skip units with no UnitAI or no position
+		let cmpUnitAI = Engine.QueryInterface(ent, IID_UnitAI);
+		let cmpPosition = Engine.QueryInterface(ent, IID_Position);
+		if (!cmpUnitAI || !cmpPosition || !cmpPosition.IsInWorld())
+			continue;
+
+		let cmpIdentity = Engine.QueryInterface(ent, IID_Identity);
+		let nullFormation = cmpUnitAI.GetFormationTemplate() ==  "special/formations/null";
+		if (nullFormation) {
+			RemoveFromFormation([ent]);
+			nonformedEnts.push(ent);
+		} else {
+			formedEnts.push(ent);
+		}
+	}
+	// No units support the formation - return all the others
+	if (formedEnts.length == 0)
+		return GetMergedFormationUnitAIs(nonformedEnts, player, "special/formations/box");
+
+	let formationUnitAIs = [];
+	let formations = ExtractFormations(formedEnts);
+
+	for (let i = 0; i < formations.ids.length; ++i) {
+		let fId = formations.ids[i];
+		let cmpUnitAI = Engine.QueryInterface(+fId, IID_UnitAI);
+		if(cmpUnitAI)
+			formationUnitAIs.push(cmpUnitAI);
+	}
+	if (!nonformedEnts)
+		return formationUnitAIs;
+	
+	return GetMergedFormationUnitAIs(nonformedEnts, player, "special/formations/box").concat(formationUnitAIs);
 }
 
 /**
@@ -1550,6 +1596,19 @@ function RemoveFromFormation(ents)
  */
 function GetFormationUnitAIs(ents, player)
 {
+	// TODO: LOCKABLE BATALION
+	// so if locked, one selection would mean whole selection
+	if (ents.length == 1)
+	{
+		warn("one ent");
+		// Skip unit if it has no UnitAI
+		let cmpUnitAI = Engine.QueryInterface(ents[0], IID_UnitAI);
+		if (!cmpUnitAI)
+			return [];
+		RemoveFromFormation(ents);
+		return [ cmpUnitAI ];
+	}
+	
 	// Separate out the units that don't support the chosen formation
 	let formedEnts = [];
 	let nonformedUnitAIs = [];
@@ -1590,7 +1649,7 @@ function GetMergedFormationUnitAIs(ents, player, formationTemplate)
 	// If an individual was selected, remove it from any formation
 	// and command it individually
 	if (ents.length == 1)
-	{
+	{//
 		// Skip unit if it has no UnitAI
 		let cmpUnitAI = Engine.QueryInterface(ents[0], IID_UnitAI);
 		if (!cmpUnitAI)
@@ -1653,31 +1712,28 @@ function GetMergedFormationUnitAIs(ents, player, formationTemplate)
 				cmpFormation.LoadFormation(formationTemplate);
 		}
 	}
-
 	
-	// TESTING PURPOSES ONLY
 	// ALLOW TO CREATE FORMATION
-	
 	if (!formationUnitAIs.length)
 	{
 		// We need to give the selected units a new formation controller
 
 		// TODO replace the fixed 60 with something sensible, based on vision range f.e.
-		var formationSeparation = 60;
-		var clusters = ClusterEntities(formation.entities, formationSeparation);
-		var formationEnts = [];
+		let formationSeparation = 60;
+		let clusters = ClusterEntities(formation.entities, formationSeparation);
+		let formationEnts = [];
 		for (let cluster of clusters)
 		{
 			if (!formationTemplate || !CanMoveEntsIntoFormation(cluster, formationTemplate))
 			{
 				// Use the last formation template if everyone was using it
-				var lastFormationTemplate = undefined;
+				let lastFormationTemplate = undefined;
 				for (let ent of cluster)
 				{
-					var cmpUnitAI = Engine.QueryInterface(ent, IID_UnitAI);
+					let cmpUnitAI = Engine.QueryInterface(ent, IID_UnitAI);
 					if (cmpUnitAI)
 					{
-						var template = cmpUnitAI.GetFormationTemplate();
+						let template = cmpUnitAI.GetFormationTemplate();
 						if (lastFormationTemplate === undefined)
 						{
 							lastFormationTemplate = template;
@@ -1732,15 +1788,15 @@ function GetMergedFormationUnitAIs(ents, player, formationTemplate)
  */
 function ClusterEntities(ents, separationDistance)
 {
-	var clusters = [];
+	let clusters = [];
 	if (!ents.length)
 		return clusters;
 
-	var distSq = separationDistance * separationDistance;
-	var positions = [];
+	let distSq = separationDistance * separationDistance;
+	let positions = [];
 	// triangular matrix with the (squared) distances between the different clusters
 	// the other half is not initialised
-	var matrix = [];
+	let matrix = [];
 	for (let i = 0; i < ents.length; ++i)
 	{
 		matrix[i] = [];
@@ -1753,10 +1809,10 @@ function ClusterEntities(ents, separationDistance)
 	while (clusters.length > 1)
 	{
 		// search two clusters that are closer than the required distance
-		var closeClusters = undefined;
+		let closeClusters = undefined;
 
-		for (var i = matrix.length - 1; i >= 0 && !closeClusters; --i)
-			for (var j = i - 1; j >= 0 && !closeClusters; --j)
+		for (let i = matrix.length - 1; i >= 0 && !closeClusters; --i)
+			for (let j = i - 1; j >= 0 && !closeClusters; --j)
 				if (matrix[i][j] < distSq)
 					closeClusters = [i,j];
 
@@ -1765,17 +1821,17 @@ function ClusterEntities(ents, separationDistance)
 			return clusters;
 
 		// make a new cluster with the entities from the two found clusters
-		var newCluster = clusters[closeClusters[0]].concat(clusters[closeClusters[1]]);
+		let newCluster = clusters[closeClusters[0]].concat(clusters[closeClusters[1]]);
 
 		// calculate the minimum distance between the new cluster and all other remaining
 		// clusters by taking the minimum of the two distances.
-		var distances = [];
+		let distances = [];
 		for (let i = 0; i < clusters.length; ++i)
 		{
 			if (i == closeClusters[1] || i == closeClusters[0])
 				continue;
-			var dist1 = matrix[closeClusters[1]][i] || matrix[i][closeClusters[1]];
-			var dist2 = matrix[closeClusters[0]][i] || matrix[i][closeClusters[0]];
+			let dist1 = matrix[closeClusters[1]][i] || matrix[i][closeClusters[1]];
+			let dist2 = matrix[closeClusters[0]][i] || matrix[i][closeClusters[0]];
 			distances.push(Math.min(dist1, dist2));
 		}
 		// remove the rows and columns in the matrix for the merged clusters,

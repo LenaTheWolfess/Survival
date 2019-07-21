@@ -24,6 +24,12 @@ UnitAI.prototype.Schema =
 	"<element name='CanPatrol'>" +
 		"<data type='boolean'/>" +
 	"</element>" +
+	"<element name='Run'>" +
+		"<interleave>" +
+			"<element name='Min'><ref name='nonNegativeDecimal'/></element>"+
+			"<element name='Max'><ref name='nonNegativeDecimal'/></element>"+
+		"</interleave>" +
+	"</element>" +
 	"<optional>" +
 		"<interleave>" +
 			"<element name='NaturalBehaviour' a:help='Behaviour of the unit in the absence of player commands (intended for animals)'>" +
@@ -142,6 +148,9 @@ var g_Stances = {
 UnitAI.prototype.UnitFsmSpec = {
 
 	// Default event handlers:
+	"TargetKilled": function(msg) {
+		// ignore by default
+	},
 	"NearbyAttacked": function(msg) {
 		if (this.GetStance().respondFlee) {
 			let cmpIdentity = Engine.QueryInterface(this.entity, IID_Identity);
@@ -1537,7 +1546,7 @@ UnitAI.prototype.UnitFsmSpec = {
 				let animationName = "idle";
 				if (this.IsFormationMember())
 				{
-					var cmpFormation = Engine.QueryInterface(this.formationController, IID_Formation);
+					let cmpFormation = Engine.QueryInterface(this.formationController, IID_Formation);
 					if (cmpFormation)
 						animationName = cmpFormation.GetFormationAnimation(this.entity, animationName);
 				}
@@ -1876,10 +1885,15 @@ UnitAI.prototype.UnitFsmSpec = {
 
 						this.SelectAnimation("move");
 
+						
+					let distance = DistanceBetweenEntities(this.entity, this.order.data.target);
+						if (distance > this.template.Run.Min && distance < this.template.Run.Max)
+						this.SetMoveSpeed(this.GetRunSpeed());
 					this.StartTimer(1000, 1000);
 				},
 
-				"leave": function() {
+				"leave": function() {	
+					this.SetMoveSpeed(this.GetWalkSpeed());
 					// Show carried resources when walking.
 					this.SetDefaultAnimationVariant();
 
@@ -1887,6 +1901,10 @@ UnitAI.prototype.UnitFsmSpec = {
 				},
 
 				"Timer": function(msg) {
+					if (!this.order) {
+						this.StopMoving();
+						return;
+					}
 					if (this.ShouldAbandonChase(this.order.data.target, this.order.data.force, IID_Attack, this.order.data.attackType))
 					{
 						this.StopMoving();
@@ -1895,11 +1913,47 @@ UnitAI.prototype.UnitFsmSpec = {
 						// Return to our original position
 						if (this.GetStance().respondHoldGround)
 							this.WalkToHeldPosition();
+					} else {
+						let distance = DistanceBetweenEntities(this.entity, this.order.data.target);
+						if (distance > this.template.Run.Min && distance < this.template.Run.Max)
+							this.SetMoveSpeed(this.GetRunSpeed());
 					}
 				},
 
-				"MoveCompleted": function() {
+				"TargetKilled": function(msg) {
+					// Check if our target was not killed by someone else
+					if (msg.target == this.order.data.target) {
+						this.StopTimer();
+						let target = msg.target;
+						// if we're targetting a formation, find a new member of that formation
+						let cmpTargetFormation = Engine.QueryInterface(this.order.data.formationTarget || INVALID_ENTITY, IID_Formation);
+						// if there is no target, it means previously searching for the target inside the target formation failed, so don't repeat the search
+						if (target && cmpTargetFormation)
+						{
+							this.order.data.target = this.order.data.formationTarget;
+							this.TimerHandler(msg.data, msg.lateness);
+							return;
+						}
+						if (this.FinishOrder())
+						{
+							if (this.IsWalkingAndFighting())
+								this.FindWalkAndFightTargets();
+							else
+								this.SetNextState("IDLE");
+							return;
+						}
+						if (this.FindNewTargets())
+							return;
 
+						// Return to our original position
+						if (this.GetStance().respondHoldGround)
+							this.WalkToHeldPosition();
+					}
+				},
+				
+				"MoveCompleted": function() {
+					if (!this.order)
+						return;
 					if (this.CheckTargetAttackRange(this.order.data.target, this.order.data.attackType))
 					{
 						// If the unit needs to unpack, do so
@@ -1964,8 +2018,8 @@ UnitAI.prototype.UnitFsmSpec = {
 					let prepare = this.attackTimers.prepare;
 					if (this.lastAttacked)
 					{
-						var cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
-						var repeatLeft = this.lastAttacked + this.attackTimers.repeat - cmpTimer.GetTime();
+						let cmpTimer = Engine.QueryInterface(SYSTEM_ENTITY, IID_Timer);
+						let repeatLeft = this.lastAttacked + this.attackTimers.repeat - cmpTimer.GetTime();
 						prepare = Math.max(prepare, repeatLeft);
 					}
 
@@ -2145,8 +2199,33 @@ UnitAI.prototype.UnitFsmSpec = {
 						this.WalkToHeldPosition();
 				},
 
-				// TODO: respond to target deaths immediately, rather than waiting
-				// until the next Timer event
+				"TargetKilled": function(msg) {
+					// Check if our target was not killed by someone else
+					if (msg.target == this.order.data.target) {
+						this.StopTimer();
+						let target = msg.target;
+						// if we're targetting a formation, find a new member of that formation
+						let cmpTargetFormation = Engine.QueryInterface(this.order.data.formationTarget || INVALID_ENTITY, IID_Formation);
+						// if there is no target, it means previously searching for the target inside the target formation failed, so don't repeat the search
+						if (target && cmpTargetFormation)
+						{
+							this.order.data.target = this.order.data.formationTarget;
+							return;
+						}
+						if (this.FinishOrder())
+						{
+							if (this.IsWalkingAndFighting())
+								this.FindWalkAndFightTargets();
+							return;
+						}
+						if (this.FindNewTargets())
+							return;
+
+						// Return to our original position
+						if (this.GetStance().respondHoldGround)
+							this.WalkToHeldPosition();
+					}
+				},
 
 				"Attacked": function(msg) {
 					// If we are capturing and are attacked by something that we would not capture, attack that entity instead
@@ -2162,22 +2241,17 @@ UnitAI.prototype.UnitFsmSpec = {
 					this.SetAnimationVariant("combat");
 
 					this.SelectAnimation("move");
-					var cmpUnitAI = Engine.QueryInterface(this.order.data.target, IID_UnitAI);
+					let cmpUnitAI = Engine.QueryInterface(this.order.data.target, IID_UnitAI);
 					if (cmpUnitAI && cmpUnitAI.IsFleeing())
-					{
-						// Run after a fleeing target
-						var speed = this.GetRunSpeed();
-						this.SetMoveSpeed(speed);
-					}
+						this.SetMoveSpeed(this.GetRunSpeed());
 					this.StartTimer(1000, 1000);
 				},
 
 				"HealthChanged": function() {
-					var cmpUnitAI = Engine.QueryInterface(this.order.data.target, IID_UnitAI);
+					let cmpUnitAI = Engine.QueryInterface(this.order.data.target, IID_UnitAI);
 					if (!cmpUnitAI || !cmpUnitAI.IsFleeing())
 						return;
-					var speed = this.GetRunSpeed();
-					this.SetMoveSpeed(speed);
+					this.SetMoveSpeed(this.GetRunSpeed());
 				},
 
 				"leave": function() {
@@ -2204,6 +2278,35 @@ UnitAI.prototype.UnitFsmSpec = {
 				"MoveCompleted": function() {
 					this.SetNextState("ATTACKING");
 				},
+				"TargetKilled": function(msg) {
+					// Check if our target was not killed by someone else
+					if (msg.target == this.order.data.target) {
+						let target = msg.target;
+						// if we're targetting a formation, find a new member of that formation
+						let cmpTargetFormation = Engine.QueryInterface(this.order.data.formationTarget || INVALID_ENTITY, IID_Formation);
+						// if there is no target, it means previously searching for the target inside the target formation failed, so don't repeat the search
+						if (target && cmpTargetFormation)
+						{
+							this.order.data.target = this.order.data.formationTarget;
+							this.TimerHandler(msg.data, msg.lateness);
+							return;
+						}
+						if (this.FinishOrder())
+						{
+							if (this.IsWalkingAndFighting())
+								this.FindWalkAndFightTargets();
+							return;
+						}
+						if (this.FindNewTargets())
+							return;
+
+						// Return to our original position
+						if (this.GetStance().respondHoldGround)
+							this.WalkToHeldPosition();
+						else
+							this.StopMoving();
+					}
+				}
 			},
 		},
 
@@ -3158,7 +3261,7 @@ UnitAI.prototype.UnitFsmSpec = {
 
 			"leave": function() {
 				this.StopTimer();
-				var cmpDamageReceiver = Engine.QueryInterface(this.entity, IID_DamageReceiver);
+				let cmpDamageReceiver = Engine.QueryInterface(this.entity, IID_DamageReceiver);
 				cmpDamageReceiver.SetInvulnerability(false);
 			},
 
@@ -3169,7 +3272,7 @@ UnitAI.prototype.UnitFsmSpec = {
 
 		"PACKING": {
 			"enter": function() {
-				var cmpPack = Engine.QueryInterface(this.entity, IID_Pack);
+				let cmpPack = Engine.QueryInterface(this.entity, IID_Pack);
 				cmpPack.Pack();
 			},
 
@@ -3187,7 +3290,7 @@ UnitAI.prototype.UnitFsmSpec = {
 
 		"UNPACKING": {
 			"enter": function() {
-				var cmpPack = Engine.QueryInterface(this.entity, IID_Pack);
+				let cmpPack = Engine.QueryInterface(this.entity, IID_Pack);
 				cmpPack.Unpack();
 			},
 
@@ -4118,6 +4221,10 @@ UnitAI.prototype.OnNearbyUnitAttacked = function(msg)
 {
 	this.UnitFsm.ProcessMessage(this, {"type": "NearbyAttacked", "data": msg});
 }
+UnitAI.prototype.TargetKilled = function(target)
+{
+//	this.UnitFsm.ProcessMessage(this, {"type": "TargetKilled", "target": target});
+}
 UnitAI.prototype.OnRangeUpdate = function(msg)
 {
 	if (msg.tag == this.losRangeQuery)
@@ -4157,7 +4264,6 @@ UnitAI.prototype.GetWalkSpeed = function()
 		health = cmpHealth.GetHitpoints()/cmpHealth.GetMaxHitpoints();
 	return (walkSpeed/2.0) + (walkSpeed/2.0)*health;
 };
-
 UnitAI.prototype.GetRunSpeed = function()
 {
 	let cmpUnitMotion = Engine.QueryInterface(this.entity, IID_UnitMotion);
@@ -4737,12 +4843,12 @@ UnitAI.prototype.CheckTargetDistanceFromHeldPosition = function(target, iid, typ
 
 UnitAI.prototype.CheckTargetIsInVisionRange = function(target)
 {
-	var cmpVision = Engine.QueryInterface(this.entity, IID_Vision);
+	let cmpVision = Engine.QueryInterface(this.entity, IID_Vision);
 	if (!cmpVision)
 		return false;
-	var range = cmpVision.GetRange();
+	let range = cmpVision.GetRange();
 
-	var distance = DistanceBetweenEntities(this.entity, target);
+	let distance = DistanceBetweenEntities(this.entity, target);
 
 	return distance < range;
 };
@@ -4843,8 +4949,8 @@ UnitAI.prototype.ShouldAbandonChase = function(target, force, iid, type)
 	// If we are guarding/escorting, don't abandon as long as the guarded unit is in target range of the attacker
 	if (this.isGuardOf)
 	{
-		var cmpUnitAI =  Engine.QueryInterface(target, IID_UnitAI);
-		var cmpAttack = Engine.QueryInterface(target, IID_Attack);
+		let cmpUnitAI =  Engine.QueryInterface(target, IID_UnitAI);
+		let cmpAttack = Engine.QueryInterface(target, IID_Attack);
 		if (cmpUnitAI && cmpAttack &&
 		    cmpAttack.GetAttackTypes().some(type => cmpUnitAI.CheckTargetAttackRange(this.isGuardOf, type)))
 				return false;
@@ -5867,6 +5973,10 @@ UnitAI.prototype.WalkToHeldPosition = function()
 
 UnitAI.prototype.CanAttack = function(target)
 {
+	let cmpHealth = Engine.QueryInterface(target, IID_Health);
+	if (cmpHealth && cmpHealth.GetHitpoints() <= 0)
+		return false;
+	
 	// Formation controllers should always respond to commands
 	// (then the individual units can make up their own minds)
 	if (this.IsFormationController())

@@ -132,6 +132,12 @@
   <StatusBars>
     <HeightOffset>6.5</HeightOffset>
   </StatusBars>
+  <UnitAI>
+	<Run>
+	  <Min>10.0</Min>
+	  <Max>40.0</Max>
+	</Run>
+  </UnitAI>
   <UnitMotion>
     <PassabilityClass>horse</PassabilityClass>
     <WalkSpeed op="mul">1.8</WalkSpeed>

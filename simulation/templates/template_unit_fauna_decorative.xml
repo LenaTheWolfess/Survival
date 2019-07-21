@@ -32,6 +32,10 @@
     <RoamTimeMax>100000</RoamTimeMax>
     <FeedTimeMin>1</FeedTimeMin>
     <FeedTimeMax>2</FeedTimeMax>
+	<Run>
+	  <Min>0.0</Min>
+	  <Max>0.0</Max>
+	</Run>
   </UnitAI>
   <UnitMotion>
     <FormationController>false</FormationController>

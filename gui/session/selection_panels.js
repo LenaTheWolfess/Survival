@@ -714,7 +714,7 @@ g_SelectionPanels.Formation = {
 			tooltip += "\n" + formationInfo.description;
 		}
 		data.button.tooltip = tooltip;
-		data.button.onPressRight = function() { showTemplateDetails(data.item);};
+	//	data.button.onPressRight = function() { showTemplateDetails(data.item);};
 		
 		data.button.enabled = formationOk && controlsPlayer(data.player);
 		let grayscale = formationOk ? "" : "grayscale:";

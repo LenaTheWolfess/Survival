@@ -110,6 +110,10 @@
     <FormationController>false</FormationController>
     <CanGuard>true</CanGuard>
     <CanPatrol>true</CanPatrol>
+	<Run>
+	  <Min>10.0</Min>
+	  <Max>20.0</Max>
+	</Run>
   </UnitAI>
   <UnitMotion>
     <FormationController>false</FormationController>

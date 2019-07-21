@@ -296,12 +296,12 @@ Formation.prototype.SetMembers = function(ents)
 {
 	this.members = ents;
 
-	for (var ent of this.members)
+	for (let ent of this.members)
 	{
-		var cmpUnitAI = Engine.QueryInterface(ent, IID_UnitAI);
+		let cmpUnitAI = Engine.QueryInterface(ent, IID_UnitAI);
 		cmpUnitAI.SetFormationController(this.entity);
 
-		var cmpAuras = Engine.QueryInterface(ent, IID_Auras);
+		let cmpAuras = Engine.QueryInterface(ent, IID_Auras);
 		if (cmpAuras && cmpAuras.HasFormationAura())
 		{
 			this.formationMembersWithAura.push(ent);
@@ -309,6 +309,11 @@ Formation.prototype.SetMembers = function(ents)
 		}
 	}
 
+	let cmpAura = Engine.QueryInterface(this.entity, IID_Auras);
+	if(cmpAura && cmpAura.HasFormationAura()){
+		cmpAura.ApplyFormationBonus(this.members);
+	}
+	
 	this.offsets = undefined;
 	// Locate this formation controller in the middle of its members
 	this.MoveToMembersCenter();
@@ -327,32 +332,42 @@ Formation.prototype.RemoveMembers = function(ents)
 	this.members = this.members.filter(function(e) { return ents.indexOf(e) == -1; });
 	this.inPosition = this.inPosition.filter(function(e) { return ents.indexOf(e) == -1; });
 
-	for (var ent of ents)
+	for (let ent of ents)
 	{
-		var cmpUnitAI = Engine.QueryInterface(ent, IID_UnitAI);
+		let cmpUnitAI = Engine.QueryInterface(ent, IID_UnitAI);
 		cmpUnitAI.UpdateWorkOrders();
 		cmpUnitAI.SetFormationController(INVALID_ENTITY);
 	}
 
-	for (var ent of this.formationMembersWithAura)
+	for (let ent of this.formationMembersWithAura)
 	{
-		var cmpAuras = Engine.QueryInterface(ent, IID_Auras);
+		let cmpAuras = Engine.QueryInterface(ent, IID_Auras);
 		cmpAuras.RemoveFormationBonus(ents);
 
 		// the unit with the aura is also removed from the formation
 		if (ents.indexOf(ent) !== -1)
 			cmpAuras.RemoveFormationBonus(this.members);
 	}
+	
+	let cmpAura = Engine.QueryInterface(this.entity, IID_Auras);
+	if(cmpAura && cmpAura.HasFormationAura()){
+		cmpAura.RemoveFormationBonus(ents);
+	}
 
 	this.formationMembersWithAura = this.formationMembersWithAura.filter(function(e) { return ents.indexOf(e) == -1; });
 
 	// If there's nobody left, destroy the formation
-	if (this.members.length == 0)
+	if (!this.members.length)
 	{
-		Engine.DestroyEntity(this.entity);
+		this.Disband();
 		return;
 	}
 
+	if (this.members.length < this.template.RequiredMemberCount) {
+		this.LoadFormation("special/formations/null");
+		return;
+	}
+	
 	if (!this.rearrange)
 		return;
 
@@ -387,6 +402,11 @@ Formation.prototype.AddMembers = function(ents)
 			cmpAuras.ApplyFormationBonus(this.members);
 		}
 	}
+	
+	let cmpAura = Engine.QueryInterface(this.entity, IID_Auras);
+	if(cmpAura && cmpAura.HasFormationAura()){
+		cmpAura.ApplyFormationBonus(ents);
+	}
 
 	this.MoveMembersIntoFormation(true, true);
 };
@@ -415,18 +435,22 @@ Formation.prototype.FindInPosition = function()
  */
 Formation.prototype.Disband = function()
 {
-	for (var ent of this.members)
+	for (let ent of this.members)
 	{
-		var cmpUnitAI = Engine.QueryInterface(ent, IID_UnitAI);
+		let cmpUnitAI = Engine.QueryInterface(ent, IID_UnitAI);
 		cmpUnitAI.SetFormationController(INVALID_ENTITY);
 	}
 
-	for (var ent of this.formationMembersWithAura)
+	for (let ent of this.formationMembersWithAura)
 	{
-		var cmpAuras = Engine.QueryInterface(ent, IID_Auras);
+		let cmpAuras = Engine.QueryInterface(ent, IID_Auras);
 		cmpAuras.RemoveFormationBonus(this.members);
 	}
 
+	let cmpAura = Engine.QueryInterface(this.entity, IID_Auras);
+	if(cmpAura && cmpAura.HasFormationAura()){
+		cmpAura.RemoveFormationBonus(this.members);
+	}
 
 	this.members = [];
 	this.inPosition = [];
@@ -442,9 +466,37 @@ Formation.prototype.SetVariant = function(variant)
 	this.variant = variant;
 }
 
+Formation.prototype.DistributeExp = function(amount)
+{
+	
+}
+
+Formation.prototype.RotateToPoint = function(x, z)
+{
+	let cmpPosition = Engine.QueryInterface(this.entity, IID_Position);
+	let angle = cmpPosition.GetRotation().y;
+	let targetPos = {"x": x, "y": z};
+	angle = cmpPosition.GetPosition2D().angleTo(targetPos);
+	cmpPosition.TurnTo(angle);
+//	warn ( "Formation turns to: " + angle);
+	this.MoveMembersIntoFormation();
+	this.inPosition = [];
+}
+
 Formation.prototype.GetVariant = function()
 {
 	return this.variant;
+}
+Formation.prototype.UnitKilled = function(target)
+{
+	return;
+	/*
+	for (let member of this.members) {
+		let cmpUnitAI = Engine.QueryInterface(member, IID_UnitAI);
+		if (cmpUnitAI)
+			cmpUnitAI.TargetKilled(target);
+	}
+	*/
 }
 
 /**
@@ -963,13 +1015,13 @@ Formation.prototype.DeleteTwinFormations = function()
 Formation.prototype.LoadFormation = function(newTemplate)
 {
 	// get the old formation info
-	var members = this.members.slice();
-	var cmpThisUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
-	var orders = cmpThisUnitAI.GetOrders().slice();
+	let members = this.members.slice();
+	let cmpThisUnitAI = Engine.QueryInterface(this.entity, IID_UnitAI);
+	let orders = cmpThisUnitAI.GetOrders().slice();
 
 	this.Disband();
 
-	var newFormation = Engine.AddEntity(newTemplate);
+	let newFormation = Engine.AddEntity(newTemplate);
 
 	// Apply the info from the old formation to the new one
 
@@ -978,18 +1030,25 @@ Formation.prototype.LoadFormation = function(newTemplate)
 	if (cmpOwnership && cmpNewOwnership)
 		cmpNewOwnership.SetOwner(cmpOwnership.GetOwner());
 
-	var cmpNewPosition = Engine.QueryInterface(newFormation, IID_Position);
-	var cmpPosition = Engine.QueryInterface(this.entity, IID_Position);
+	let cmpNewPosition = Engine.QueryInterface(newFormation, IID_Position);
+	let cmpPosition = Engine.QueryInterface(this.entity, IID_Position);
 	if (cmpPosition && cmpPosition.IsInWorld() && cmpNewPosition)
 		cmpNewPosition.TurnTo(cmpPosition.GetRotation().y);
 
-	var cmpFormation = Engine.QueryInterface(newFormation, IID_Formation);
-	var cmpNewUnitAI = Engine.QueryInterface(newFormation, IID_UnitAI);
+	let cmpFormation = Engine.QueryInterface(newFormation, IID_Formation);
+	let cmpNewUnitAI = Engine.QueryInterface(newFormation, IID_UnitAI);
 	cmpFormation.SetMembers(members);
 	if (orders.length)
 		cmpNewUnitAI.AddOrders(orders);
 	else
 		cmpNewUnitAI.MoveIntoFormation();
+	
+	let cmpVisual = Engine.QueryInterface(newFormation, IID_Visual);
+	if (cmpVisual) {
+		let player = cmpNewOwnership.GetOwner();
+		let civ = QueryPlayerIDInterface(player).GetCiv();
+		cmpVisual.SetVariant("animationVariant", civ);
+	}
 
 	Engine.PostMessage(this.entity, MT_EntityRenamed, { "entity": this.entity, "newentity": newFormation });
 };

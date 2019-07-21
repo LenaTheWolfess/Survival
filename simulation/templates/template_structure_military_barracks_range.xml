@@ -14,7 +14,7 @@
     <Train> 
       <TrainList datatype="tokens">Ranged+Infantry</TrainList>
     </Train>
-    <List datatype="tokens">Infantry</List>
+    <List datatype="tokens">Infantry Citizen+Male</List>
   </GarrisonHolder>
   <ProductionQueue>
 	<BatchTimeModifier>1.0</BatchTimeModifier>

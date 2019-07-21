@@ -461,7 +461,6 @@ Damage.prototype.TargetKilled = function(attacker, target, attackerOwner)
 
 	let cmpUnitAI = Engine.QueryInterface(attacker, IID_UnitAI);
 	if (cmpUnitAI) {
-		//cmpUnitAI.TargetDied(target);
 		if (cmpUnitAI.IsFormationMember()) {
 			let formationEnt = cmpUnitAI.GetFormationController();
 			let cmpFormation = Engine.QueryInterface(formationEnt, IID_Formation);

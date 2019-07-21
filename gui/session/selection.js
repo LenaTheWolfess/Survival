@@ -69,6 +69,37 @@ EntityGroups.prototype.add = function(ents)
 
 		let templateName = entState.template;
 		let key = GetTemplateData(templateName).selectionGroupName || templateName;
+
+		// Group the ents by player and template
+		if (entState.player !== undefined)
+			key = "p" + entState.player + "&" + key;
+
+		if (this.groups[key])
+			this.groups[key] += 1;
+		else
+			this.groups[key] = 1;
+
+		this.ents[ent] = key;
+	}
+	
+	return;
+	// FOR BATALIONS
+	// TODO: MAKE LOCKABLE
+	/*
+	for (let ent of ents)
+	{
+		if (this.ents[ent])
+			continue;
+		let entState = GetEntityState(ent);
+
+		// When this function is called during group rebuild, deleted
+		// entities will not yet have been removed, so entities might
+		// still be present in the group despite not existing.
+		if (!entState)
+			continue;
+
+		let templateName = entState.template;
+		let key = GetTemplateData(templateName).selectionGroupName || templateName;
 		
 		let formationKey = "";
 		if (entState.unitAI && entState.unitAI.formationController) {
@@ -96,11 +127,12 @@ EntityGroups.prototype.add = function(ents)
 		this.ents[ent] = key;
 		this.formEnts[ent] = formationKey;
 	}
+	*/
 };
 
 EntityGroups.prototype.removeEnt = function(ent)
 {
-	var key = this.ents[ent];
+	let key = this.ents[ent];
 
 	// Remove the entity
 	delete this.ents[ent];
@@ -121,11 +153,11 @@ EntityGroups.prototype.removeEnt = function(ent)
 
 EntityGroups.prototype.rebuildGroup = function(renamed)
 {
-	var oldGroup = this.ents;
+	let oldGroup = this.ents;
 	this.reset();
 
-	var toAdd = [];
-	for (var ent in oldGroup)
+	let toAdd = [];
+	for (let ent in oldGroup)
 		toAdd.push(renamed[ent] ? renamed[ent] : +ent);
 
 	this.add(toAdd);
@@ -158,8 +190,8 @@ EntityGroups.prototype.getFormKeys = function()
 
 EntityGroups.prototype.getEntsByKey = function(key)
 {
-	var ents = [];
-	for (var ent in this.ents)
+	let ents = [];
+	for (let ent in this.ents)
 		if (this.ents[ent] == key)
 			ents.push(+ent);
 
@@ -168,8 +200,8 @@ EntityGroups.prototype.getEntsByKey = function(key)
 
 EntityGroups.prototype.getEntsByFormKey = function(key)
 {
-	var ents = [];
-	for (var ent in this.formEnts)
+	let ents = [];
+	for (let ent in this.formEnts)
 		if (this.formEnts[ent] == key)
 			ents.push(+ent);
 
@@ -200,8 +232,8 @@ EntityGroups.prototype.getEntsFormationGrouped = function()
  */
 EntityGroups.prototype.getEntsByKeyInverse = function(key)
 {
-	var ents = [];
-	for (var ent in this.ents)
+	let ents = [];
+	for (let ent in this.ents)
 		if (this.ents[ent] != key)
 			ents.push(+ent);
 
@@ -245,7 +277,7 @@ EntitySelection.prototype.makePrimarySelection = function(key, inverse)
  */
 EntitySelection.prototype.getTemplateNames = function()
 {
-	var templateNames = [];
+	let templateNames = [];
 
 	for (let ent in this.selected)
 	{
@@ -307,10 +339,10 @@ EntitySelection.prototype.update = function()
  */
 EntitySelection.prototype.checkRenamedEntities = function()
 {
-	var renamedEntities = Engine.GuiInterfaceCall("GetRenamedEntities");
+	let renamedEntities = Engine.GuiInterfaceCall("GetRenamedEntities");
 	if (renamedEntities.length > 0)
 	{
-		var renamedLookup = {};
+		let renamedLookup = {};
 		for (let renamedEntity of renamedEntities)
 			renamedLookup[renamedEntity.entity] = renamedEntity.newentity;
 
@@ -381,7 +413,7 @@ EntitySelection.prototype.addList = function(ents, quiet, force = false)
 
 EntitySelection.prototype.removeList = function(ents)
 {
-	var removed = [];
+	let removed = [];
 
 	for (let ent of ents)
 		if (this.selected[ent])
@@ -410,10 +442,10 @@ EntitySelection.prototype.reset = function()
 
 EntitySelection.prototype.rebuildSelection = function(renamed)
 {
-	var oldSelection = this.selected;
+	let oldSelection = this.selected;
 	this.reset();
 
-	var toAdd = [];
+	let toAdd = [];
 	for (let ent in oldSelection)
 		toAdd.push(renamed[ent] || +ent);
 
@@ -444,7 +476,30 @@ EntitySelection.prototype.setHighlightList = function(ents)
 	let removed = [];
 	let added = [];
 
+	// Remove highlighting for the old units that are no longer highlighted
+	// (excluding ones that are actively selected too)
+	for (let ent in this.highlighted)
+		if (!highlighted[ent] && !this.selected[ent])
+			removed.push(+ent);
+
+	// Add new highlighting for units that aren't already highlighted
+	for (let ent of ents)
+		if (!this.highlighted[ent] && !this.selected[ent])
+			added.push(+ent);
+
+	_setHighlight(removed, 0, false);
+	_setStatusBars(removed, false);
+
+	_setHighlight(added, g_HighlightedAlpha, true);
+	_setStatusBars(added, true);
+
+	// Store the new highlight list
+	this.highlighted = highlighted;
 	
+	return;
+	// CODE FOR BATALIONS
+	// TODO: OPTIONAL LOCK
+	/*
 	// Remove highlighting for the old units that are no longer highlighted
 	// (excluding ones that are actively selected too)
 	for (let ent in this.highlighted)
@@ -492,6 +547,7 @@ EntitySelection.prototype.setHighlightList = function(ents)
 
 	// Store the new highlight list
 	this.highlighted = highlighted;
+	*/
 };
 
 EntitySelection.prototype.SetMotionDebugOverlay = function(enabled)
@@ -538,7 +594,7 @@ function onSelectionChange()
 function EntityGroupsContainer()
 {
 	this.groups = [];
-	for (var i = 0; i < 10; ++i)
+	for (let i = 0; i < 10; ++i)
 		this.groups[i] = new EntityGroups();
 }
 
@@ -556,9 +612,9 @@ EntityGroupsContainer.prototype.update = function()
 {
 	this.checkRenamedEntities();
 	for (let group of this.groups)
-		for (var ent in group.ents)
+		for (let ent in group.ents)
 		{
-			var entState = GetEntityState(+ent);
+			let entState = GetEntityState(+ent);
 			// Remove deleted units
 			if (!entState)
 				group.removeEnt(ent);
@@ -571,10 +627,10 @@ EntityGroupsContainer.prototype.update = function()
  */
 EntityGroupsContainer.prototype.checkRenamedEntities = function()
 {
-	var renamedEntities = Engine.GuiInterfaceCall("GetRenamedEntities");
+	let renamedEntities = Engine.GuiInterfaceCall("GetRenamedEntities");
 	if (renamedEntities.length > 0)
 	{
-		var renamedLookup = {};
+		let renamedLookup = {};
 		for (let renamedEntity of renamedEntities)
 			renamedLookup[renamedEntity.entity] = renamedEntity.newentity;
 

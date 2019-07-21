@@ -33,6 +33,10 @@
     <FormationController>true</FormationController>
     <CanGuard>false</CanGuard>
     <CanPatrol>true</CanPatrol>
+	<Run>
+	  <Min>10.0</Min>
+	  <Max>20.0</Max>
+	</Run>
   </UnitAI>
   <UnitMotion>
     <FormationController>true</FormationController>
@@ -46,4 +50,10 @@
     </Run>
     <PassabilityClass>formation</PassabilityClass>
   </UnitMotion>
+  <VisualActor>
+    <Actor>props/special/common/waypoint_flag.xml</Actor>
+    <SilhouetteDisplay>true</SilhouetteDisplay>
+    <SilhouetteOccluder>false</SilhouetteOccluder>
+    <VisibleInAtlasOnly>false</VisibleInAtlasOnly>
+  </VisualActor>
 </Entity>
