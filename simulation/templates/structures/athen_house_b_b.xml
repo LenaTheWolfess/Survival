@@ -4,6 +4,9 @@
     <Tooltip>Home for citizens with wooden fence.</Tooltip>
     <RequiredTechnology>phase_town</RequiredTechnology>
   </Identity>
+  <Footprint>
+    <Square width="24.0" depth="32.0"/>
+  </Footprint>
   <Obstruction>
     <Static disable = ""/>
 	<Obstructions>

@@ -52,6 +52,7 @@
   </StatusBars>
   <Trader>
     <GainMultiplier>0.75</GainMultiplier>
+    <GainMultiplierPerGarrisonedTrader>0.2</GainMultiplierPerGarrisonedTrader>
   </Trader>
   <UnitAI>
     <DefaultStance>passive</DefaultStance>

@@ -1883,12 +1883,13 @@ UnitAI.prototype.UnitFsmSpec = {
 					else
 						this.SetAnimationVariant("combat");
 
-						this.SelectAnimation("move");
-
-						
-					let distance = DistanceBetweenEntities(this.entity, this.order.data.target);
+					if (this.order.data.attackType != "Slaughter") {
+						let distance = DistanceBetweenEntities(this.entity, this.order.data.target);
 						if (distance > this.template.Run.Min && distance < this.template.Run.Max)
-						this.SetMoveSpeed(this.GetRunSpeed());
+							this.SetMoveSpeed(this.GetRunSpeed());
+					}
+					this.SelectAnimation("move");
+
 					this.StartTimer(1000, 1000);
 				},
 
@@ -1914,9 +1915,11 @@ UnitAI.prototype.UnitFsmSpec = {
 						if (this.GetStance().respondHoldGround)
 							this.WalkToHeldPosition();
 					} else {
-						let distance = DistanceBetweenEntities(this.entity, this.order.data.target);
-						if (distance > this.template.Run.Min && distance < this.template.Run.Max)
-							this.SetMoveSpeed(this.GetRunSpeed());
+						if (this.order.data.attackType != "Slaughter") {
+							let distance = DistanceBetweenEntities(this.entity, this.order.data.target);
+							if (distance > this.template.Run.Min && distance < this.template.Run.Max)
+								this.SetMoveSpeed(this.GetRunSpeed());
+						}
 					}
 				},
 
@@ -2197,6 +2200,8 @@ UnitAI.prototype.UnitFsmSpec = {
 					// Return to our original position
 					if (this.GetStance().respondHoldGround)
 						this.WalkToHeldPosition();
+
+					this.Cheer();
 				},
 
 				"TargetKilled": function(msg) {
@@ -3251,18 +3256,13 @@ UnitAI.prototype.UnitFsmSpec = {
 
 		"CHEERING": {
 			"enter": function() {
-				// Unit is invulnerable while cheering
-				var cmpDamageReceiver = Engine.QueryInterface(this.entity, IID_DamageReceiver);
-				cmpDamageReceiver.SetInvulnerability(true);
 				this.SelectAnimation("promotion");
-				this.StartTimer(2800, 2800);
+				this.StartTimer(2800);
 				return false;
 			},
 
 			"leave": function() {
 				this.StopTimer();
-				let cmpDamageReceiver = Engine.QueryInterface(this.entity, IID_DamageReceiver);
-				cmpDamageReceiver.SetInvulnerability(false);
 			},
 
 			"Timer": function(msg) {
@@ -3634,8 +3634,8 @@ UnitAI.prototype.OnOwnershipChanged = function(msg)
 	if (msg.to != INVALID_PLAYER && msg.from != INVALID_PLAYER)
 	{
 		// Switch to a virgin state to let states execute their leave handlers.
-		// except if garrisoned or cheering or (un)packing, in which case we only clear the order queue
-		if (this.isGarrisoned || this.IsPacking() || this.orderQueue[0] && this.orderQueue[0].type == "Cheering")
+		// except if garrisoned or (un)packing, in which case we only clear the order queue
+		if (this.isGarrisoned || this.IsPacking())
 		{
 			this.orderQueue.length = Math.min(this.orderQueue.length, 1);
 			Engine.PostMessage(this.entity, MT_UnitAIOrderDataChanged, { "to": this.GetOrderData() });
@@ -3906,17 +3906,11 @@ UnitAI.prototype.PushOrder = function(type, data)
  */
 UnitAI.prototype.PushOrderFront = function(type, data)
 {
-	var order = { "type": type, "data": data };
-	// If current order is cheering then add new order after it
-	// same thing if current order if packing/unpacking
-	if (this.order && this.order.type == "Cheering")
+	let order = { "type": type, "data": data };
+	// If current order is packing/unpacking then add new order after it
+	if (this.order && this.IsPacking())
 	{
-		var cheeringOrder = this.orderQueue.shift();
-		this.orderQueue.unshift(cheeringOrder, order);
-	}
-	else if (this.order && this.IsPacking())
-	{
-		var packingOrder = this.orderQueue.shift();
+		let packingOrder = this.orderQueue.shift();
 		this.orderQueue.unshift(packingOrder, order);
 	}
 	else
@@ -3982,19 +3976,12 @@ UnitAI.prototype.ReplaceOrder = function(type, data)
 	let garrisonHolder = this.IsGarrisoned() && type != "Ungarrison" ? this.GetGarrisonHolder() : null;
 
 	// Special cases of orders that shouldn't be replaced:
-	// 1. Cheering - we're invulnerable, add order after we finish
-	// 2. Packing/unpacking - we're immobile, add order after we finish (unless it's cancel)
+	// 1. Packing/unpacking - we're immobile, add order after we finish (unless it's cancel)
 	// TODO: maybe a better way of doing this would be to use priority levels
-	if (this.order && this.order.type == "Cheering")
+	if (this.IsPacking() && type != "CancelPack" && type != "CancelUnpack")
 	{
-		var order = { "type": type, "data": data };
-		var cheeringOrder = this.orderQueue.shift();
-		this.orderQueue = [cheeringOrder, order];
-	}
-	else if (this.IsPacking() && type != "CancelPack" && type != "CancelUnpack")
-	{
-		var order = { "type": type, "data": data };
-		var packingOrder = this.orderQueue.shift();
+		let order = { "type": type, "data": data };
+		let packingOrder = this.orderQueue.shift();
 		this.orderQueue = [packingOrder, order];
 	}
 	else
@@ -4085,13 +4072,7 @@ UnitAI.prototype.BackToWork = function()
 	}
 
 	// Clear the order queue considering special orders not to avoid
-	if (this.order && this.order.type == "Cheering")
-	{
-		var cheeringOrder = this.orderQueue.shift();
-		this.orderQueue = [cheeringOrder];
-	}
-	else
-		this.orderQueue = [];
+	this.orderQueue = [];
 
 	this.AddOrders(this.workOrders);
 	Engine.PostMessage(this.entity, MT_UnitAIOrderDataChanged, { "to": this.GetOrderData() });
@@ -4099,7 +4080,7 @@ UnitAI.prototype.BackToWork = function()
 	// And if the unit is in a formation, remove it from the formation
 	if (this.IsFormationMember())
 	{
-		var cmpFormation = Engine.QueryInterface(this.formationController, IID_Formation);
+		let cmpFormation = Engine.QueryInterface(this.formationController, IID_Formation);
 		if (cmpFormation)
 			cmpFormation.RemoveMembers([this.entity]);
 	}
@@ -5657,11 +5638,11 @@ UnitAI.prototype.Flee = function(target, queued)
 };
 
 /**
- * Adds cheer order to the queue. Forced so it won't be interrupted by attacks.
+ * Adds cheer order to the queue. Do not force so it can be interrupted by attacks.
  */
 UnitAI.prototype.Cheer = function()
 {
-	this.AddOrder("Cheering", { "force": true }, false);
+	this.AddOrder("Cheering", { "force": false }, false);
 };
 
 UnitAI.prototype.Pack = function(queued)

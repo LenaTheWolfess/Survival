@@ -901,7 +901,7 @@ function handleInputAfterGui(ev)
 			return false;
 
 		case "mousebuttondown":
-			if (ev.button == SDL_BUTTON_LEFT && preSelectedAction != ACTION_NONE)
+			if (ev.button == SDL_BUTTON_RIGHT && preSelectedAction != ACTION_NONE)
 			{
 				var action = determineAction(ev.x, ev.y, false, ev.clicks);
 				if (!action)
@@ -913,7 +913,7 @@ function handleInputAfterGui(ev)
 				}
 				return doAction(action, ev);
 			}
-			else if (ev.button == SDL_BUTTON_RIGHT && preSelectedAction != ACTION_NONE)
+			else if (ev.button == SDL_BUTTON_LEFT && preSelectedAction != ACTION_NONE)
 			{
 				preSelectedAction = ACTION_NONE;
 				inputState = INPUT_NORMAL;

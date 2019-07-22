@@ -32,7 +32,10 @@
   <group>
     <variant file="biped/base_swordsman_shieldarm_fast_relax.xml" frequency="1" />
     <variant file="biped/base_swordsman_shieldarm_fast.xml" name="combat"/>
+    <variant file="biped/approach_slaughter.xml"/>
     <variant file="biped/attack_capture.xml"/>
+    <variant file="biped/attack_slaughter.xml"/>
+    <variant file="biped/gather_praise.xml"/>
     <variant file="biped/death_infantry.xml"/>
   </group>
   <material>player_trans.xml</material>

@@ -7,6 +7,13 @@
       <RepeatTime>1000</RepeatTime>
       <RestrictedClasses datatype="tokens">Field Palisade SiegeWall StoneWall</RestrictedClasses>
     </Capture>
+    <Slaughter>
+      <Hack>100.0</Hack>
+      <Pierce>0.0</Pierce>
+      <Crush>0.0</Crush>
+      <Missle>0</Missle>
+      <MaxRange>2</MaxRange>
+    </Slaughter>
   </Attack>
   <Cost>
     <BatchSize>1</BatchSize>

@@ -373,7 +373,7 @@ Attack.prototype.CanRange = function()
 	if (!this.HasAttack("Ranged"))
 		return false;
 
-	return this.noRange;
+	return !this.noRange;
 }
 
 Attack.prototype.SetCanRange = function()
